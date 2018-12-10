@@ -17,6 +17,15 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# *** additional gems ***
+# jonny
+
+# dan
+
+# ines
+
+# carlotta
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
