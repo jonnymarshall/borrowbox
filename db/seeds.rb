@@ -62,6 +62,7 @@ n_items.times do
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
     address: addresses.sample
+    rating: rand(1.0..5.0)
   )
   p "#{item}"
 end
