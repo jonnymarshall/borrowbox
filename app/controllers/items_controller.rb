@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
 
     sql_query = "user.address ILIKE :address"
     # @items = Item.where(sql_query, "%#{params[:address]}%")
-    @items = Item.joins(:user).where(sql_query, address: "%#{params[:address]}%")
+    @items = Item.near(params[:address])
     raise
 
     # if params[:query].present?

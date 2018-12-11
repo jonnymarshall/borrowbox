@@ -10,24 +10,31 @@ titles = [
 addresses = [
   "Rua Sousa Lopes 73, Lisboa",
   "Avenida da Republica 40, Lisboa",
-  "Avenida João Crisóstomo 74, Lisboa",
-  "Avenida João Crisóstomo 17, Lisboa",
+  "Avenida Joao Crisostomo 74, Lisboa",
+  "Avenida Joao Crisostomo 17, Lisboa",
   "Avenida Miguel Bombarda 64, Lisboa",
-  "R Irene Lisboa 17, Lisboa",
-  "Rua Pé Mouro Armz 52, Lisboa",
-  "Avenida República 2, Lisboa",
-  "Praça Teófilo Braga 60, Lisboa",
+  "Rua Irene Lisboa 17, Lisboa",
+  "Rua Pe Mouro Armz 52, Lisboa",
+  "Avenida Republica 2, Lisboa",
+  "Praca Teofilo Braga 60, Lisboa",
   "Avenida Lago 77, Lisboa",
-  "Rua Pé Mouro Armz 59, Lisboa",
-  "Avenida Visconde Valmor 61, Lisboa"
+  "Avenida Visconde Valmor 61, Lisboa",
+  "Rua dos caminhos de ferro 84, Lisboa",
+  "Travessa Nova de Sao Domingos 10, Lisboa",
+  "Rua do Duque 9, Lisboa",
+  "Rua Vitor Cordon 26, Lisboa",
+  "Rua da Alegria 101, Porto",
+  "Rua de Miguel Bombarda 452, Porto",
+  "Rua de Miragaia 106, Porto",
+  "Terreiro da Se, Porto"
 ]
-
-# Creates users
-puts 'Creating users...'
 
 n_users = 10
 n_items = 50
 n_bookings = n_items * 5
+
+# Creates users
+puts 'Creating users...'
 
 # Creates test user
 n_users.times do |user|
@@ -49,14 +56,13 @@ puts "Created #{User.count} users..."
 puts 'Creating items...'
 # names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 n_items.times do
-  item = Item.new(
+  item = Item.create(
     name: Faker::HarryPotter.spell,
     credits: rand(50..5000),
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
     address: addresses.sample
   )
-  item.save!
   p "#{item}"
 end
 
