@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 titles = [
   "Great drill!",
   "Amazing drill!",
@@ -14,7 +7,20 @@ titles = [
   "FANTASTIC"
 ]
 
-addresses = ["Bairro Alto", "Baixa", "Rossio Square", "Belem", "Castelo", "Alfama", "Mouraria"]
+addresses = [
+  "Rua Sousa Lopes 73, Lisboa",
+  "Avenida da Republica 40, Lisboa",
+  "Avenida João Crisóstomo 74, Lisboa",
+  "Avenida João Crisóstomo 17, Lisboa",
+  "Avenida Miguel Bombarda 64, Lisboa",
+  "R Irene Lisboa 17, Lisboa",
+  "Rua Pé Mouro Armz 52, Lisboa",
+  "Avenida República 2, Lisboa",
+  "Praça Teófilo Braga 60, Lisboa",
+  "Avenida Lago 77, Lisboa",
+  "Rua Pé Mouro Armz 59, Lisboa",
+  "Avenida Visconde Valmor 61, Lisboa"
+]
 
 # Creates users
 puts 'Creating users...'
@@ -32,7 +38,6 @@ n_users.times do |user|
     last_name: Faker::Name.last_name,
     credits: rand(1000..10000),
     rating: rand(1.0..5.0),
-    address: addresses.sample,
   )
   user.save!
   p "#{user}"
@@ -49,6 +54,7 @@ n_items.times do
     credits: rand(50..5000),
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
+    address: addresses.sample
   )
   item.save!
   p "#{item}"
