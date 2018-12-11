@@ -1,2 +1,35 @@
-<h1>Dashboard</h1>
-<p>This is where the dashboard will be</p>
+<h3><%= "current_user.first_name" %></h3>
+
+<p><%= "current_user.rating" %></p>
+<p>Your rating</p>
+
+<p><%= "current_user.credits" %></p>
+<p>Credits</p>
+
+<p><%= "current_user.items.count" %></p>
+<p>Items lent</p>
+
+<p><%= "current_user.bookings.count" %></p>
+<p>Items borrowed</p>
+
+<button type="submit" class="btn btn-primary">Buy 1000 more credits</button>
+
+
+<div class="tabs">
+  <a class="tab active" href="#">
+    <h3>350</h3>
+    <p>Requested</p>
+  </a>
+  <a class="tab" href="#">
+    <h3>456</h3>
+    <p>Borrowing</p>
+  </a>
+  <a class="tab" href="#">
+    <h3>189</h3>
+    <p>Borrowed</p>
+  </a>
+  <a class="tab" href="#">
+    <h3>13</h3>
+    <p>Lending</p>
+  </a>
+</div>
