@@ -26,7 +26,7 @@ addresses = [
 puts 'Creating users...'
 
 n_users = 10
-n_items = 100
+n_items = 50
 n_bookings = n_items * 5
 
 # Creates test user
