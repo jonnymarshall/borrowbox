@@ -14,6 +14,7 @@ titles = [
   "FANTASTIC"
 ]
 
+addresses = ["Bairro Alto", "Baixa", "Rossio Square", "Belem", "Castelo", "Alfama", "Mouraria"]
 
 # Creates users
 puts 'Creating users...'
@@ -23,14 +24,6 @@ n_items = 100
 n_bookings = n_items * 5
 
 # Creates test user
-user = User.new(
-  email: "all@packer.com",
-  password: "foobar",
-  first_name: Faker::Name.first_name,
-  last_name: Faker::Name.last_name
-  )
-user.save!
-
 n_users.times do |user|
   user = User.new(
     email: Faker::Internet.email,
@@ -39,7 +32,7 @@ n_users.times do |user|
     last_name: Faker::Name.last_name,
     credits: rand(1000..10000),
     rating: rand(1.0..5.0),
-    address: "Lisbon",
+    address: addresses.sample,
   )
   user.save!
   p "#{user}"
@@ -71,7 +64,7 @@ n_bookings.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
-    user_id: User.all.sample,
+    user: User.all.sample,
     item: Item.all.sample
   )
   booking.save!
