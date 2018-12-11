@@ -49,6 +49,7 @@ n_items.times do
     credits: rand(50..5000),
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
+    rating: rand(1.0..5.0),
   )
   item.save!
   p "#{item}"
