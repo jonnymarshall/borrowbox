@@ -19,6 +19,7 @@ gem 'webpacker'
 
 # *** additional gems ***
 # jonny
+gem 'faker'
 
 # dan
 
