@@ -5,9 +5,13 @@ class ItemsController < ApplicationController
   end
 
   def search
-    # raise
 
-    @items = Item.where('? > credits', params[:max_credits])
+    # @items = Item.where('? > credits', params[:max_credits])
+
+    sql_query = "user.address ILIKE :address"
+    # @items = Item.where(sql_query, "%#{params[:address]}%")
+    @items = Item.joins(:user).where(sql_query, address: "%#{params[:address]}%")
+    raise
 
     # if params[:query].present?
     #
