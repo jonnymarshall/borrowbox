@@ -1,0 +1,11 @@
+<h1>Results</h1>
+<p>This is where the cards will be</p>
+
+<ul>
+<% @items.each do |item| %>
+  <li>
+    <%= item.name %>
+    <%= link_to "show", item_path(item) %>
+  </li>
+<% end %>
+</ul>
