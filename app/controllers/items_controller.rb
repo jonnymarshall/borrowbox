@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    # @items = @items.near(params[:location]) if params[:location].present?
   end
 
   def search
