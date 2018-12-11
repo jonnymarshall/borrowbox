@@ -6,8 +6,10 @@
 <ul>
 <% @items.each do |item| %>
   <li>
-    <%= item.name %>
-    <%= link_to "show", item_path(item) %>
+    <h3><%= item.name %></h3>
+    <p><%= item.address %></p>
+    <p><%= item.credits %> credits</p>
+    <p><%= link_to "show", item_path(item) %></p>
   </li>
 <% end %>
 </ul>
