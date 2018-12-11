@@ -1,0 +1,13 @@
+<%= form_tag items_path, method: :get do %>
+  <%= text_field_tag :max_credits,
+    params[:max_credits],
+    class: "form-control",
+    placeholder: "Max credits"
+  %>
+  <%= text_field_tag :address,
+    params[:address],
+    class: "form-control",
+    placeholder: "Lisboa"
+  %>
+  <button type="submit">Send</button>
+<% end %>
