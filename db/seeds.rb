@@ -47,7 +47,7 @@ end
 
 puts "Created #{User.count} users..."
 
-# Creates alpacas
+# Creates items
 puts 'Creating items...'
 # names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 n_items.times do
@@ -71,17 +71,15 @@ n_bookings.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
-    user: User.all.sample,
-    alpaca: Item.all.sample
+    user_id: User.all.sample,
+    item: Item.all.sample
   )
   booking.save!
-  # puts "#{booking}"
+  p "#{booking}"
 
   review = Review.new(
     title: titles.sample,
-    description: "#{Faker::Hipster.paragraph},
-                  #{Faker::Hipster.paragraph},
-                  #{Faker::Hipster.paragraph}",
+    content: "#{Faker::Hipster.paragraph}, #{Faker::Hipster.paragraph}, #{Faker::Hipster.paragraph}",
     item_rating: rand(3..5),
     lender_rating: rand(3..5),
     booking: booking
