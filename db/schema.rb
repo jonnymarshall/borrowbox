@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2018_12_11_124737) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.date "start_date"
     t.date "end_date"
-    t.integer "total_credits"
+    t.integer "total_credits", default: 0
     t.text "request_message"
     t.text "response_message"
     t.boolean "response_message_read"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_124737) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "credits"
+    t.integer "credits", default: 0
     t.string "photo"
     t.integer "rating"
     t.datetime "created_at", null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_124737) do
     t.string "address"
     t.string "first_name"
     t.string "last_name"
-    t.integer "credits"
+    t.integer "credits", default: 0
     t.integer "rating"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

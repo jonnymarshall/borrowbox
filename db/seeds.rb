@@ -65,7 +65,8 @@ n_bookings.times do |booking|
     start_date: 20181201,
     end_date: 20181202,
     user: User.all.sample,
-    item: Item.all.sample
+    item: Item.all.sample,
+    status: rand(0..2)
   )
   booking.save!
   p "#{booking}"
