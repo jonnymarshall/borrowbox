@@ -19,29 +19,31 @@
   height:100%;
   object-fit: cover;
 }
- .alpaca-key-info {
+ .item-key-info {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
   // background-color: red;
 }
- .alpaca-key-info p {
+ .item-key-info p {
   font-size: 16px;
   margin-bottom: 5px;
  }
- .alpaca-key-info h2 {
+ .item-key-info h2 {
   margin-top: 0px;
   margin-bottom: 5px;
  }
- .alpaca-rating {
+ .item-rating {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
   // background-color: green;
 }
- .alpaca-description {
+ .item-description {
   grid-column: 1 / span 2;
   grid-row: 3 / span 1;
+  // display: flex; OPTIONAL
+  // align-items: center;
 }
- .alpaca-reviews {
+ .item-reviews {
   grid-column: 1 / span 2;
   grid-row: 4 / span 1;
   // background-color: yellow;
@@ -50,9 +52,9 @@
  #map {
   grid-column: 3 / span 1;
   grid-row: 1 / span 1;
-  // background-color: purple;
+  background-color: #8CDEFC;
 }
- .alpaca-calendar {
+ .item-calendar {
   grid-column: 3 / span 1;
   grid-row: 2 / span 2;
   // background-color: orange;
@@ -100,7 +102,7 @@
 .reviewer {
   margin-left: 10px;
 }
-.alpaca-reviews p {
+.item-reviews p {
   font-size: 14px;
 }
 .user-rating p {
@@ -119,3 +121,7 @@
 .fa-star {
   color: rgb(7.0, 81.0, 72.0);
 }
+.booking-form-borrowbox {
+  margin-left: 15px;
+}
+
