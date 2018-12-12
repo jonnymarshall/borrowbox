@@ -32,13 +32,23 @@
 <p><%= @item.description %></p>
 
 <%= link_to "Back", request.referer %> <br>
-<%= link_to "Dashboard", dashboard_index_path %>
 
 <br>
 
-<button type="submit" class="btn btn-primary">Request</button>
+<%= simple_form_for [@item, @booking] do |f| %>
+  <%= f.label :request_message %>
+  <%= f.text_field :request_message %>
 
-<%#= button_to 'Request', provide_path(@prov_id), :method => :patch %>
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date %>
+
+  <%= f.label :end_date %>
+  <%= f.date_select :end_date %>
+
+  <%= f.submit id:"sweet-alert-demo", class: "btn btn-primary" %>
+
+  <% sleep(3) %>
+<% end %>
 
 <div class="item-reviews">
   <% @item.reviews.each do |review| %>

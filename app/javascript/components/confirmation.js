@@ -5,10 +5,9 @@ function bindSweetAlertButtonDemo() {
   if (swalButton) { // protect other pages
     swalButton.addEventListener('click', () => {
       swal({
-        title: 'Confirmed!',
-        text: 'You have reserved the item',
-        type: 'success',
-        confirmButtonText: 'Continue'
+        title: 'Reserved!',
+        text: 'The lender will reply to you shortly',
+        type: 'success'
       })
     });
   }
