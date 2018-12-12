@@ -2,11 +2,19 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @items = Item.all
+    sql_query = []
+    sql_query << ':max_credits > credits' if params[:max_credits].present?
+    sql_query << 'name ILIKE :name' if params[:name].present?
+    sql_query = sql_query.join(' AND ')
 
-    # This will work with two queries
-    @items = @items.where('? > credits', params[:max_credits]) if params[:max_credits].present?
-    @items = @items.near(params[:address]) if params[:address].present?
+    @items =
+      if sql_query.blank?
+        Item.all
+      else
+        Item.where(sql_query,
+                   max_credits: params[:max_credits],
+                   name: "%#{params[:name]}%")
+      end
   end
 
   def show
