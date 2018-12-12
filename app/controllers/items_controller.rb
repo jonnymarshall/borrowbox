@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @booking = Booking.new
     # @item.user.rating = nil
     ratings_array = [@item.user.rating, @item.rating]
     @combined_rating = calculate_average(ratings_array)
