@@ -1,8 +1,8 @@
 <h1>Borrowbox</h1>
 
 <%= form_tag items_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
+  <%= text_field_tag :name,
+    params[:name],
     class: "form-control",
     placeholder: "Find an item"
   %>
