@@ -38,15 +38,7 @@
 
 <button type="submit" class="btn btn-primary">Request</button>
 
-<%= form_for(@booking) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-
-  <%= f.submit %>
-<% end %>
+<%#= button_to 'Request', provide_path(@prov_id), :method => :patch %>
 
 <div class="item-reviews">
   <% @item.reviews.each do |review| %>

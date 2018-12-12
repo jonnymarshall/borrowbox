@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_183625) do
     t.integer "total_credits", default: 0
     t.text "request_message"
     t.text "response_message"
-    t.boolean "response_message_read", default: false
+    t.boolean "response_message_read"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
