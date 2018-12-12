@@ -23,7 +23,7 @@ gem 'geocoder'
 gem 'faker'
 
 # dan
-
+# gem 'validates_timeliness'
 # ines
 
 # carlotta
