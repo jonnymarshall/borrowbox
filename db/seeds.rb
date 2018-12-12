@@ -33,6 +33,21 @@ n_users = 10
 n_items = 50
 n_bookings = n_items * 5
 
+# Creates test user
+
+puts 'Creating test user...'
+user = User.new(
+  email: "borrow@box.com",
+  password: "borrowbox",
+  first_name: "Borrow",
+  last_name: "Box",
+  credits: rand(1000..10000),
+  rating: rand(1.0..5.0),
+)
+user.save!
+p "#{user}"
+
+
 # Creates users
 puts 'Creating users...'
 
@@ -70,8 +85,30 @@ end
 puts "Created #{Item.count} items..."
 
 
+# Creates 10 bookings for test user
+
+puts 'Creating bookings for test user...'
+
+
+10.times do |booking|
+  count = 0
+  booking = Booking.new(
+    start_date: 20181201 + count,
+    end_date: 20181202 + count,
+    user: User.first,
+    item: Item.all.sample,
+    status: rand(0..2)
+  )
+  booking.save!
+  count += 1
+  p "#{booking}"
+end
+
+puts "Created #{Booking.count} bookings for test user..."
+
+
 # Creates 100 bookings with reviews
-puts 'Creating bookings...'
+puts 'Creating bookings and reviews...'
 
 n_bookings.times do |booking|
   booking = Booking.new(
