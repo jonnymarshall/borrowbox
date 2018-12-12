@@ -9,6 +9,6 @@ class Booking < ApplicationRecord
   validates :item, presence: true
   validates :status, presence: true
   validates :total_credits, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :start_date, presence: true, on_or_before: lambda { Date.current }
-  validates :end_date, presence: true#, date: { after_or_equal_to: :start_date }
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 end

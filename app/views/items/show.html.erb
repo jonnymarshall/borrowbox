@@ -46,7 +46,9 @@
   <%= f.label :end_date %>
   <%= f.date_select :end_date %>
 
-  <%= f.submit class: "btn btn-primary" %>
+  <%= f.submit id:"sweet-alert-demo", class: "btn btn-primary" %>
+
+  <% sleep(3) %>
 <% end %>
 
 <div class="item-reviews">
