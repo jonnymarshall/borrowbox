@@ -7,7 +7,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.integer :total_credits, default: 0
       t.text :request_message
       t.text :response_message
-      t.boolean :response_message_read
+      t.boolean :response_message_read, default: false
 
       t.timestamps
     end

@@ -97,7 +97,9 @@ puts 'Creating bookings for test user...'
     end_date: 20181202 + count,
     user: User.first,
     item: Item.all.sample,
-    status: rand(0..2)
+    status: rand(0..2),
+    request_message: "I wanna borrow yo shit",
+    response_message: "You can borrow my shit"
   )
   booking.save!
   count += 1
