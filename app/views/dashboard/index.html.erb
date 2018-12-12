@@ -27,10 +27,11 @@
   <p><strong>Their message:</strong></p>
   <p><%= booking.response_message %></p>
   <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
-  <% if booking.response_message_read %>
+  <% if booking.response_message_read == false %>
     <i class="fas fa-comment"></i>
   <% end %>
-  <button type="button" class="btn btn-primary">Item received</button>
+  <%= link_to "Item received", booking_path(booking, status: 'borrowing'), method: :patch %>
+
 <% end %>
 
 <!-- BORROWING -->
@@ -45,7 +46,10 @@
   <p><strong>Their message:</strong></p>
   <p><%= booking.response_message %></p>
   <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
-  <button type="button" class="btn btn-primary">Item returned</button>
+    <% if booking.response_message_read == false %>
+    <i class="fas fa-comment"></i>
+  <% end %>
+  <%= link_to "Item returned", booking_path(booking, status: 'borrowed'), method: :patch %>
 <% end %>
 
 <!-- BORROWED -->

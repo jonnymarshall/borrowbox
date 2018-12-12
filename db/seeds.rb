@@ -47,6 +47,7 @@ user = User.new(
 user.save!
 p "#{user}"
 
+puts 'Created test user...'
 
 # Creates users
 puts 'Creating non-testusers...'
