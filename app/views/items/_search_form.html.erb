@@ -1,13 +1,43 @@
 <%= form_tag items_path, method: :get do %>
-  <%= text_field_tag :max_credits,
-    params[:max_credits],
-    class: "form-control",
-    placeholder: "Max credits"
-  %>
-  <%= text_field_tag :address,
-    params[:address],
-    class: "form-control",
-    placeholder: "Lisboa"
-  %>
-  <button type="submit">Send</button>
+  <div class="filter-row">
+    <p><strong>Where</strong></p>
+    <%= text_field_tag :address,
+      params[:address],
+      class: "form-control",
+      placeholder: "Lisboa"
+    %>
+  </div>
+  <div class="filter-row">
+    <p><strong>Availability</strong></p>
+    <%= text_field_tag :address,
+      params[:address],
+      class: "form-control",
+      placeholder: "From:                         To:"
+    %>
+    </div>
+  <div class="filter-row">
+    <p><strong>Max Credits</strong></p>
+    <%= text_field_tag :max_credits,
+      params[:max_credits],
+      class: "form-control",
+      placeholder: "Max Credits"
+    %>
+  </div>
+  <div class="filter-row">
+    <p><strong>Max Distance</strong></p>
+    <%= text_field_tag :address,
+      params[:address],
+      class: "form-control",
+      placeholder: "Max Distance"
+    %>
+  </div>
+  <div class="filter-row">
+    <p><strong>Min Rating</strong></p>
+    <%= text_field_tag :address,
+      params[:address],
+      class: "form-control",
+      placeholder: "Min Rating"
+    %>
+  </div>
+  <button type="submit" class="btn btn-secondary">Send</button>
 <% end %>
