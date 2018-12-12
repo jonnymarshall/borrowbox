@@ -15,31 +15,50 @@
 <button type="submit" class="btn btn-primary">Buy 1000 more credits</button>
 
 
-<h2>Requested</h2> <h3><%= current_user.bookings.where(status: :requested).count %></h3>
+<!-- REQUESTED -->
+
+<h2>Requested</h2>
+<h3><%= current_user.bookings.where(status: :requested).count %></h3>
 <% current_user.bookings.where(status: :requested).each do |booking| %>
   <p><%= "Item: #{booking.item.name}" %></p>
   <p><%= "User: #{booking.item.user.first_name} #{booking.item.user.last_name}" %></p>
   <p><strong>Your message:</strong></p>
-  <p><%= booking.equest_message %></p>
+  <p><%= booking.request_message %></p>
+  <p><strong>Their message:</strong></p>
+  <p><%= booking.response_message %></p>
   <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
-
+  <% if booking.response_message_read %>
+    <i class="fas fa-comment"></i>
+  <% end %>
+  <button type="button" class="btn btn-primary">Item received</button>
 <% end %>
 
-<h2>Borrowing</h2> <h3><%= current_user.bookings.where(status: :borrowing).count %></h3>
+<!-- BORROWING -->
+
+<h2>Borrowing</h2>
+<h3><%= current_user.bookings.where(status: :borrowing).count %></h3>
 <% current_user.bookings.where(status: :borrowing).each do |booking| %>
   <p>Item:<%= booking.item.name %></p>
   <p>User:<%= "#{booking.item.user.first_name} #{booking.item.user.last_name}" %></p>
   <p><strong>Your message:</strong></p>
-  <p><%= booking.equest_message %></p>
+  <p><%= booking.request_message %></p>
+  <p><strong>Their message:</strong></p>
+  <p><%= booking.response_message %></p>
   <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
+  <button type="button" class="btn btn-primary">Item returned</button>
 <% end %>
 
-<h2>Borrowed</h2> <h3><%= current_user.bookings.where(status: :borrowed).count %></h3>
+<!-- BORROWED -->
+
+<h2>Borrowed</h2>
+<h3><%= current_user.bookings.where(status: :borrowed).count %></h3>
 <% current_user.bookings.where(status: :borrowed).each do |booking| %>
   <p><%= "Item: #{booking.item.name}" %></p>
   <p><%= "User: #{booking.item.user.first_name} #{booking.item.user.last_name}" %></p>
   <p><strong>Your message:</strong></p>
-  <p><%= booking.equest_message %></p>
+  <p><%= booking.request_message %></p>
+  <p><strong>Their message:</strong></p>
+  <p><%= booking.response_message %></p>
   <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
 <% end %>
 

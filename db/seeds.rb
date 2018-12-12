@@ -49,10 +49,12 @@ p "#{user}"
 
 
 # Creates users
-puts 'Creating users...'
+puts 'Creating non-testusers...'
+
+non_test_users = []
 
 # Creates test user
-n_users.times do |user|
+10.times do |user|
   user = User.new(
     email: Faker::Internet.email,
     password: "foobar",
@@ -62,10 +64,11 @@ n_users.times do |user|
     rating: rand(1.0..5.0),
   )
   user.save!
+  non_test_users << user
   p "#{user}"
 end
 
-puts "Created #{User.count} users..."
+puts "Created #{User.count} non-test users..."
 
 # Creates items
 puts 'Creating items...'
@@ -89,6 +92,7 @@ puts "Created #{Item.count} items..."
 
 puts 'Creating bookings for test user...'
 
+boolean = ["true", "false"]
 
 10.times do |booking|
   count = 0
@@ -99,7 +103,8 @@ puts 'Creating bookings for test user...'
     item: Item.all.sample,
     status: rand(0..2),
     request_message: "I wanna borrow yo shit",
-    response_message: "You can borrow my shit"
+    response_message: "You can borrow my shit",
+    response_message_read: boolean.sample
   )
   booking.save!
   count += 1
@@ -116,7 +121,7 @@ n_bookings.times do |booking|
   booking = Booking.new(
     start_date: 20181201,
     end_date: 20181202,
-    user: User.all.sample,
+    user: non_test_users.sample,
     item: Item.all.sample,
     status: rand(0..2)
   )
