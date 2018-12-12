@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.find(params[:id])
   end
-  
+
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_status_params)
