@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :new, :create, :edit, :update] do
     resources :reviews, only: [:index]
   end
+
+  get "/items-development", to: "front_end_development#index"
+  get "/show-development", to: "front_end_development#show"
 end

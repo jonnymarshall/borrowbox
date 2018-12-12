@@ -1,0 +1,38 @@
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: black 1px solid;
+}
+.card-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: white 3px solid;
+  background-color: orange;
+  right: 10px;
+  bottom: -30px;
+
+}
+.avatar-bordered {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: black 1px solid;
+}
+.avatar-square {
+  width: 30px;
+  height: 30px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: black 1px solid;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.z-index-ten {
+  z-index: 10;
+}
