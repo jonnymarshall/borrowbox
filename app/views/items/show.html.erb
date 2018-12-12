@@ -1,57 +1,70 @@
-<h1>Item <%= @item.id %></h1>
-<h3><%= @item.name %></h3>
-<p><%= @item.address %></p>
+<div class="wrapper">
+  <div class="container">
+    <div class="grid">
+      <div class="picture-frame">
+        <div class="item-photo" id="item-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
+        </div>
+        <!-- <img id="item-picture" src="https://images.unsplash.com/photo-1518259102261-b40117eabbc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"> -->
+      <div class= "avatar-medium item-owner">
+      </div>
+    </div>
+    <div class="item-key-info">
+      <h2><%= @item.name %></h2>
+      <p><%= @item.address %></p>
+      <p><strong><%= @item.credits %> Credits</strong> per day</p>
+    </div>
+    <div class="item-description">
+      <p><%= @item.description %></p>
+    </div>
 
-<p><%= "#{@item.credits} credits per day"%></p>
+    <!-- rating -->
+    <div class="item-rating">
+      <div class="inline">
+        <div class="rating-block">
+          <div>
+            <p><strong>
+              <% if @combined_rating.nil? %>
+                <%= N/A %>
+              <% else %>
+                <%= @combined_rating %>
+              <% end %>
+            </strong></p>
+          </div>
+        </div>
+        <div>
+          <h4 class="kill-margin-top kill-margin-bottom"><%= @item.user.first_name %></h4>
+          <p class="kill-margin-top kill-margin-bottom" id=reviews-number>
+            <%= "#{@item.reviews.count} Total Reviews"%>
+          </p>
+        </div>
+      </div>
+      <div class="inline space-between user-rating">
+        <div><p><%= @item.name %>'s Rating</p></div>
+        <div><p>
+          <% if @item.rating.nil? %>
+            <h3>N/A</h3>
+          <% else %>
+            <p><%= @item.rating %></p>
+          <% end %>
+        </p></div>
+      </div>
+      <div class="rating-bar"></div>
+      <div class="inline space-between user-rating">
+        <div><p><%= @item.user.first_name %>'s Rating</p></div>
+        <div><p>
+          <% if @item.user.rating.nil? %>
+            <h3>N/A</h3>
+          <% else %>
+            <p><%= @item.user.rating %></p>
+          <% end %>
+        </p></div>
+      </div>
+      <div class="rating-bar"></div>
+    </div>
 
-<% if @combined_rating.nil? %>
-  <h3>N/A</h3>
-<% else %>
-  <h3><%= @combined_rating %></h3>
-<% end %>
-
-<p><%= @item.user.first_name %></p>
-<p><%= "#{@item.reviews.count} Total Reviews"%></p>
-
-<p><%= "#{@item.name}'s Rating"%></p>
-
-<% if @item.rating.nil? %>
-  <h3>N/A</h3>
-<% else %>
-  <p><%= @item.rating %></p>
-<% end %>
-
-<p><%= @item.user.first_name %>'s Rating</p>
-
-<% if @item.user.rating.nil? %>
-  <h3>N/A</h3>
-<% else %>
-  <p><%= @item.user.rating %></p>
-<% end %>
-
-<p><%= @item.description %></p>
-
-<%= link_to "Back", request.referer %> <br>
-
-<br>
-
-<%= simple_form_for [@item, @booking] do |f| %>
-  <%= f.label :request_message %>
-  <%= f.text_field :request_message %>
-
-  <%= f.label :start_date %>
-  <%= f.date_select :start_date %>
-
-  <%= f.label :end_date %>
-  <%= f.date_select :end_date %>
-
-  <%= f.submit id:"sweet-alert-demo", class: "btn btn-primary" %>
-
-  <% sleep(3) %>
-<% end %>
-
-<div class="item-reviews">
-  <% @item.reviews.each do |review| %>
+    <!-- reviews -->
+    <div class="item-reviews">
+      <% @item.reviews.each do |review| %>
         <div class="review">
           <div class="inline space-between">
             <div>
@@ -69,14 +82,56 @@
             </div>
             <div class="stars">
               <% review.item_rating.times do %>
-              <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
               <% end %>
               <% (5 - review.item_rating).times do %>
-              <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
               <% end %>
             </div>
           </div>
           <p><%= review.content %></p>
         </div>
+      <% end %>
+    </div>
+
+    <!-- map -->
+    <div id="map">
+    </div>
+
+    <!-- calender -->
+    <div class="item-calendar">
+      <div class="booking-form booking-form-borrowbox">
+        <%= simple_form_for [@item, @booking] do |f| %>
+          <%= f.label :request_message, class: "h5 kill-margin-top" %>
+          <%= f.text_field :request_message %>
+          <br>
+          <%= f.label :start_date, class: "h5 kill-margin-bottom" %>
+          <br>
+          <%= f.date_select :start_date %>
+          <br>
+          <%= f.label :end_date, class: "h5 kill-margin-bottom" %>
+          <br>
+          <%= f.date_select :end_date %>
+          <br>
+
+          <br>
+          <%= f.submit id:"sweet-alert-demo", class: "btn btn-primary" %>
+
+          <% sleep(3) %>
         <% end %>
       </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<%= link_to "Back", request.referer %> <br>
+
+<br>
+
+
