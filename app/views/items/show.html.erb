@@ -36,9 +36,7 @@
 
 <br>
 
-<button type="submit" class="btn btn-primary">Request</button>
-
-<%#= button_to 'Request', provide_path(@prov_id), :method => :patch %>
+<%= button_to 'Request', new_item_booking_path(@item) %>
 
 <div class="item-reviews">
   <% @item.reviews.each do |review| %>
