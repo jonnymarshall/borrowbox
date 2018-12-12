@@ -36,7 +36,18 @@
 
 <br>
 
-<%= button_to 'Request', new_item_booking_path(@item) %>
+<%= simple_form_for [@item, @booking] do |f| %>
+  <%= f.label :request_message %>
+  <%= f.text_field :request_message %>
+
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date %>
+
+  <%= f.label :end_date %>
+  <%= f.date_select :end_date %>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
 
 <div class="item-reviews">
   <% @item.reviews.each do |review| %>
