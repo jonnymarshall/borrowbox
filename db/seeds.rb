@@ -76,7 +76,7 @@ puts 'Creating items...'
 # names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 n_items.times do
   item = Item.create(
-    name: Faker::HarryPotter.spell,
+    name: Faker::Commerce.product_name,
     credits: rand(50..5000),
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,

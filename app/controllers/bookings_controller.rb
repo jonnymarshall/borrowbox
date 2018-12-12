@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     booking.item = item
     booking.total_credits = credits
     booking.save
-    redirect_to item_path(item)
+    redirect_to dashboard_index_path
   end
 
   def update
