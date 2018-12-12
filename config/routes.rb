@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :items, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:create]
   end
 
   resources :dashboard, only: [:index]
-  resources :bookings, only: [:index, :new, :create, :edit, :update] do
+  resources :bookings, only: [:update] do
     resources :reviews, only: [:index]
   end
   get "/", to: "front_end_development#homepage-search"
