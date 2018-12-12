@@ -1,6 +1,70 @@
 <h1>Item <%= @item.id %></h1>
 <h3><%= @item.name %></h3>
+<p><%= @item.address %></p>
+
+<p><%= "#{@item.credits} credits per day"%></p>
+
+<% if @combined_rating.nil? %>
+  <h3>N/A</h3>
+<% else %>
+  <h3><%= @combined_rating %></h3>
+<% end %>
+
+<p><%= @item.user.first_name %></p>
+<p><%= "#{@item.reviews.count} Total Reviews"%></p>
+
+<p><%= "#{@item.name}'s Rating"%></p>
+
+<% if @item.rating.nil? %>
+  <h3>N/A</h3>
+<% else %>
+  <p><%= @item.rating %></p>
+<% end %>
+
+<p><%= @item.user.first_name %>'s Rating</p>
+
+<% if @item.user.rating.nil? %>
+  <h3>N/A</h3>
+<% else %>
+  <p><%= @item.user.rating %></p>
+<% end %>
+
 <p><%= @item.description %></p>
 
-<%= link_to "Index", items_path %> <br>
+<%= link_to "Back", request.referer %> <br>
 <%= link_to "Dashboard", dashboard_index_path %>
+
+<br>
+
+<button type="submit" class="btn btn-primary">Request</button>
+
+<div class="item-reviews">
+  <% @item.reviews.each do |review| %>
+        <div class="review">
+          <div class="inline space-between">
+            <div>
+              <div class="avatar-small">
+              </div>
+              <div class="reviewer">
+                <div>
+                  <p><strong>
+                    <%= review.booking.user.first_name %>
+                    <%= review.booking.user.last_name %>
+                  </strong></p>
+                </div>
+                <div><p><%= review.created_at.strftime("%b %d, %Y") %></p></div>
+              </div>
+            </div>
+            <div class="stars">
+              <% review.item_rating.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - review.item_rating).times do %>
+              <i class="far fa-star"></i>
+              <% end %>
+            </div>
+          </div>
+          <p><%= review.content %></p>
+        </div>
+        <% end %>
+      </div>
