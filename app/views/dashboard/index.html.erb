@@ -39,76 +39,84 @@
       <div class="list-area">
         <h2>Requested</h2>
         <% current_user.bookings.where(status: :requested).each do |booking| %>
-          <div class="booking-card-grid">
-            <div class="booking-card-request-info-section">
-              <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
-              <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
-            </div>
-            <div class="booking-card-request-message-section">
-              <strong>Your message:</strong>
-              <p><%= booking.request_message %></p>
-            </div>
-            <div class="booking-card-footer-right">
-              <div class="read-message-container">
-              <% if booking.response_message_read == false %>
-                <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
-              <% end %>
-                <!-- <button type="button" class="btn btn-primary">Read message</button> -->
+          <%= link_to item_path(booking.item) do %>
+            <div class="booking-card-grid">
+              <div class="booking-card-request-info-section">
+                <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
+                <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
               </div>
-              <div class="mark-item-container">
-              <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-success', method: :patch} %>
+              <div class="booking-card-request-message-section">
+                <strong>Your message:</strong>
+                <p><%= booking.request_message %></p>
+                <strong>Lender's Response:</strong>
+                <p><%= booking.response_message %></p>
+              </div>
+              <div class="booking-card-footer-right">
+                <div class="read-message-container">
+                <% if booking.response_message_read == false %>
+                  <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                <% end %>
+                  <!-- <button type="button" class="btn btn-primary">Read message</button> -->
+                </div>
+                <div class="mark-item-container">
+                <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-success', method: :patch} %>
+                </div>
+              </div>
+              <div class="booking-card-image-container">
+                <div class="card-avatar position-absolute z-index-ten"></div>
+                <div class="booking-card-image"></div>
+              </div>
+              <div class="booking-card-footer">
+                <div class="card-rating-box">
+                  <h6><i class="fas fa-star"></i>8.5</h6>
+                </div>
+                <div class="card-credits-box">
+                  <h6>350</h6>
+                </div>
               </div>
             </div>
-            <div class="booking-card-image-container">
-              <div class="card-avatar position-absolute z-index-ten"></div>
-              <div class="booking-card-image"></div>
-            </div>
-            <div class="booking-card-footer">
-              <div class="card-rating-box">
-                <h6><i class="fas fa-star"></i>8.5</h6>
-              </div>
-              <div class="card-credits-box">
-                <h6>350</h6>
-              </div>
-            </div>
-          </div>
+          <% end %>
         <% end %>
 
         <h2>Borrowing</h2>
         <% current_user.bookings.where(status: :borrowing).each do |booking| %>
-          <div class="booking-card-grid">
-            <div class="booking-card-request-info-section">
-              <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
-              <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
-            </div>
-            <div class="booking-card-request-message-section">
-              <strong>Your message:</strong>
-              <p><%= booking.request_message %></p>
-            </div>
-            <div class="booking-card-footer-right">
-              <div class="read-message-container">
-              <% if booking.response_message_read == false %>
-                <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
-              <% end %>
-                <!-- <button type="button" class="btn btn-primary">Read message</button> -->
+          <%= link_to item_path(booking.item) do %>
+            <div class="booking-card-grid">
+              <div class="booking-card-request-info-section">
+                <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
+                <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
               </div>
-              <div class="mark-item-container">
-              <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-success', method: :patch} %>
+              <div class="booking-card-request-message-section">
+                <strong>Your message:</strong>
+                <p><%= booking.request_message %></p>
+                <strong>Lender's Response:</strong>
+                <p><%= booking.response_message %></p>
+              </div>
+              <div class="booking-card-footer-right">
+                <div class="read-message-container">
+                <% if booking.response_message_read == false %>
+                  <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                <% end %>
+                  <!-- <button type="button" class="btn btn-primary">Read message</button> -->
+                </div>
+                <div class="mark-item-container">
+                <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-success', method: :patch} %>
+                </div>
+              </div>
+              <div class="booking-card-image-container">
+                <div class="card-avatar position-absolute z-index-ten"></div>
+                <div class="booking-card-image"></div>
+              </div>
+              <div class="booking-card-footer">
+                <div class="card-rating-box">
+                  <h6><i class="fas fa-star"></i>8.5</h6>
+                </div>
+                <div class="card-credits-box">
+                  <h6>350</h6>
+                </div>
               </div>
             </div>
-            <div class="booking-card-image-container">
-              <div class="card-avatar position-absolute z-index-ten"></div>
-              <div class="booking-card-image"></div>
-            </div>
-            <div class="booking-card-footer">
-              <div class="card-rating-box">
-                <h6><i class="fas fa-star"></i>8.5</h6>
-              </div>
-              <div class="card-credits-box">
-                <h6>350</h6>
-              </div>
-            </div>
-          </div>
+          <% end %>
         <% end %>
 
         <h2>Borrowed</h2>
@@ -121,6 +129,8 @@
             <div class="booking-card-request-message-section">
               <strong>Your message:</strong>
               <p><%= booking.request_message %></p>
+              <strong>Lender's Response:</strong>
+              <p><%= booking.response_message %></p>
             </div>
             <div class="booking-card-footer-right">
               <div class="read-message-container">
