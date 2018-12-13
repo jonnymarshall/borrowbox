@@ -69,10 +69,122 @@
             </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+<button type="submit" class="btn btn-primary">Buy 1000 more credits</button>
+
+
+<!-- MODAL TEST -->
+
+<!-- Button trigger modal -->
+<i class="fas fa-comment" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></i>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="inner-container">
+        <div class="popup-row-1">
+          <div class="popup-row-1-title-lpadding">
+            <h3>Borrow Shannon's <br/> Drill </h3>
+          </div>
+          <div class="popup-profile-picture"></div>
+        </div>
+        <div class="popup-row-2">
+          <div class="popup-message-container">
+            <div class="message-content">Message content goes here.</div>
+          </div>
+        </div>
+        <div class="popup-row-3">
+          <button type="button" class="popup-btn-OK" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REQUESTED -->
+
+<h2>Requested</h2>
+<h3><%= current_user.bookings.where(status: :requested).count %></h3>
+<% current_user.bookings.where(status: :requested).each do |booking| %>
+  <p><%= "Booking ID: #{booking.id}" %></p>
+  <p><%= "Item: #{booking.item.name}" %></p>
+  <p><%= "User: #{booking.item.user.first_name} #{booking.item.user.last_name}" %></p>
+  <p><strong>Your message:</strong></p>
+  <p><%= booking.request_message %></p>
+  <p><strong>Their message:</strong></p>
+  <p><%= booking.response_message %></p>
+  <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
+  <% if booking.response_message_read == false %>
+    <i class="fas fa-comment"></i>
+  <% end %>
+  <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-success', method: :patch} %>
+  <%= link_to "MESSAGE READ", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+<% end %>
+
+<!-- BORROWING -->
+
+<h2>Borrowing</h2>
+<h3><%= current_user.bookings.where(status: :borrowing).count %></h3>
+<% current_user.bookings.where(status: :borrowing).each do |booking| %>
+  <p><%= "Booking ID: #{booking.id}" %></p>
+  <p>Item:<%= booking.item.name %></p>
+  <p>User:<%= "#{booking.item.user.first_name} #{booking.item.user.last_name}" %></p>
+  <p><strong>Your message:</strong></p>
+  <p><%= booking.request_message %></p>
+  <p><strong>Their message:</strong></p>
+  <p><%= booking.response_message %></p>
+  <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
+    <% if booking.response_message_read == false %>
+    <i class="fas fa-comment"></i>
+  <% end %>
+  <%= link_to "Item returned", booking_path(booking, status: 'borrowed'), {class: 'btn btn-success', method: :patch} %>
+  <%= link_to "MESSAGE READ", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+<% end %>
+
+<!-- BORROWED -->
+
+<h2>Borrowed</h2>
+<h3><%= current_user.bookings.where(status: :borrowed).count %></h3>
+<% current_user.bookings.where(status: :borrowed).each do |booking| %>
+  <p><%= "Booking ID: #{booking.id}" %></p>
+  <p><%= "Item: #{booking.item.name}" %></p>
+  <p><%= "User: #{booking.item.user.first_name} #{booking.item.user.last_name}" %></p>
+  <p><strong>Your message:</strong></p>
+  <p><%= booking.request_message %></p>
+  <p><strong>Their message:</strong></p>
+  <p><%= booking.response_message %></p>
+  <p><%= "#{booking.start_date} to #{booking.end_date}" %></p>
+<% end %>
+
+<h2>Lending</h2> <h3>35</h3>
+
+
+<!-- <div class="tabs">
+  <a class="tab active" href="#">
+    <h3>350</h3>
+    <p>Requested</p>
+  </a>
+  <a class="tab" href="#">
+    <h3>456</h3>
+    <p>Borrowing</p>
+  </a>
+  <a class="tab" href="#">
+    <h3>189</h3>
+    <p>Borrowed</p>
+  </a>
+  <a class="tab" href="#">
+    <h3>13</h3>
+    <p>Lending</p>
+  </a>
+</div> -->
+
