@@ -1,0 +1,25 @@
+ <i class="fas fa-comment" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></i>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="inner-container">
+        <div class="popup-row-1">
+          <div class="popup-row-1-title-lpadding">
+            <h3>Borrow Shannon's <br/> Drill </h3>
+          </div>
+          <div class="popup-profile-picture"></div>
+        </div>
+        <div class="popup-row-2">
+          <div class="popup-message-container">
+            <div class="message-content">Message content goes here.</div>
+          </div>
+        </div>
+        <div class="popup-row-3">
+          <%= link_to booking_path(booking, response_message_read: true), {class: 'btn btn-primary'}, method: :patch %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
