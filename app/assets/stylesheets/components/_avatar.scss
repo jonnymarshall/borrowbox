@@ -12,7 +12,6 @@
   background-color: orange;
   right: 10px;
   bottom: -30px;
-
 }
 .avatar-bordered {
   width: 30px;
@@ -35,4 +34,8 @@
 
 .z-index-ten {
   z-index: 10;
+}
+
+.avatar-image {
+  background-size: contain;
 }
