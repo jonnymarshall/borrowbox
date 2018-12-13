@@ -1,0 +1,36 @@
+
+.btn-green {
+  background-color: $green;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px #CDCDCD;
+}
+
+.btn-green:hover {
+  background-color: #378276;
+  color: white;
+}
+
+.btn-beige {
+  background-color: $beige;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px #CDCDCD;
+}
+
+.btn-beige:hover {
+  background-color: #378276;
+  color: white;
+}
+
+.btn-lightgray {
+  background-color: $b-light-gray;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px #CDCDCD;
+}
+
+.btn-lightgray:hover {
+  background-color: #555555;
+  color: white;
+}
