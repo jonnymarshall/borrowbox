@@ -10,9 +10,9 @@
         <div class="item-photo" id="item-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @item.photo %>')"></div>
         <% end %>
         <% unless @item.user.photo_fake == nil %>
-        <div class="avatar-medium item-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @item.user.photo_fake %>)"></div>
+        <div class="avatar-medium item-owner" style="background-image: url(<%= @item.user.photo_fake %>)"></div>
         <% else %>
-        <div class="avatar-medium item-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @item.user.photo %>)"></div>
+        <div class="avatar-medium item-owner" style="background-image: url(<%= cl_image_path @item.user.photo %>)"></div>
         <% end %>
       </div>
       <div class="item-key-info">

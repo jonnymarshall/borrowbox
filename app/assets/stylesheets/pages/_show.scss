@@ -14,6 +14,11 @@
   position: relative;
   overflow: hidden;
 }
+
+.item-photo {
+  background-position: center;
+}
+
 #item-picture {
   width:100%;
   height:100%;
@@ -62,7 +67,7 @@
  .rating-block {
   width: 60px;
   height:45px;
-  background-color: orange;
+  // background-color: orange;
   border-radius: 5px;
   color: white;
   text-align: center;

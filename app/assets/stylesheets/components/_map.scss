@@ -4,5 +4,13 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
+}
+
+.mapbox-card-image {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 180px;
+  border-radius: 5px;
 }
