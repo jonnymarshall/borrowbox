@@ -21,8 +21,20 @@
           <%= link_to item_path(item) do %>
             <div class="item-card-grid">
               <div class="item-card-image-container">
-                <div class="card-avatar position-absolute z-index-ten"></div>
-                <div class="item-card-image"></div>
+                <!-- avatar -->
+                <% unless item.user.photo_fake == nil %>
+                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.user.photo_fake %>)"></div>
+                <% else %>
+                  <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path item.user.photo %>)"></div>
+                <% end %>
+                <!-- item photo -->
+                <% unless item.photo_fake == nil %>
+                  <div class="item-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo_fake %>)
+                  "></div>
+                <% else %>
+                  <div class="item-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path item.photo %>)
+                  "></div>
+                <% end %>
               </div>
               <div class="item-card-lender">
                 <p><%= item.user.first_name %>'s</p>
