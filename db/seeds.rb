@@ -34,9 +34,47 @@ addresses = [
   "Terreiro da Se, Porto"
 ]
 
+photos = [
+  "https://images.unsplash.com/photo-1541474424879-14480b8e249d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1037&q=80",
+  "https://images.unsplash.com/photo-1526714719019-b3032b5b5aac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+  "https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&auto=format&fit=crop&w=843&q=80",
+  "https://images.unsplash.com/photo-1518709414768-a88981a4515d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+  "https://images.unsplash.com/photo-1541474424879-14480b8e249d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1037&q=80",
+  "https://images.unsplash.com/photo-1540104539488-92a51bbc0410?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80",
+  "https://images.unsplash.com/photo-1531984557360-89184e00f590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=937&q=80",
+  "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1479244209311-71e35c910f59?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1496080174650-637e3f22fa03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1006&q=80",
+  "https://images.unsplash.com/photo-1526714719019-b3032b5b5aac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1542583633-aa0b0e378e2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1509016068623-286b408eb841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+  "https://images.unsplash.com/photo-1466074395296-41cba23ce4f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
+  "https://images.unsplash.com/photo-1466074395296-41cba23ce4f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80",
+  "https://images.unsplash.com/photo-1518436935151-68b514fa58f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+]
+
+avatars = [
+  "http://kitt.lewagon.com/placeholder/users/ssaunier",
+  "http://kitt.lewagon.com/placeholder/users/carlottaschaffner",
+  "http://kitt.lewagon.com/placeholder/users/jonnymarshall",
+  "http://kitt.lewagon.com/placeholder/users/dfmore",
+  "http://kitt.lewagon.com/placeholder/users/ineslgrc",
+  "http://kitt.lewagon.com/placeholder/users/robstaa",
+  "http://kitt.lewagon.com/placeholder/users/papillard",
+  "http://kitt.lewagon.com/placeholder/users/code-hound",
+  "http://kitt.lewagon.com/placeholder/users/tsingell",
+  "http://kitt.lewagon.com/placeholder/users/MaxxxxaM",
+  "http://kitt.lewagon.com/placeholder/users/BenDu89",
+  "http://kitt.lewagon.com/placeholder/users/jamirene88",
+  "http://kitt.lewagon.com/placeholder/users/mlrcbsousa",
+  "http://kitt.lewagon.com/placeholder/users/BeNeinDias",
+  "http://kitt.lewagon.com/placeholder/users/pbusby",
+  "http://kitt.lewagon.com/placeholder/users/sisserian",
+]
+
 n_users = 10
-n_items = 50
-n_bookings = n_items * 5
+n_items = 150
+n_bookings = n_items * 4
 
 # Creates test user
 
@@ -48,6 +86,7 @@ user = User.new(
   last_name: "Box",
   credits: rand(1000..10000),
   rating: rand(1.0..5.0),
+  photo_fake: "http://kitt.lewagon.com/placeholder/users/dfmore"
 )
 user.save!
 p "#{user}"
@@ -68,6 +107,7 @@ non_test_users = []
     last_name: Faker::Name.last_name,
     credits: rand(1000..10000),
     rating: rand(1.0..5.0),
+    photo_fake: avatars.sample
   )
   user.save!
   non_test_users << user
@@ -78,17 +118,22 @@ puts "Created #{User.count} non-test users..."
 
 # Creates items
 puts 'Creating items...'
-# names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 n_items.times do
+  fake_item_array = Faker::Commerce.product_name.split(/\W+/)
   item = Item.create(
-    name: Faker::Commerce.product_name,
+    name: "#{fake_item_array[1]} #{fake_item_array[2]}",
     credits: rand(50..5000),
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
     address: addresses.sample,
-    rating: rand(1.0..5.0)
+    rating: rand(1.0..5.0),
+    photo_fake: photos.sample,
+    # latitude: rand(38..43.5),
+    # longitude: rand(-9.5..0.3)
   )
-  p "#{item}"
+  # item.remote_photo_url = photos.sample
+  item.save!
+  p "#{item.name}"
 end
 
 puts "Created #{Item.count} items..."
