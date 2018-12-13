@@ -18,6 +18,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
       .setHTML(marker.infoWindow.content))
       .addTo(map);
   })
+
   if (markers.length === 0) {
     map.setZoom(1);
   } else if (markers.length === 1) {
@@ -28,7 +29,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     markers.forEach((marker) => {
       bounds.extend([marker.lng, marker.lat]);
     });
-    map.fitBounds(bounds, { duration: 2000, padding: 75 })
+    map.fitBounds(bounds, { duration: 1000, padding: 75 })
   }
 }
 
