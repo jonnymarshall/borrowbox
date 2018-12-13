@@ -1,23 +1,34 @@
 <%= form_tag items_path, method: :get do %>
   <div class="filter-row">
-    <p><strong>Where</strong></p>
+    <p><strong>Item</strong></p>
+    <%= text_field_tag :name,
+      params[:name],
+      class: "form-control",
+      placeholder: "What are you looking for?"
+    %>
+  </div>
+  <div class="filter-row">
+    <p><strong>Location</strong></p>
     <%= text_field_tag :address,
       params[:address],
       class: "form-control",
-      placeholder: "Lisboa"
+      placeholder: "Where are you searching?"
     %>
   </div>
   <div class="filter-row">
     <p><strong>Availability</strong></p>
-    <%= text_field_tag :address,
-      params[:address],
-      class: "form-control",
-      placeholder: "From:                         To:"
+    <%= date_field_tag :start_date,
+      params[:start_date],
+      class: "form-control"
+    %>
+    <%= date_field_tag :end_date,
+      params[:end_date],
+      class: "form-control"
     %>
     </div>
   <div class="filter-row">
     <p><strong>Max Credits</strong></p>
-    <%= text_field_tag :max_credits,
+    <%= number_field_tag :max_credits,
       params[:max_credits],
       class: "form-control",
       placeholder: "Max Credits"
@@ -25,19 +36,19 @@
   </div>
   <div class="filter-row">
     <p><strong>Max Distance</strong></p>
-    <%= text_field_tag :address,
-      params[:address],
+    <%= number_field_tag :max_distance,
+      params[:max_distance],
       class: "form-control",
       placeholder: "Max Distance"
     %>
   </div>
   <div class="filter-row">
     <p><strong>Min Rating</strong></p>
-    <%= text_field_tag :address,
-      params[:address],
+    <%= number_field_tag :min_rating,
+      params[:min_rating],
       class: "form-control",
       placeholder: "Min Rating"
     %>
   </div>
-  <button type="submit" class="btn btn-secondary">Send</button>
+  <button type="submit" class="btn btn-secondary">Filter</button>
 <% end %>

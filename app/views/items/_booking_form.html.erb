@@ -1,0 +1,16 @@
+<%= simple_form_for [@item, @booking] do |f| %>
+  <%= f.label :request_message %>
+  <%= f.text_field :request_message %>
+
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date %>
+
+  <%= f.label :end_date %>
+  <%= f.date_select :end_date %>
+
+  <%= f.submit class: "btn btn-primary" %>
+  <!-- add the JS below for special effect -->
+  <!-- id:"sweet-alert-demo", -->
+
+  <% sleep(1) %>
+<% end %>

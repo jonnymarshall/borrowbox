@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-
   def index
     sql_query = []
     sql_query << ':max_credits > credits' if params[:max_credits].present?
+    sql_query << ':min_rating <= rating' if params[:min_rating].present?
     sql_query << 'name ILIKE :name' if params[:name].present?
     sql_query = sql_query.join(' AND ')
 
@@ -13,8 +13,11 @@ class ItemsController < ApplicationController
       else
         Item.where(sql_query,
                    max_credits: params[:max_credits],
+                   min_rating: params[:min_rating],
                    name: "%#{params[:name]}%")
       end
+
+    @items = @items.near(params[:address]) if params[:address].present?
   end
 
   def show
