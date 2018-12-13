@@ -2,20 +2,20 @@
   <div class="container">
     <div class="index-grid">
       <div class="filter-area">
-        <button type = "button" class="btn btn-secondary" id="show-map">Show Map</button>
+        <button type = "button" class="btn btn-secondary btn-sm" id="show-map">Show Map</button>
         <div class="filter-form">
           <%= render 'items/search_form' %>
         </div>
       </div>
       <div class="cards-area">
 <!-- MAP -->
-        <div
-          id="map"
-          style="width: 100%;
-          height: 600px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        ></div>
+      <div
+        id="map"
+        style="width: 100%;
+        height: 400px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
 <!-- CARDS -->
         <% @items.each do |item| %>
           <%= link_to item_path(item) do %>
