@@ -101,24 +101,7 @@
     <!-- calender -->
     <div class="item-calendar">
       <div class="booking-form booking-form-borrowbox">
-        <%= simple_form_for [@item, @booking] do |f| %>
-          <%= f.label :request_message, class: "h5 kill-margin-top" %>
-          <%= f.text_field :request_message %>
-          <br>
-          <%= f.label :start_date, class: "h5 kill-margin-bottom" %>
-          <br>
-          <%= f.date_select :start_date %>
-          <br>
-          <%= f.label :end_date, class: "h5 kill-margin-bottom" %>
-          <br>
-          <%= f.date_select :end_date %>
-          <br>
-
-          <br>
-          <%= f.submit id:"sweet-alert-demo", class: "btn btn-primary" %>
-
-          <% sleep(3) %>
-        <% end %>
+        <%= render 'items/booking_form' %>
       </div>
 
     </div>
