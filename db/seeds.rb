@@ -73,8 +73,8 @@ avatars = [
 ]
 
 n_users = 10
-n_items = 50
-n_bookings = n_items * 5
+n_items = 150
+n_bookings = n_items * 4
 
 # Creates test user
 
@@ -119,14 +119,17 @@ puts "Created #{User.count} non-test users..."
 # Creates items
 puts 'Creating items...'
 n_items.times do
+  fake_item_array = Faker::Commerce.product_name.split(/\W+/)
   item = Item.create(
-    name: Faker::Commerce.product_name,
+    name: "#{fake_item_array[1]} #{fake_item_array[2]}",
     credits: rand(50..5000),
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
     address: addresses.sample,
     rating: rand(1.0..5.0),
-    photo_fake: photos.sample
+    photo_fake: photos.sample,
+    # latitude: rand(38..43.5),
+    # longitude: rand(-9.5..0.3)
   )
   # item.remote_photo_url = photos.sample
   item.save!
