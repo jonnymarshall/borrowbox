@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   get "/items-development", to: "front_end_development#index"
   get "/show-development", to: "front_end_development#show"
+  get "/dashboard-development", to: "front_end_development#dashboard"
 end
