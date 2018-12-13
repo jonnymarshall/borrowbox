@@ -12,7 +12,6 @@
   background-color: orange;
   right: 10px;
   bottom: -30px;
-
 }
 .avatar-bordered {
   width: 30px;
@@ -35,4 +34,40 @@
 
 .z-index-ten {
   z-index: 10;
+}
+
+.avatar-image {
+  background-size: contain;
+}
+
+.navbar-avatar {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.avatar-medium {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-size: contain;
+}
+
+.item-owner {
+  position: absolute;
+  box-shadow: 0 1px 7px rgba(0,0,0,.15);
+  top: 10px;
+  right: 10px;
+}
+
+.avatar-small {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background-color: white;
+  border: solid;
+  border-color: $green;
+  border-width: 1px;
+  background-size: contain;
 }

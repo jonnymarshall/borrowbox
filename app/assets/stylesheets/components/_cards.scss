@@ -31,6 +31,8 @@
   height: 100%;
   border-radius: 10px;
   position: absolute;
+  background-size: contain;
+  background-position: center center;
 }
 
 .item-card-lender {
@@ -51,7 +53,7 @@
   overflow: hidden;
   // background-color: green;
 }
-.item-card-name h4 {
+.item-card-name h5 {
   margin: 0;
 }
 
