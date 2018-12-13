@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_status_params
-    params.permit(:status)
+    params.permit(:status, :response_message_read)
   end
 
   def booking_new_params

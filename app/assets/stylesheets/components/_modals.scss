@@ -1,0 +1,152 @@
+.popup-container {
+  background-color: white;
+  height: 370px;
+  width: 560px;
+  border-radius: 4px;
+  background-color: #F9F9F9;
+  margin: 50px 0px;
+  box-shadow: 3px 3px #DCDCDC;
+
+}
+
+.popup-container h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.inner-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: table-cell;
+  vertical-align: middle;
+  justify-content: center;
+  width: 560px;
+  height: 370px;
+}
+
+
+/*REQUEST ITEM POP UP*/
+.popup-row-1 {
+  display: grid;
+  grid-template-columns: auto 85px;
+  height: 100px;
+}
+
+.popup-row-1-title {
+ height: 100px;
+ width: 300px;
+}
+
+.popup-row-1-title-lpadding h2 {
+  text-align: center;
+  padding-left: 75px;
+  margin-top: 30px;
+}
+
+.popup-profile-picture {
+  height: 85px;
+  width: 85px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 60px;
+}
+
+.popup-row-2 {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.popup-message-container {
+  height: 140px;
+  width: 470px;
+  background-color: #FFF;
+  border-radius: 4px;
+  margin-top: 0px;
+}
+
+.message-content {
+  height: 120px ;
+  width: 450px;
+  align-items: center;
+}
+
+.popup-row-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.popup-btn-cancel {
+  border-radius: 4px;
+  border: none;
+  height: 45px;
+  width: 160px;
+  font-size: 16px;
+  background-color: #F4E9ED;
+  margin: 0px 20px;
+  box-shadow: 1px 1px #DCDCDC;
+}
+
+.popup-btn-request {
+  border-radius: 4px;
+    border: none;
+    height: 45px;
+    width: 160px;
+    font-size: 16px;
+    background-color: #008E82;
+    color: #fff;
+    margin: 0px 20px;
+    box-shadow: 1px 1px #DCDCDC;
+}
+
+/*ITEM HAS BEEN REQUESTED POP UP*/
+
+.popup-row-1-2 {
+    text-align: center;
+    margin: 0 !important;
+
+}
+
+.popup-row-2-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.popup-profile-picture-2 {
+  height: 95px;
+  width: 95px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+.popup-row-3-2 {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.popup-btn-OK {
+    border-radius: 4px;
+    border: none;
+    height: 45px;
+    width: 160px;
+    font-size: 16px;
+    background-color: #433E41;
+    color: #fff;
+    box-shadow: 1px 1px #DCDCDC;
+}
