@@ -3,13 +3,15 @@
     <div class="grid">
       <div class="picture-frame">
         <% unless @item.photo_fake == nil %>
-          <div class="item-photo" id="item-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @item.photo_fake %>')">
-          </div>
+          <div class="item-photo" id="item-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @item.photo_fake %>')"></div>
         <% else %>
           <div class="item-photo" id="item-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @item.photo %>')"></div>
         <% end %>
-        <div class= "avatar-medium item-owner">
-        </div>
+        <% unless @item.user.photo_fake == nil %>
+          <div class="avatar-medium item-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @item.user.photo_fake %>)"></div>
+        <% else %>
+          <div class="avatar-medium item-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @item.user.photo %>)"></div>
+        <% end %>
       </div>
       <div class="item-key-info">
         <h2><%= @item.name %></h2>
@@ -70,9 +72,12 @@
       <% @item.reviews.each do |review| %>
         <div class="review">
           <div class="inline space-between">
-            <div>
-              <div class="avatar-small">
-              </div>
+            <div class="inline">
+              <% unless review.booking.user.photo_fake == nil %>
+              <div class="avatar-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= review.booking.user.photo_fake %>)"></div>
+              <% else %>
+              <div class="avatar-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path review.booking.user.photo %>)"></div>
+              <% end %>
               <div class="reviewer">
                 <div>
                   <p><strong>
@@ -85,10 +90,10 @@
             </div>
             <div class="stars">
               <% review.item_rating.times do %>
-                <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
               <% end %>
               <% (5 - review.item_rating).times do %>
-                <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
               <% end %>
             </div>
           </div>
