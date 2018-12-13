@@ -1,0 +1,19 @@
+<%= simple_form_for [@item, @booking] do |f| %>
+  <%= f.label :request_message, class: "h5 kill-margin-top" %>
+  <%= f.text_field :request_message %>
+  <br>
+  <%= f.label :start_date, class: "h5 kill-margin-bottom" %>
+  <br>
+  <%= f.date_select :start_date %>
+  <br>
+  <%= f.label :end_date, class: "h5 kill-margin-bottom" %>
+  <br>
+  <%= f.date_select :end_date %>
+  <br>
+  <br>
+  <%= f.submit class: "btn btn-primary" %>
+
+  <!-- Include code below as an attribute of the submit form for a JS popup to appear -->
+  <!-- id:"sweet-alert-demo", -->
+  <% sleep(1) %>
+<% end %>

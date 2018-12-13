@@ -16,12 +16,14 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'geocoder'
 
 # *** additional gems ***
 # jonny
+gem 'faker'
 
 # dan
-
+# gem 'validates_timeliness'
 # ines
 
 # carlotta
