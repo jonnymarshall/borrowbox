@@ -3,7 +3,7 @@
   height: 300px;
   width: 240px;
   grid-template-columns: 100%;
-  grid-template-rows: 55% 3fr 4fr 4fr 4fr;
+  grid-template-rows: 55% 3fr 3fr 4fr 4fr;
   // background-color: white;
   padding: 10px;
   background: linear-gradient(#FFFFFF, #F7F7F7);
@@ -39,17 +39,19 @@
   // background-color: pink;
 }
 .item-card-lender p {
-  margin: 0;
-  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+  font-size: 14px;
   // color: grey;
 }
 
 .item-card-name {
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
+  overflow: hidden;
   // background-color: green;
 }
-.item-card-name h4 {
+.item-card-name h5 {
   margin: 0;
 }
 
