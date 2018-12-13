@@ -16,10 +16,11 @@ class ItemsController < ApplicationController
     # Mapbox logic
     @items = @items.where.not(latitude: nil, longitude: nil)
 
-    @markers = @items.map do |flat|
+    @markers = @items.map do |item|
       {
-        lng: flat.longitude,
-        lat: flat.latitude
+        lng: item.longitude,
+        lat: item.latitude,
+        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
       }
     end
   end
