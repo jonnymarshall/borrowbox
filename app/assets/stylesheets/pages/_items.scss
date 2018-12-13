@@ -6,6 +6,7 @@
 }
 
 .map-area {
+  box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.1);
   grid-row: 1;
   height: auto;
 }
@@ -21,7 +22,6 @@
 .cards-area {
   grid-column: 2 / span 1;
   grid-row: 2;
-  background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
