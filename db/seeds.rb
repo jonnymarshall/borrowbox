@@ -48,6 +48,7 @@ user = User.new(
   last_name: "Box",
   credits: rand(1000..10000),
   rating: rand(1.0..5.0),
+  photo:
 )
 user.save!
 p "#{user}"
@@ -78,7 +79,6 @@ puts "Created #{User.count} non-test users..."
 
 # Creates items
 puts 'Creating items...'
-# names = ["Bill", "Bob", "Fred", "Paco", "Jorge", "Andy", "Sherman"]
 n_items.times do
   item = Item.create(
     name: Faker::Commerce.product_name,
