@@ -1,3 +1,8 @@
+User.destroy_all
+Item.destroy_all
+Booking.destroy_all
+Review.destroy_all
+
 titles = [
   "Great drill!",
   "Amazing drill!",
