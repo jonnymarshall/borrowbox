@@ -1,0 +1,53 @@
+.booking-card-grid {
+  display: grid;
+  height: 300px;
+  width: auto;
+  grid-template-columns: 240px auto;
+  grid-template-rows: 55% 3fr 4fr 4fr 4fr;
+  // background-color: white;
+  padding: 10px;
+  background: linear-gradient(#FFFFFF, #F7F7F7);
+  border: 1px solid #E2E2E2;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  &:hover {
+    background: linear-gradient(#F7F7F7, #F1F1F1);
+  }
+}
+
+.booking-card-request-info-section {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  border-radius: 0px 0px 0px 0px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // position: relative;
+  text-align: center;
+  // background-color: yellow;
+  overflow: hidden;
+  p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+.booking-card-request-message-section {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 4;
+  border-radius: 0px 0px 0px 0px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // position: relative;
+  // background-color: red;
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+  p {
+    font-size: 14px;
+  }
+  strong {
+    font-size: 14px;
+  }
+}
