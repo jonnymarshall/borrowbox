@@ -1,56 +1,24 @@
+<%= render 'shared/navbar' %>
+
 <div class="wrapper">
   <div class="container">
     <div class="index-grid">
       <div class="filter-area">
-        <button type = "button" class="btn btn-secondary" id="show-map">Show Map</button>
+        <!-- <button type = "button" class="btn btn-secondary btn-sm" id="show-map">Show Map</button> -->
         <div class="filter-form">
           <%= render 'items/search_form' %>
         </div>
       </div>
-      <div class="cards-area">
-
-        <% @items.each do |item| %>
-          <%= link_to item_path(item) do %>
-            <div class="item-card-grid">
-              <div class="item-card-image-container">
-                <!-- avatar -->
-                <% unless item.user.photo_fake == nil %>
-                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.user.photo_fake %>)"></div>
-                <% else %>
-                  <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path item.user.photo %>)"></div>
-                <% end %>
-                <!-- item photo -->
-                <% unless item.photo_fake == nil %>
-                  <div class="item-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= item.photo_fake %>)
-                  "></div>
-                <% else %>
-                  <div class="item-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path item.photo %>)
-                  "></div>
-                <% end %>
-              </div>
-              <div class="item-card-lender">
-                <p><%= item.user.first_name %>'s</p>
-              </div>
-              <div class="item-card-name">
-                <h5><%= item.name %></h5>
-              </div>
-              <div class="item-card-description">
-                <p><%= item.description %></p>
-              </div>
-              <div class="item-card-footer">
-                <div class="card-rating-box">
-                  <h6><i class="fas fa-star"></i><%= item.rating %></h6>
-                </div>
-                <div class="card-credits-box">
-                  <h6><%= item.credits %></h6>
-                </div>
-              </div>
-              <% link_to item_path(item) %>
-            </div>
-          <% end %>
-        <% end %>
+      <div class="map-area">
+        <div
+        id="map"
+        style="width: 100%;
+        height: 100%;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
       </div>
-        <!-- <div class="map-area"></div> -->
+      <%= render "/items/cards" %>
     </div>
   </div>
 </div>

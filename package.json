@@ -5,7 +5,8 @@
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
     "jquery": "^3.3.1",
-    "sweetalert2": "^7.32.2"
+    "mapbox-gl": "^0.52.0-beta.2",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

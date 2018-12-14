@@ -1,0 +1,47 @@
+.about {
+  background-color: white;
+  height: 700px;
+}
+
+.about h2 {
+  margin: 30px;
+  text-align: center;
+  padding-right: 10px;
+  width: 1200px;
+}
+
+.card {
+  text-align: center;
+  margin: 40px;
+  height: 230px;
+}
+
+.card-title {
+  height: 100px;
+}
+
+.row.row-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-top: 50px;
+}
+
+.fas.fa-hand-holding-usd{
+  color: $green;
+  font-size: 70px;
+  margin: 20px;
+}
+
+.fas.fa-users {
+  color: $green;
+  font-size: 70px;
+  margin: 20px;
+}
+
+.fa-lock {
+  color: $green;
+  font-size: 70px;
+  margin: 20px;
+}

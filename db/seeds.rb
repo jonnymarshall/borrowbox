@@ -1,7 +1,18 @@
-User.destroy_all
-Item.destroy_all
-Booking.destroy_all
 Review.destroy_all
+Booking.destroy_all
+Item.destroy_all
+User.destroy_all
+
+# Bunch of realistic locations
+path = "pinned-places.json"
+json_serialized = open(path).read
+json = JSON.parse(json_serialized)
+
+coordinates = []
+
+json["features"].each do |feature|
+  coordinates << feature["geometry"]["coordinates"]
+end
 
 titles = [
   "Great drill!",
@@ -73,8 +84,8 @@ avatars = [
 ]
 
 n_users = 10
-n_items = 50
-n_bookings = n_items * 5
+n_items = 1000
+n_bookings = n_items * 4
 
 # Creates test user
 
@@ -119,14 +130,18 @@ puts "Created #{User.count} non-test users..."
 # Creates items
 puts 'Creating items...'
 n_items.times do
+  fake_coordinates = coordinates.sample
+  fake_item_array = Faker::Commerce.product_name.split(/\W+/)
   item = Item.create(
-    name: Faker::Commerce.product_name,
+    name: "#{fake_item_array[1]} #{fake_item_array[2]}",
     credits: rand(50..5000),
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
-    address: addresses.sample,
+    # address: addresses.sample,
     rating: rand(1.0..5.0),
-    photo_fake: photos.sample
+    photo_fake: photos.sample,
+    latitude: fake_coordinates[1],
+    longitude: fake_coordinates[0]
   )
   # item.remote_photo_url = photos.sample
   item.save!
