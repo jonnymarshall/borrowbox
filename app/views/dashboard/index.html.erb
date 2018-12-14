@@ -2,6 +2,7 @@
 
 <div class="wrapper">
   <div class="container">
+
     <div class="index-grid">
       <div class="user-area">
         <div class="user-image-container">
@@ -38,6 +39,8 @@
         </div>
       </div>
 
+<!-- TABS -->
+
       <div class="list-area">
         <div class="tabs">
           <a class="tab active" id="requested" href="#">
@@ -57,6 +60,9 @@
             <p>My Items</p>
           </a>
         </div>
+
+<!-- REQUESTED -->
+
         <h2>Requested</h2>
         <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
@@ -67,10 +73,12 @@
               <div class="booking-card-request-info-section">
                 <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
                 <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
-            </div>
+              </div>
             <div class="booking-card-request-message-section">
               <strong>Your message:</strong>
-              <p><%= booking.request_message %></p>
+                <p><%= booking.request_message %></p>
+                <strong>Lender's Response:</strong>
+                <p><%= booking.response_message %></p>
             </div>
             <div class="booking-card-footer-right">
               <div class="read-message-container">
@@ -79,12 +87,7 @@
               <% end %>
                 <!-- <button type="button" class="btn btn-primary">Read message</button> -->
               </div>
-              <div class="booking-card-request-message-section">
-                <strong>Your message:</strong>
-                <p><%= booking.request_message %></p>
-                <strong>Lender's Response:</strong>
-                <p><%= booking.response_message %></p>
-              </div>
+            </div>
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
                 <% if booking.response_message_read == false %>
@@ -120,6 +123,8 @@
             </div>
           <% end %>
         <% end %>
+
+<!-- BORROWING -->
 
         <h2>Borrowing</h2>
         <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>

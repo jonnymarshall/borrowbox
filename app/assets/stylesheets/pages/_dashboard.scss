@@ -3,7 +3,6 @@
   height: 70vh;
   grid-template-columns: 100%;
   grid-template-rows: 50% 5fr 4fr 3fr 2fr;
-  // background-color: white;
   // padding: 10px;
   // background-color: yellow;
   // border: 1px solid #E2E2E2;
@@ -27,7 +26,7 @@
 .user-info {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
-  // background-color: blue;
+  // background-color: pink;
   overflow: hidden;
   justify-content: space-between;
   align-items: center;
@@ -75,7 +74,7 @@
 }
 
 .user-items-borrowed {
-  // background-color: white;
+  // background-color: black;
 }
 
 .dashboard-rating-block-container {
