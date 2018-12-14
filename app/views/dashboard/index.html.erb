@@ -3,7 +3,7 @@
 <div class="wrapper">
   <div class="container">
 
-    <div class="index-grid">
+    <div class="dashboard-index-grid">
       <div class="user-area">
         <div class="user-image-container">
           <!-- <div class="dashboard-user-image"></div> -->
@@ -75,10 +75,8 @@
                 <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
               </div>
             <div class="booking-card-request-message-section">
-              <strong>Your message:</strong>
-                <p><%= booking.request_message %></p>
-                <strong>Lender's Response:</strong>
-                <p><%= booking.response_message %></p>
+              <div class="request-message inline"><strong>Your message:</strong><p><%= booking.request_message %></p></div>
+                <div class="response-message inline"><strong>Lender's Response:</strong><p><%= booking.response_message %></p></div>
             </div>
             <div class="booking-card-footer-right">
               <div class="read-message-container">
