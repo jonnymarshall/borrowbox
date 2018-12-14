@@ -178,6 +178,7 @@
 
         <h2>Borrowed</h2>
         <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
+          <%= link_to item_path(booking.item) do %>
           <div class="booking-card-grid">
             <div class="booking-card-request-info-section">
               <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
@@ -220,7 +221,7 @@
             </div>
           </div>
         <% end %>
-
+        <% end %>
       </div>
 
     </div>
