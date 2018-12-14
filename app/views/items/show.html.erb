@@ -18,7 +18,9 @@
       <div class="item-key-info">
         <h2><%= @item.name %></h2>
         <p><%= @item.address %></p>
-        <p><strong><%= @item.credits %> Credits</strong> per day</p>
+        <div class="item-credits-per-day inline">
+        <p class="credits-icon">b&nbsp;</p><p class="credits-per-day-figure"><strong><%= @item.credits %></strong> per day</p>
+        </div>
       </div>
       <div class="item-description">
         <h5><strong>Item description</strong></h5>
@@ -124,7 +126,7 @@
         <div class="item-calendar">
           <div class="booking-form booking-form-borrowbox">
             <%= render 'items/booking_form' %>
-            <%= link_to "Back", request.referer, class: "btn btn-back btn-beige btn-type-2", style: "width: 90%" %>
+            <%= link_to "Back", request.referer, class: "btn btn-back btn-beige btn-type-2", style: "width: 100%" %>
           </div>
 
         </div>
