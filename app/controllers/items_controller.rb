@@ -1,12 +1,7 @@
 class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  def index
-    sql_query = []
-    sql_query << ':max_credits > credits' if params[:max_credits].present?
-    sql_query << ':min_rating <= rating' if params[:min_rating].present?
-    sql_query << 'name ILIKE :name' if params[:name].present?
-    sql_query = sql_query.join(' AND ')
 
+  def index
     @items =
       if sql_query.blank?
         Item.all
@@ -16,16 +11,37 @@ class ItemsController < ApplicationController
                    min_rating: params[:min_rating],
                    name: "%#{params[:name]}%")
       end
-
     @items = @items.near(params[:address]) if params[:address].present?
+
+    # Mapbox logic
+    @items = @items.where.not(latitude: nil, longitude: nil)
+
+    @markers = @items.map do |item|
+      {
+        lng: item.longitude,
+        lat: item.latitude,
+        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
+      }
+    end
   end
 
   def show
     @item = Item.find(params[:id])
     @booking = Booking.new
-    # @item.user.rating = nil
     ratings_array = [@item.user.rating, @item.rating]
     @combined_rating = calculate_average(ratings_array)
+
+    items = [@item]
+    # Mapbox logic
+    # @item = @item.where.not(latitude: nil, longitude: nil)
+
+    @markers = items.map do |item|
+      {
+        lng: item.longitude,
+        lat: item.latitude,
+        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
+      }
+    end
   end
 
   private
@@ -55,5 +71,13 @@ class ItemsController < ApplicationController
   def average_with_nils(ratings_array)
     clean_ratings = ratings_array.compact
     average(clean_ratings)
+  end
+
+  def sql_query
+    query = []
+    query << ':max_credits > credits' if params[:max_credits].present?
+    query << ':min_rating <= rating' if params[:min_rating].present?
+    query << 'name ILIKE :name' if params[:name].present?
+    query.join(' AND ')
   end
 end

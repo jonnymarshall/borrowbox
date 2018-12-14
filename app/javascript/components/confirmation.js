@@ -1,4 +1,4 @@
-import swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 function bindSweetAlertButtonDemo() {
   const swalButton = document.getElementById('sweet-alert-demo');

@@ -1,0 +1,7 @@
+<%= link_to item_path(item) do %>
+  <div class="mapbox-card">
+    <h6><%= item.name %></h6>
+    <div class="mapbox-card-image" style="background-image: url(<%= item.photo_fake %>)"></div>
+    <p>From <%= item.user.first_name %></p>
+  </div>
+<% end %>

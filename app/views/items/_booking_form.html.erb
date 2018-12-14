@@ -1,19 +1,27 @@
-<%= simple_form_for [@item, @booking] do |f| %>
-  <%= f.label :request_message, class: "h5 kill-margin-top" %>
-  <%= f.text_field :request_message %>
-  <br>
-  <%= f.label :start_date, class: "h5 kill-margin-bottom" %>
-  <br>
-  <%= f.date_select :start_date %>
-  <br>
-  <%= f.label :end_date, class: "h5 kill-margin-bottom" %>
-  <br>
-  <%= f.date_select :end_date %>
-  <br>
-  <br>
-  <%= f.submit class: "btn btn-green" %>
 
-  <!-- Include code below as an attribute of the submit form for a JS popup to appear -->
-  <!-- id:"sweet-alert-demo", -->
-  <% sleep(1) %>
+<div class="row">
+<%= form_tag item_bookings_path(@item), method: :post do %>
+  <div class="col-xs-6">
+    <div class="form-group font-sm">
+      <label for="start-date">From:</label>
+      <%= date_field_tag :start_date, params[:start_date], class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="form-group font-sm">
+      <label for="end-date">To:</label>
+      <%= date_field_tag :end_date, params[:end_date], class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <div class="form-group font-sm">
+      <%= text_area_tag :request_message, params[:request_message], class: "form-control", rows: "3", placeholder: "Tell your lender about how you intend to collect their item" %>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <button type="submit" class="btn btn-success btn-type-2">Create Booking</button>
+  </div>
 <% end %>
+<% sleep(1) %>
+</div>
+
