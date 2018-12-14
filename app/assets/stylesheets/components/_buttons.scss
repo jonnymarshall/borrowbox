@@ -3,7 +3,14 @@
   background-color: $green;
   color: white;
   border-radius: 4px;
-  box-shadow: 1px 1px #CDCDCD;
+  box-shadow: 1px 1px 5px $b-light-gray;
+}
+
+.btn-orange {
+  background-color: $orange;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px $b-light-gray;
 }
 
 .btn-green:hover {
@@ -13,9 +20,9 @@
 
 .btn-beige {
   background-color: $beige;
-  color: white;
+  color: $b-gray;
   border-radius: 4px;
-  box-shadow: 1px 1px #CDCDCD;
+  box-shadow: 1px 1px 5px $b-light-gray;
 }
 
 .btn-beige:hover {
@@ -27,16 +34,27 @@
   background-color: $b-light-gray;
   color: white;
   border-radius: 4px;
-  box-shadow: 1px 1px #CDCDCD;
+  box-shadow: 1px 1px 5px $b-light-gray;
 }
 
 .btn-lightgray:hover {
   background-color: #555555;
   color: white;
 }
-  
+
 .btn-type-2 {
   margin-top: 5px;
   margin-bottom: 5px;
   width: 75%;
+}
+
+.btn-filter.btn-green {
+  margin-top: 20px;
+}
+
+.btn-credits.btn-green {
+  margin-top: 20px;
+  width: 260px;
+  padding-left: 30px;
+  padding-right: 30px;
 }

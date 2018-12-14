@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="buy-more-credits inline">
-          <button type="button" class="btn btn-primary">Buy More Credits</button>
+          <button type="button" class="btn btn-credits btn-green">Buy More Credits</button>
         </div>
       </div>
 
@@ -83,7 +83,7 @@
             <div class="booking-card-footer-right">
               <div class="read-message-container">
               <% if booking.response_message_read == false %>
-                <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
               <% end %>
                 <!-- <button type="button" class="btn btn-primary">Read message</button> -->
               </div>
@@ -91,25 +91,25 @@
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
                 <% if booking.response_message_read == false %>
-                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
                 <% end %>
                   <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
                 </div>
                 <div class="mark-item-container">
-                <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-success', method: :patch} %>
+                <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green', method: :patch} %>
                 </div>
               </div>
               <div class="booking-card-image-container">
                 <% unless booking.item.user.photo_fake == nil %>
-                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.user.photo_fake %>)"></div>
+                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
                 <% else %>
-                  <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.user.photo %>)"></div>
+                  <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
                 <% end %>
                   <!-- item photo -->
                 <% unless booking.item.photo_fake == nil %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.photo_fake %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
                 <% else %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.photo %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
                 <% end %>
               </div>
               <div class="booking-card-footer">
@@ -143,25 +143,25 @@
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
                 <% if booking.response_message_read == false %>
-                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
                 <% end %>
                   <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
                 </div>
                 <div class="mark-item-container">
-                <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-success', method: :patch} %>
+                <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green', method: :patch} %>
                 </div>
               </div>
               <div class="booking-card-image-container">
                 <% unless booking.item.user.photo_fake == nil %>
-                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.user.photo_fake %>)"></div>
+                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
                 <% else %>
-                  <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.user.photo %>)"></div>
+                  <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
                 <% end %>
                   <!-- item photo -->
                 <% unless booking.item.photo_fake == nil %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.photo_fake %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
                 <% else %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.photo %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
                 <% end %>
               </div>
               <div class="booking-card-footer">
@@ -193,22 +193,22 @@
             <div class="booking-card-footer-right">
               <div class="read-message-container">
               <% if booking.response_message_read == false %>
-                <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
               <% end %>
                 <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
               </div>
             </div>
             <div class="booking-card-image-container">
               <% unless booking.item.user.photo_fake == nil %>
-                <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.user.photo_fake %>)"></div>
+                <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
               <% else %>
-                <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.user.photo %>)"></div>
+                <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
               <% end %>
                 <!-- item photo -->
               <% unless booking.item.photo_fake == nil %>
-                <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.photo_fake %>)"></div>
+                <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
               <% else %>
-                <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.photo %>)"></div>
+                <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
               <% end %>
             </div>
             <div class="booking-card-footer">
