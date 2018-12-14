@@ -7,9 +7,9 @@
 
 .user-area {
   display: grid;
-  height: 70vh;
+  height: 75vh;
   grid-template-columns: 100%;
-  grid-template-rows: 50% 10fr 8fr 8fr 4fr;
+  grid-template-rows: 50% 11fr 8fr 8fr 4fr;
   position: sticky;
   top: 70px;
   left: 0;
@@ -95,7 +95,7 @@
 .dashboard-rating-block {
   width: 50px;
   height:40px;
-  background-color: orange;
+  background-color: #ebd351;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -110,4 +110,8 @@
 
 .dashboard-user-first-name > h4 {
   margin: 0px;
+}
+
+.request-message {
+  margin-bottom: 5px;
 }

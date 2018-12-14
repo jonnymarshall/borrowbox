@@ -75,8 +75,14 @@
                 <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
               </div>
             <div class="booking-card-request-message-section">
-              <div class="request-message inline"><strong>Your message:</strong><p><%= booking.request_message %></p></div>
-                <div class="response-message inline"><strong>Lender's Response:</strong><p><%= booking.response_message %></p></div>
+              <div class="request-message inline">
+                <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
+                <p><%= booking.request_message %></p>
+              </div>
+              <div class="response-message inline">
+                <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
+                <p><%= booking.response_message %></p>
+              </div>
             </div>
             <div class="booking-card-footer-right">
               <div class="read-message-container">
@@ -123,20 +129,28 @@
         <% end %>
 
 <!-- BORROWING -->
-
+        <br>
+        <br>
         <h2>Borrowing</h2>
         <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
+          <% if booking.response_message_read == false %>
+            <div class="green-bar"></div>
+          <% end %>
             <div class="booking-card-grid">
               <div class="booking-card-request-info-section">
                 <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
                 <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
               </div>
               <div class="booking-card-request-message-section">
-                <strong>Your message:</strong>
-                <p><%= booking.request_message %></p>
-                <strong>Lender's Response:</strong>
-                <p><%= booking.response_message %></p>
+                <div class="request-message inline">
+                  <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
+                  <p><%= booking.request_message %></p>
+                </div>
+                <div class="response-message inline">
+                  <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
+                  <p><%= booking.response_message %></p>
+                </div>
               </div>
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
@@ -174,19 +188,29 @@
           <% end %>
         <% end %>
 
+<!-- BORROWED -->
+        <br>
+        <br>
         <h2>Borrowed</h2>
         <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
+          <% if booking.response_message_read == false %>
+            <div class="green-bar"></div>
+          <% end %>
           <div class="booking-card-grid">
             <div class="booking-card-request-info-section">
               <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
               <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
             </div>
             <div class="booking-card-request-message-section">
-              <strong>Your message:</strong>
-              <p><%= booking.request_message %></p>
-              <strong>Lender's Response:</strong>
-              <p><%= booking.response_message %></p>
+              <div class="request-message inline">
+                <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
+                <p><%= booking.request_message %></p>
+              </div>
+              <div class="request-message inline">
+                <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
+                <p><%= booking.response_message %></p>
+              </div>
             </div>
             <div class="booking-card-footer-right">
               <div class="read-message-container">
