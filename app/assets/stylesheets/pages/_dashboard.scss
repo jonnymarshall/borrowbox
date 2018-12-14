@@ -1,8 +1,18 @@
+.dashboard-index-grid {
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+}
+
 .user-area {
   display: grid;
-  height: 70vh;
+  height: 75vh;
   grid-template-columns: 100%;
-  grid-template-rows: 50% 5fr 4fr 3fr 2fr;
+  grid-template-rows: 50% 11fr 8fr 8fr 4fr;
+  position: sticky;
+  top: 70px;
+  left: 0;
   // padding: 10px;
   // background-color: yellow;
   // border: 1px solid #E2E2E2;
@@ -17,6 +27,7 @@
 
 .dashboard-user-image {
   border-radius: 20px;
+  border: 1px solid #C2C2C2;
   // background-color: blue;
   height: 100%;
   width: 100%;
@@ -82,9 +93,9 @@
 }
 
 .dashboard-rating-block {
-  width: 60px;
-  height:45px;
-  background-color: orange;
+  width: 50px;
+  height:40px;
+  background-color: #ebd351;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -99,4 +110,8 @@
 
 .dashboard-user-first-name > h4 {
   margin: 0px;
+}
+
+.request-message {
+  margin-bottom: 5px;
 }
