@@ -1,8 +1,13 @@
-
 .btn-green {
   background-color: $green;
   color: white;
   border-radius: 4px;
+  box-shadow: 1px 1px #CDCDCD;
+}
+
+.btn-green:hover {
+  background-color: #378276;
+  color: white;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
@@ -20,6 +25,14 @@
 
 .btn-beige {
   background-color: $beige;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px #CDCDCD;
+}
+
+.btn-beige:hover {
+  background-color: #378276;
+  // color: white;
   color: $b-gray;
   border-radius: 4px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -46,6 +59,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
   width: 75%;
+
 }
 
 .btn-filter.btn-green {
