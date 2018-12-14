@@ -58,7 +58,7 @@
           </a>
         </div>
         <h2>Requested</h2>
-        <% current_user.bookings.where(status: :requested).each do |booking| %>
+        <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
             <% if booking.response_message_read == false %>
               <div class="green-bar"></div>
@@ -111,7 +111,7 @@
         <% end %>
 
         <h2>Borrowing</h2>
-        <% current_user.bookings.where(status: :borrowing).each do |booking| %>
+        <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
             <div class="booking-card-grid">
               <div class="booking-card-request-info-section">
@@ -161,7 +161,7 @@
         <% end %>
 
         <h2>Borrowed</h2>
-        <% current_user.bookings.where(status: :borrowed).each do |booking| %>
+        <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
           <div class="booking-card-grid">
             <div class="booking-card-request-info-section">
               <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>

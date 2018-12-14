@@ -12,7 +12,7 @@
         <% unless @item.user.photo_fake == nil %>
         <div class="avatar-medium item-owner" style="background-image: url(<%= @item.user.photo_fake %>)"></div>
         <% else %>
-        <div class="avatar-medium item-owner" style="background-image: url(<%= cl_image_path @item.user.photo %>)"></div>
+        <div class="avatar-medium item-owner" style="background-image: gurl(<%= cl_image_path @item.user.photo %>)"></div>
         <% end %>
       </div>
       <div class="item-key-info">
@@ -117,12 +117,9 @@
       <div class="item-calendar">
         <div class="booking-form booking-form-borrowbox">
           <%= render 'items/booking_form' %>
+          <%= link_to "Back", request.referer, class: "btn btn-primary btn-type-2", style: "width: 75%" %>
         </div>
 
       </div>
     </div>
   </div>
-
-  <%= link_to "Back", request.referer %> <br>
-
-  <br>
