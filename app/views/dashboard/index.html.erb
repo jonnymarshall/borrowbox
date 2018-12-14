@@ -15,7 +15,7 @@
           </div>
           <div class="dashboard-user-rating">
             <div class="dashboard-rating-block-container inline">
-              <div class="dashboard-rating-block"><strong><%= current_user.rating %></strong></div>
+              <div class="dashboard-rating-block"><strong><%= current_user.rating.round(1) %></strong></div>
             </div>
             <p>Your rating</p>
           </div>
@@ -100,7 +100,7 @@
               </div>
               <div class="booking-card-footer">
                 <div class="card-rating-box">
-                  <h6><i class="fas fa-star"></i><%= booking.item.rating %></h6>
+                  <h6><i class="fas fa-star"></i><%= booking.item.rating.round(1) %></h6>
                 </div>
                 <div class="card-credits-box">
                   <h6><%= booking.item.credits %></h6>
@@ -160,7 +160,7 @@
               </div>
               <div class="booking-card-footer">
                 <div class="card-rating-box">
-                  <h6><i class="fas fa-star"></i> <%= booking.item.rating %></h6>
+                  <h6><i class="fas fa-star"></i> <%= booking.item.rating.round(1) %></h6>
                 </div>
                 <div class="card-credits-box">
                   <h6><%= booking.item.credits %></h6>
@@ -217,7 +217,7 @@
             </div>
             <div class="booking-card-footer">
               <div class="card-rating-box">
-                <h6><i class="fas fa-star"></i><%= booking.item.rating %></h6>
+                <h6><i class="fas fa-star"></i><%= booking.item.rating.round(1) %></h6>
               </div>
               <div class="card-credits-box">
                 <h6><%= booking.item.credits %></h6>
