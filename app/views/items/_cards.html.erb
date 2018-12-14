@@ -5,18 +5,17 @@
     <div class="item-card-image-container">
       <!-- avatar -->
       <% unless item.user.photo_fake == nil %>
-      <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= item.user.photo_fake %>)"></div>
+      <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image:url(<%= item.user.photo_fake %>)"></div>
       <% else %>
       <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path item.user.photo %>)"></div>
       <% end %>
       <!-- item photo -->
       <% unless item.photo_fake == nil %>
-      <div class="item-card-image" style="background-image: url(<%= item.photo_fake %>)"></div>
+      <div class="item-card-image" style="background-image: url(<%= item.photo_fake %>)
+      "></div>
       <% else %>
-      <div class="item-card-image" style="background-image: url(<%= cl_image_path item.photo %>)"></div>
-      <div class="item-card-image" style="background-image: url(<%= item.photo_fake %>)"></div>
-      <% else %>
-      <div class="item-card-image" style="background-image: url(<%= cl_image_path item.photo %>)"></div>
+      <div class="item-card-image" style="background-image: url(<%= cl_image_path item.photo %>)
+      "></div>
       <% end %>
     </div>
     <div class="item-card-lender">
