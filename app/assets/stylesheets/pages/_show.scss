@@ -67,7 +67,7 @@
  .rating-block {
   width: 60px;
   height:45px;
-  // background-color: orange;
+  background-color: orange;
   border-radius: 5px;
   color: white;
   text-align: center;
@@ -116,6 +116,10 @@
 .review {
   margin-bottom: 50px;
   border-bottom: 1px solid black;
+}
+.review:last-child {
+  margin-bottom: 50px;
+  border-bottom: none;
 }
 .stars {
   // margin-top: 20px;
