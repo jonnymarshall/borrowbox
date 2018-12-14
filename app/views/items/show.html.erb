@@ -5,9 +5,9 @@
     <div class="grid">
       <div class="picture-frame">
         <% unless @item.photo_fake == nil %>
-        <div class="item-photo" id="item-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @item.photo_fake %>')"></div>
+        <div class="item-photo" id="item-picture" style="background-image: url('<%= @item.photo_fake %>')"></div>
         <% else %>
-        <div class="item-photo" id="item-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @item.photo %>')"></div>
+        <div class="item-photo" id="item-picture" style="background-image: url('<%= cl_image_path @item.photo %>')"></div>
         <% end %>
         <% unless @item.user.photo_fake == nil %>
         <div class="avatar-medium item-owner" style="background-image: url(<%= @item.user.photo_fake %>)"></div>
@@ -83,9 +83,9 @@
             <div class="inline space-between">
               <div class="inline">
                 <% unless review.booking.user.photo_fake == nil %>
-                <div class="avatar-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= review.booking.user.photo_fake %>)"></div>
+                <div class="avatar-small" style="background-image: url(<%= review.booking.user.photo_fake %>)"></div>
                 <% else %>
-                <div class="avatar-small" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path review.booking.user.photo %>)"></div>
+                <div class="avatar-small" style="background-image: url(<%= cl_image_path review.booking.user.photo %>)"></div>
                 <% end %>
                 <div class="reviewer">
                   <div>
@@ -124,7 +124,7 @@
         <div class="item-calendar">
           <div class="booking-form booking-form-borrowbox">
             <%= render 'items/booking_form' %>
-            <%= link_to "Back", request.referer, class: "btn btn-primary btn-type-2", style: "width: 75%" %>
+            <%= link_to "Back", request.referer, class: "btn btn-booking btn-beige btn-type-2", style: "width: 75%" %>
           </div>
 
         </div>

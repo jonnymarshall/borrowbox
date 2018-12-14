@@ -3,7 +3,7 @@
 <div class="wrapper">
   <div class="container">
 
-    <div class="index-grid">
+    <div class="dashboard-index-grid">
       <div class="user-area">
         <div class="user-image-container">
           <!-- <div class="dashboard-user-image"></div> -->
@@ -35,31 +35,13 @@
           </div>
         </div>
         <div class="buy-more-credits inline">
-          <button type="button" class="btn btn-primary">Buy More Credits</button>
+          <button type="button" class="btn btn-credits btn-green">Buy More Credits</button>
         </div>
       </div>
 
 <!-- TABS -->
 
       <div class="list-area">
-        <div class="tabs">
-          <a class="tab active" id="requested" href="#">
-            <h3>350</h3>
-            <p>Requested</p>
-          </a>
-          <a class="tab" id="borrowing" href="#">
-            <h3>456</h3>
-            <p>Borrowing</p>
-          </a>
-          <a class="tab" id="borrowed" href="#">
-            <h3>189</h3>
-            <p>Borrowed</p>
-          </a>
-          <a class="tab" id="my-items" href="#">
-            <h3>13</h3>
-            <p>My Items</p>
-          </a>
-        </div>
 
 <!-- REQUESTED -->
 
@@ -75,15 +57,19 @@
                 <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
               </div>
             <div class="booking-card-request-message-section">
-              <strong>Your message:</strong>
+              <div class="request-message inline">
+                <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
                 <p><%= booking.request_message %></p>
-                <strong>Lender's Response:</strong>
+              </div>
+              <div class="response-message inline">
+                <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
                 <p><%= booking.response_message %></p>
+              </div>
             </div>
             <div class="booking-card-footer-right">
               <div class="read-message-container">
               <% if booking.response_message_read == false %>
-                <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
               <% end %>
                 <!-- <button type="button" class="btn btn-primary">Read message</button> -->
               </div>
@@ -91,25 +77,25 @@
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
                 <% if booking.response_message_read == false %>
-                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
                 <% end %>
                   <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
                 </div>
                 <div class="mark-item-container">
-                <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-success', method: :patch} %>
+                <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green', method: :patch} %>
                 </div>
               </div>
               <div class="booking-card-image-container">
                 <% unless booking.item.user.photo_fake == nil %>
-                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.user.photo_fake %>)"></div>
+                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
                 <% else %>
-                  <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.user.photo %>)"></div>
+                  <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
                 <% end %>
                   <!-- item photo -->
                 <% unless booking.item.photo_fake == nil %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.photo_fake %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
                 <% else %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.photo %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
                 <% end %>
               </div>
               <div class="booking-card-footer">
@@ -125,43 +111,51 @@
         <% end %>
 
 <!-- BORROWING -->
-
+        <br>
+        <br>
         <h2>Borrowing</h2>
         <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
+          <% if booking.response_message_read == false %>
+            <div class="green-bar"></div>
+          <% end %>
             <div class="booking-card-grid">
               <div class="booking-card-request-info-section">
                 <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
                 <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
               </div>
               <div class="booking-card-request-message-section">
-                <strong>Your message:</strong>
-                <p><%= booking.request_message %></p>
-                <strong>Lender's Response:</strong>
-                <p><%= booking.response_message %></p>
+                <div class="request-message inline">
+                  <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
+                  <p><%= booking.request_message %></p>
+                </div>
+                <div class="response-message inline">
+                  <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
+                  <p><%= booking.response_message %></p>
+                </div>
               </div>
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
                 <% if booking.response_message_read == false %>
-                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
                 <% end %>
                   <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
                 </div>
                 <div class="mark-item-container">
-                <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-success', method: :patch} %>
+                <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green', method: :patch} %>
                 </div>
               </div>
               <div class="booking-card-image-container">
                 <% unless booking.item.user.photo_fake == nil %>
-                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.user.photo_fake %>)"></div>
+                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
                 <% else %>
-                  <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.user.photo %>)"></div>
+                  <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
                 <% end %>
                   <!-- item photo -->
                 <% unless booking.item.photo_fake == nil %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.photo_fake %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
                 <% else %>
-                  <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.photo %>)"></div>
+                  <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
                 <% end %>
               </div>
               <div class="booking-card-footer">
@@ -176,39 +170,49 @@
           <% end %>
         <% end %>
 
+<!-- BORROWED -->
+        <br>
+        <br>
         <h2>Borrowed</h2>
         <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
+          <% if booking.response_message_read == false %>
+            <div class="green-bar"></div>
+          <% end %>
           <div class="booking-card-grid">
             <div class="booking-card-request-info-section">
               <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
               <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
             </div>
             <div class="booking-card-request-message-section">
-              <strong>Your message:</strong>
-              <p><%= booking.request_message %></p>
-              <strong>Lender's Response:</strong>
-              <p><%= booking.response_message %></p>
+              <div class="request-message inline">
+                <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
+                <p><%= booking.request_message %></p>
+              </div>
+              <div class="request-message inline">
+                <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
+                <p><%= booking.response_message %></p>
+              </div>
             </div>
             <div class="booking-card-footer-right">
               <div class="read-message-container">
               <% if booking.response_message_read == false %>
-                <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-primary', method: :patch} %>
+                <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
               <% end %>
                 <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
               </div>
             </div>
             <div class="booking-card-image-container">
               <% unless booking.item.user.photo_fake == nil %>
-                <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.user.photo_fake %>)"></div>
+                <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
               <% else %>
-                <div class="card-avatar position-absolute z-index-ten" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.user.photo %>)"></div>
+                <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
               <% end %>
                 <!-- item photo -->
               <% unless booking.item.photo_fake == nil %>
-                <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= booking.item.photo_fake %>)"></div>
+                <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
               <% else %>
-                <div class="booking-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path booking.item.photo %>)"></div>
+                <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
               <% end %>
             </div>
             <div class="booking-card-footer">

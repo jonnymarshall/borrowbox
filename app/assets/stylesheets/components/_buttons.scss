@@ -1,5 +1,3 @@
-
-
 .btn-green {
   background-color: $green;
   color: white;
@@ -10,6 +8,19 @@
 .btn-green:hover {
   background-color: #378276;
   color: white;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.btn-orange {
+  background-color: $orange;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.btn-green:hover {
+  color: white;
+  opacity: 0.8;
 }
 
 .btn-beige {
@@ -21,14 +32,22 @@
 
 .btn-beige:hover {
   background-color: #378276;
-  color: white;
+  // color: white;
+  color: $b-gray;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.btn-beige:hover {
+  background-color: $beige;
+  opacity: 0.8;
 }
 
 .btn-lightgray {
   background-color: $b-light-gray;
   color: white;
   border-radius: 4px;
-  box-shadow: 1px 1px #CDCDCD;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 .btn-lightgray:hover {
@@ -41,4 +60,19 @@
   margin-bottom: 5px;
   width: 75%;
 
+}
+
+.btn-filter.btn-green {
+  margin-top: 20px;
+}
+
+.btn-credits.btn-green {
+  margin-top: 20px;
+  width: 260px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn-booking {
+  width: 100%;
 }
