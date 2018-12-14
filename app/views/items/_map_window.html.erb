@@ -1,12 +1,7 @@
-<div class=".mapboxgl-popup">
-  <div class="item-card-image-container">
-    <div class="card-avatar position-absolute z-index-ten"></div>
-    <div class="item-card-image"></div>
+<%= link_to item_path(item) do %>
+  <div class="mapbox-card">
+    <h6><%= item.name %></h6>
+    <div class="mapbox-card-image" style="background-image: url(<%= item.photo_fake %>)"></div>
+    <p>From <%= item.user.first_name %></p>
   </div>
-  <div class="item-card-lender">
-    <p><%= item.user.first_name %>'s</p>
-  </div>
-  <div class="item-card-name">
-    <h4><%= item.name %></h4>
-  </div>
-</div>
+<% end %>

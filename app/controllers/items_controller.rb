@@ -28,9 +28,20 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @booking = Booking.new
-    # @item.user.rating = nil
     ratings_array = [@item.user.rating, @item.rating]
     @combined_rating = calculate_average(ratings_array)
+
+    items = [@item]
+    # Mapbox logic
+    # @item = @item.where.not(latitude: nil, longitude: nil)
+
+    @markers = items.map do |item|
+      {
+        lng: item.longitude,
+        lat: item.latitude,
+        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
+      }
+    end
   end
 
   private
