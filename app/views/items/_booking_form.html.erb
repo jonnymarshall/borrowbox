@@ -1,13 +1,13 @@
 
 <div class="row">
 <%= form_tag item_bookings_path(@item), method: :post do %>
-  <div class="col-xs-6">
+  <div class="col-xs-12">
     <div class="form-group font-sm">
       <label for="start-date">From:</label>
       <%= date_field_tag :start_date, params[:start_date], class: "form-control" %>
     </div>
   </div>
-  <div class="col-xs-6">
+  <div class="col-xs-12">
     <div class="form-group font-sm">
       <label for="end-date">To:</label>
       <%= date_field_tag :end_date, params[:end_date], class: "form-control" %>
@@ -15,11 +15,12 @@
   </div>
   <div class="col-xs-12">
     <div class="form-group font-sm">
+      <label for="Message To Lender:">To:</label>
       <%= text_area_tag :request_message, params[:request_message], class: "form-control", rows: "3", placeholder: "Tell your lender about how you intend to collect their item" %>
+      <button type="submit" class="btn btn-booking btn-green btn-type-2">Create Booking</button>
     </div>
   </div>
   <div class="col-xs-12">
-    <button type="submit" class="btn btn-green btn-type-2">Create Booking</button>
   </div>
 <% end %>
 <% sleep(1) %>
