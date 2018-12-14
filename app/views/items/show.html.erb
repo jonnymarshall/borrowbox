@@ -71,7 +71,7 @@
             </p></div>
           </div>
           <div class="progress">
-            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.user.rating * 20 %>%;">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.user.rating * 20 %>%;">
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@
         <div class="item-calendar">
           <div class="booking-form booking-form-borrowbox">
             <%= render 'items/booking_form' %>
-            <%= link_to "Back", request.referer, class: "btn btn-booking btn-beige btn-type-2", style: "width: 75%" %>
+            <%= link_to "Back", request.referer, class: "btn btn-back btn-beige btn-type-2", style: "width: 90%" %>
           </div>
 
         </div>
