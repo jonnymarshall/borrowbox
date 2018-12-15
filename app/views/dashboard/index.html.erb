@@ -93,14 +93,6 @@
                   <p><%= booking.response_message %></p>
                 </div>
               </div>
-              <div class="booking-card-footer-right">
-                <div class="read-message-container">
-                <% if booking.response_message_read == false %>
-                  <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
-                <% end %>
-                  <!-- <button type="button" class="btn btn-primary">Read message</button> -->
-                </div>
-              </div>
                 <div class="booking-card-footer-right">
                   <div class="read-message-container">
                   <% if booking.response_message_read == false %>
