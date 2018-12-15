@@ -247,7 +247,15 @@
 <!-- MY ITEMS -->
         <div id="my-items-cards">
           <div class="cards-area">
-          <% current_user.items.each do |item| %>
+
+            <div class="item-card-grid">
+                  <div class="new-item-block">
+                  <i class="fas fa-plus-circle add-item-lrg"></i>
+                  <h6>Add an item</h6>
+                </div>
+              </div>
+
+          <% current_user.items.order(created_at: :desc).each do |item| %>
             <%= link_to item_path(item) do %>
             <div class="item-card-grid">
                 <div class="item-card-image-container">
