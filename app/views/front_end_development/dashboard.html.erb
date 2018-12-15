@@ -64,6 +64,7 @@
 <!-- REQUESTED -->
 
         <h2>Requested</h2>
+        <div id="requested-booking-cards">
         <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
             <% if booking.response_message_read == false %>
@@ -127,11 +128,13 @@
             </div>
           <% end %>
         <% end %>
+      </div>
 
 <!-- BORROWING -->
         <br>
         <br>
         <h2>Borrowing</h2>
+        <div id="borrowing-booking-cards">
         <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
           <% if booking.response_message_read == false %>
@@ -187,11 +190,13 @@
             </div>
           <% end %>
         <% end %>
+      </div>
 
 <!-- BORROWED -->
         <br>
         <br>
         <h2>Borrowed</h2>
+        <div id="borrowed-booking-cards">
         <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
           <%= link_to item_path(booking.item) do %>
           <% if booking.response_message_read == false %>
@@ -244,6 +249,7 @@
           </div>
         <% end %>
         <% end %>
+      </div>
       </div>
 
     </div>
