@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="buy-more-credits inline">
-          <button type="button" class="btn btn-credits btn-green">Buy More Credits</button>
+          <button type="button" class="btn btn-credits btn-green btn-sm">Buy More Credits</button>
         </div>
       </div>
 
@@ -88,7 +88,7 @@
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
                 <% if booking.response_message_read == false %>
-                  <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
+                  <%= link_to "Read Message", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
                 <% end %>
                   <!-- <button type="button" class="btn btn-primary">Read message</button> -->
                 </div>
@@ -96,12 +96,12 @@
                 <div class="booking-card-footer-right">
                   <div class="read-message-container">
                   <% if booking.response_message_read == false %>
-                    <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
+                    <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
                   <% end %>
                     <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
                   </div>
                   <div class="mark-item-container">
-                  <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green', method: :patch} %>
+                  <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
                   </div>
                 </div>
                 <div class="booking-card-image-container">
@@ -155,12 +155,12 @@
                 <div class="booking-card-footer-right">
                   <div class="read-message-container">
                   <% if booking.response_message_read == false %>
-                    <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
+                    <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
                   <% end %>
                     <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
                   </div>
                   <div class="mark-item-container">
-                  <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green', method: :patch} %>
+                  <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green btn-sm', method: :patch} %>
                   </div>
                 </div>
                 <div class="booking-card-image-container">
@@ -214,7 +214,7 @@
               <div class="booking-card-footer-right">
                 <div class="read-message-container">
                 <% if booking.response_message_read == false %>
-                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green', method: :patch} %>
+                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
                 <% end %>
                   <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
                 </div>
