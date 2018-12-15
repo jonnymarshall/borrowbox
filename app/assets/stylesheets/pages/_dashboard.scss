@@ -115,3 +115,17 @@
 .request-message {
   margin-bottom: 5px;
 }
+
+.new-item-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 5;
+}
+
+.add-item-lrg {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
