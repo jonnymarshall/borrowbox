@@ -12,19 +12,20 @@
   opacity: 0.8;
 }
 .tabs h3 {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
-  margin-top: 0;
+  margin: 0px 0px 10px 0px;
 }
 .tabs p {
   opacity: 0.5;
   margin-bottom: 0;
+  font-size: 16px;
 }
 .tab {
   background: white;
   flex: 0 0 25%;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   border-right: 1px solid #E2E2E2;
 }
 .tab:first-child {
