@@ -96,7 +96,7 @@ user = User.new(
   first_name: "Borrow",
   last_name: "Box",
   credits: rand(1000..10000),
-  rating: rand(1.0..5.0),
+  rating: rand(3.0..5.0),
   photo_fake: "http://kitt.lewagon.com/placeholder/users/dfmore"
 )
 user.save!
