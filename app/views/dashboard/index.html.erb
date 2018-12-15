@@ -15,13 +15,17 @@
           </div>
           <div class="dashboard-user-rating">
             <div class="dashboard-rating-block-container inline">
-              <% if current_user.rating.nil? %>
-                <div class="dashboard-rating-block"><strong>N/A</strong></div>
+              <% if current_user.rating %>
+              <div class="dashboard-rating-block"><strong><%= current_user.rating.round(1) %></strong></div>
               <% else %>
-                <div class="dashboard-rating-block"><strong><%= current_user.rating.round(1) %></strong></div>
+              <div class="dashboard-rating-block"><strong>n/a</strong></div>
               <% end %>
             </div>
+            <% if current_user.rating %>
             <p>Your rating</p>
+            <% else %>
+            <p>No reviews yet!</p>
+            <% end %>
           </div>
         </div>
         <div class="user-credits">
