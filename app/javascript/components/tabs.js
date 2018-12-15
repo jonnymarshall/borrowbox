@@ -5,9 +5,11 @@ const tabs = document.querySelectorAll('.tab');
 const requestedBookingCards = document.getElementById('requested-booking-cards');
 const borrowingBookingCards = document.getElementById('borrowing-booking-cards');
 const borrowedBookingCards = document.getElementById('borrowed-booking-cards');
+const myItemsCards = document.getElementById('my-items-cards');
 
 borrowingBookingCards.classList.add("hidden");
 borrowedBookingCards.classList.add("hidden");
+myItemsCards.classList.add("hidden");
 
 //tabs.forEach(function(tab) is same as tabs.forEach((tab) =>
 tabs.forEach((tab) => {
@@ -27,16 +29,25 @@ tabs.forEach((tab) => {
       requestedBookingCards.classList.remove("hidden");
       borrowingBookingCards.classList.add("hidden");
       borrowedBookingCards.classList.add("hidden");
+      myItemsCards.classList.add("hidden");
     }
     else if (selectedTab.id === "borrowing") {
       borrowingBookingCards.classList.remove("hidden");
       requestedBookingCards.classList.add("hidden");
       borrowedBookingCards.classList.add("hidden");
+      myItemsCards.classList.add("hidden");
     }
     else if (selectedTab.id === "borrowed") {
       borrowedBookingCards.classList.remove("hidden");
       requestedBookingCards.classList.add("hidden");
       borrowingBookingCards.classList.add("hidden");
+      myItemsCards.classList.add("hidden");
+    }
+    else if (selectedTab.id === "my-items") {
+      myItemsCards.classList.remove("hidden");
+      requestedBookingCards.classList.add("hidden");
+      borrowingBookingCards.classList.add("hidden");
+      borrowedBookingCards.classList.add("hidden");
     }
   });
 });
