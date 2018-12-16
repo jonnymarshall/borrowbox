@@ -29,7 +29,7 @@
     </div>
     <div class="item-card-footer">
       <div class="card-rating-box">
-        <h6><i class="fas fa-star align-middle"></i> <%= item.rating.round(1) %></h6>
+        <h6><i class="fas fa-star align-middle"></i> <%= ((item.rating + item.user.rating)/2).round(1) %></h6>
       </div>
       <div class="card-credits-box">
         <h6><i class="fab fa-cuttlefish"></i> <%= item.credits %></h6>
