@@ -9,7 +9,7 @@
           <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "What do you want to borrow?" %>
         <% else %>
           <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "What do you want to borrow in #{request.location.city}?" %>
-           f.hidden_field :item_id, @item.id
+          <%= hidden_field_tag :address, request.location.city %>
         <% end %>
       <% end %>
       <%= link_to items_path, class: "btn btn-primary", style: "background-color :#3D9082" do %>
