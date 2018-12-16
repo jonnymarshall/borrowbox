@@ -21,7 +21,7 @@
 
 .cards-area {
   grid-column: 2 / span 1;
-  grid-row: 2;
+  grid-row: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -31,4 +31,12 @@
   font-family: 'Lobster', cursive;
   color: $green;
   font-size: 22px;
+}
+
+.show-map-button-container {
+  margin-bottom: 10px;
+}
+
+.hide-element {
+  display: none;
 }

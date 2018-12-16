@@ -5,8 +5,18 @@ class BookingsController < ApplicationController
     booking = Booking.new(booking_new_params)
     booking.user = current_user
     booking.item = item
-    booking.total_credits = credits
+
+    first_day = booking.start_date.to_s(:number).to_i
+    last_day = booking.end_date.to_s(:number).to_i
+    booking_duration = last_day - first_day + 1
+
+    booking.total_credits = credits * booking_duration
     booking.save
+    booking.user.credits -= booking.total_credits
+    booking.user.save
+
+    booking.item.user.credits += booking.total_credits
+    booking.item.user.save
     redirect_to dashboard_index_path
   end
 
@@ -31,4 +41,6 @@ class BookingsController < ApplicationController
       :total_credits
     )
   end
+
+
 end
