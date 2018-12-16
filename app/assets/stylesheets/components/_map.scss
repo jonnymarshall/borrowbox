@@ -3,22 +3,77 @@
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  padding: 5px;
-  h6 {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  p {
-    margin-top: 2px;
-    margin-bottom: 2px;
+  // REMOVED CSS BELOW
+  // text-align: center;
+  // padding: 5px;
+  // h6 {
+  //   margin-top: 5px;
+  //   margin-bottom: 5px;
+  // }
+  // p {
+  //   margin-top: 2px;
+  //   margin-bottom: 2px;
+  // }
+  //ADDED CUSTOM CSS BELOW
+  height: auto;
+  width: auto;
+  background-color: inherit;
+  padding: 0px;
+  margin: 0px;
+}
+
+// REMOVED CSS BELOW
+// .mapbox-card-image {
+//   background-size: cover;
+//   background-position: center;
+//   height: 180px;
+//   width: 180px;
+//   border-radius: 5px;
+// }
+
+//ADDED CUSTOMER CSS BELOW
+
+.-webkit-box-shadow {
+  box-shadow: none;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.map-card-grid {
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  display: grid;
+  height: 240px;
+  width: 180px;
+  grid-template-columns: 100%;
+  grid-template-rows: 55% 3fr 3fr 4fr 4fr;
+  padding: 10px;
+  background: linear-gradient(#FFFFFF, #F7F7F7);
+  border: 1px solid #E2E2E2;
+  border-radius: 10px;
+  margin-bottom: 0px;
+  &:hover {
+    background: linear-gradient(#F7F7F7, #F1F1F1);
   }
 }
 
-.mapbox-card-image {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  width: 180px;
-  border-radius: 5px;
+.map-card-name {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 2;
+  overflow: hidden;
+  // background-color: green;
+}
+.item-card-name h6 {
+  margin: 0;
+}
+
+.map-card-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: white 3px solid;
+  background-color: white;
+  right: 10px;
+  bottom: -30px;
 }
