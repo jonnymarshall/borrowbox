@@ -45,7 +45,7 @@
         <div class="inline space-between user-rating">
           <div><p><%= @item.name %>'s Rating</p></div>
           <div><p>
-            <% @item.item_rating %>
+            <%= @item.item_rating %>
           </p></div>
         </div>
         <div class="progress">
@@ -55,7 +55,7 @@
         <div class="inline space-between user-rating">
           <div><p><%= @item.user.first_name %>'s Rating</p></div>
           <div><p>
-            <% @item.user_rating %>
+            <%= @item.user_rating %>
           </p></div>
         </div>
         <div class="progress">
