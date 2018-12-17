@@ -28,6 +28,27 @@ class ItemsController < ApplicationController
     @markers = markers([@item])
   end
 
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.new(item_params)
+    @item.user = current_user
+    if @item.save
+      redirect_to item_path(@item)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+
+    redirect_to dashboard_index_path
+  end
+
   private
 
   def sql_query
@@ -46,5 +67,9 @@ class ItemsController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/shared/map_window", locals: { item: item }) }
       }
     end
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :description, :address, :credits, :photo)
   end
 end

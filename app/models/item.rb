@@ -16,6 +16,10 @@ class Item < ApplicationRecord
     comb_rating.nil? ? "n/a" : comb_rating.round(1)
   end
 
+  def item_rating_bar
+    reviews.average(:item_rating).nil? ? 0 : reviews.average(:item_rating).round(1)
+  end
+
   def item_rating
     reviews.average(:item_rating).nil? ? 'n/a' : reviews.average(:item_rating).round(1)
   end

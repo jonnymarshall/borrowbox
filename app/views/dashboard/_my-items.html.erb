@@ -6,6 +6,7 @@
                   <i class="fas fa-plus-circle add-item-lrg"></i>
                   <h6>Add an item</h6>
                 </div>
+                <a href="#bottom">go to bottom</a>
               </div>
 
           <% current_user.items.order(created_at: :desc).each do |item| %>
@@ -29,7 +30,7 @@
                 </div>
                 <div class="item-card-footer">
                   <div class="card-rating-box">
-                    <h6><i class="fas fa-star align-middle"></i> <%= item.rating.round(1) %></h6>
+                    <h6><i class="fas fa-star align-middle"></i> <%= item.combined_rating %></h6>
                   </div>
                   <div class="card-credits-box">
                     <h6><i class="fab fa-cuttlefish"></i> <%= item.credits %></h6>
@@ -40,4 +41,30 @@
           <% end %>
           <% end %>
         </div>
+        </div>
+
+        <div id="bottom">
+          <h2>Add an item</h2>
+          <%= simple_form_for [@item] do |f| %>
+            <% if @item.errors.any? %>
+              <div class="errors-container">
+                <ul>
+                  <% @item.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :address %>
+            <%= f.input :credits %>
+            <%= f.input :photo %>
+            <%= f.submit "add item", class: "btn btn-green" %>
+          <% end %>
+
+
+
+
         </div>
