@@ -31,11 +31,7 @@
           <div class="rating-block">
             <div>
               <p><strong>
-                <% if @item.combined_rating.nil? %>
-                N/A
-                <% else %>
                 <%= @item.combined_rating %>
-                <% end %>
               </strong></p>
             </div>
           </div>
@@ -49,29 +45,21 @@
         <div class="inline space-between user-rating">
           <div><p><%= @item.name %>'s Rating</p></div>
           <div><p>
-            <% if @item.rating.nil? %>
-            N/A
-            <% else %>
-            <%= @item.rating.round(1) %>
-            <% end %>
+            <% @item.item_rating %>
           </p></div>
         </div>
         <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.rating * 20 %>%;">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.item_rating * 20 %>%;">
           </div>
         </div>
         <div class="inline space-between user-rating">
           <div><p><%= @item.user.first_name %>'s Rating</p></div>
           <div><p>
-            <% if @item.user.rating.nil? %>
-            N/A
-            <% else %>
-            <%= @item.user.rating.round(1) %>
-            <% end %>
+            <% @item.user_rating %>
           </p></div>
         </div>
         <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.user.rating * 20 %>%;">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.user_rating * 20 %>%;">
           </div>
         </div>
       </div>

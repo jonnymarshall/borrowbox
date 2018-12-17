@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @booking = Booking.new
-    @combined_rating = @item.combined_rating
     # Mapbox
     @markers = markers([@item])
   end
@@ -34,7 +33,7 @@ class ItemsController < ApplicationController
   def sql_query
     query = []
     query << ':max_credits > credits' if params[:max_credits].present?
-    query << ':min_rating <= rating' if params[:min_rating].present?
+    query << ':min_rating <= comb_rating' if params[:min_rating].present?
     query << 'name ILIKE :name' if params[:name].present?
     query.join(' AND ')
   end
