@@ -1,0 +1,13 @@
+<div class="booking-card-image-container">
+  <% unless booking.item.user.photo_fake == nil %>
+    <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
+  <% else %>
+    <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
+  <% end %>
+    <!-- item photo -->
+  <% unless booking.item.photo_fake == nil %>
+    <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
+  <% else %>
+    <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
+  <% end %>
+</div>

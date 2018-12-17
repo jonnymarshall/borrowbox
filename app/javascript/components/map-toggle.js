@@ -6,10 +6,10 @@ const mapToggle = () => {
   const mapArea = document.getElementById('map-area');
   const itemsList = document.getElementById('items-list');
 
-  showListButton.classList.add("hidden");
-  // showMapButton.classList.add("hidden");
-  mapArea.classList.add("hidden");
-  // itemsList.classList.add("hidden");
+  // showListButton.classList.add("hidden");
+  showMapButton.classList.add("hidden");
+  // mapArea.classList.add("hidden");
+  itemsList.classList.add("hidden");
 
   showMapButton.addEventListener("click", (event) => {
     event.preventDefault();
