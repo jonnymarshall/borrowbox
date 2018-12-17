@@ -17,6 +17,10 @@ class Item < ApplicationRecord
     calculate_average(ratings_array).round(1)
   end
 
+  def display_rating
+    rating.round(1).nil? ? "N/A" : rating.round(1)
+  end
+
   private
 
   def calculate_average(ratings_array)
