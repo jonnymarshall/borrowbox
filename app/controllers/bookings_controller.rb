@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     booking = Booking.new(booking_new_params)
     booking.user = current_user
     booking.item = item
+    booking.response_message = dummy_reponse_message(booking)
 
     first_day = booking.start_date.to_s(:number).to_i
     last_day = booking.end_date.to_s(:number).to_i
@@ -41,6 +42,8 @@ class BookingsController < ApplicationController
       :total_credits
     )
   end
-
+  def dummy_reponse_message(booking)
+    "I'd be happy for you to borrow my #{booking.item.name}! See you then :)"
+  end
 
 end

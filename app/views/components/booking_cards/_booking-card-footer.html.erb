@@ -1,0 +1,8 @@
+<div class="booking-card-footer">
+  <div class="card-rating-box">
+    <h6><i class="fas fa-star"></i><%= ((booking.item.rating + booking.item.user.rating)/2).round(1) %></h6>
+  </div>
+  <div class="card-credits-box">
+    <h6><%= booking.item.credits %></h6>
+  </div>
+</div>

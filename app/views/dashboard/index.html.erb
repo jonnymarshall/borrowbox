@@ -6,222 +6,83 @@
       <%= render 'user-area' %>
       <%= render 'tabs' %>
 
-<!-- Modal -->
-
-
-
-
 <!-- REQUESTED -->
-
-        <div id="requested-booking-cards">
-          <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
-            <%= link_to item_path(booking.item) do %>
-              <% if booking.response_message_read == false %>
-                <div class="green-bar"></div>
-              <% end %>
-              <div class="booking-card-grid">
-                <div class="booking-card-request-info-section">
-                  <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
-                  <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
-                </div>
-              <div class="booking-card-request-message-section">
-                <div class="request-message inline">
-                  <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
-                  <p><%= booking.request_message %></p>
-                  <i id="response-message-notification" class="fas fa-comment hidden"></i>
-                </div>
-                <div class="response-message inline">
-                  <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
-                  <p><%= booking.response_message %></p>
-                </div>
-              </div>
-                <div class="booking-card-footer-right">
-                  <div class="read-message-container">
+<i id="response-message-notification" class="fas fa-comment hidden"></i>
+      <div id="requested-booking-cards">
+        <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
+        <% if booking.response_message_read == false %>
+          <div class="green-bar"></div>
+        <% end %>
+          <%= link_to item_path(booking.item) do %>
+            <div class="booking-card-grid">
+              <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
+              <div class="booking-card-footer-right">
+                <div class="mark-item-container">
+                <!-- MODAL BUTTON -->
+                  <% if booking.response_message_read == true %>
+                    <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
+                  <% end %>
+                  <!-- MODAL BUTTON -->
                   <% if booking.response_message_read == false %>
-                    <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
+                    <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#rm_modal_#{booking.id}" %>">
+                      Read message
+                    </button>
                   <% end %>
-                    <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
-
-                    <!-- MODAL BUTTON -->
-
-                  </div>
-                  <div class="mark-item-container">
-                  <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="<%="#modal_#{booking.id}" %>">
-                    Leave a review
-                  </button>
-                  </div>
-                </div>
-                <div class="booking-card-image-container">
-                  <% unless booking.item.user.photo_fake == nil %>
-                    <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
-                  <% else %>
-                    <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
-                  <% end %>
-                    <!-- item photo -->
-                  <% unless booking.item.photo_fake == nil %>
-                    <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
-                  <% else %>
-                    <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
-                  <% end %>
-                </div>
-                <div class="booking-card-footer">
-                  <div class="card-rating-box">
-                    <h6><i class="fas fa-star"></i><%= ((booking.item.rating + booking.item.user.rating)/2).round(1) %></h6>
-                  </div>
-                  <div class="card-credits-box">
-                    <h6><%= booking.item.credits %></h6>
-                  </div>
+                <!-- / MODAL BUTTON -->
                 </div>
               </div>
-              <!-- MODAL -->
-              <div class="modal fade" id="<%="modal_#{booking.id}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">Leave a review for <%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <%= booking.item.name %>
-                      <%= form_for [booking, @review] do |f| %>
-                        <%= f.label :content %>:
-                        <%= f.text_area :content %><br />
-                        <%= f.label :item_rating %>:
-                        <%= f.number_field :item_rating %><br />
-                        <%= f.label :lender_rating %>:
-                        <%= f.number_field :lender_rating %><br />
-                        <%= f.submit %>
-                      <% end %>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save review</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            <% end %>
-          <% end %>
-        </div>
-
-
-
+              <%= render 'components/booking_cards/booking-card-image-container', booking: booking %>
+              <%= render 'components/booking_cards/booking-card-footer', booking: booking %>
+            </div>
+          <!-- MODAL -->
+          <%= render 'components/leave-review-modal', booking: booking %>
+        <% end %>
+        <% end %>
+      </div>
 
 <!-- BORROWING -->
-        <div id="borrowing-booking-cards">
-          <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
-            <%= link_to item_path(booking.item) do %>
-            <% if booking.response_message_read == false %>
-              <div class="green-bar"></div>
-            <% end %>
-              <div class="booking-card-grid">
-                <div class="booking-card-request-info-section">
-                  <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
-                  <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
-                </div>
-                <div class="booking-card-request-message-section">
-                  <div class="request-message inline">
-                    <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
-                    <p><%= booking.request_message %></p>
-                  </div>
-                  <div class="response-message inline">
-                    <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
-                    <p><%= booking.response_message %></p>
-                  </div>
-                </div>
-                <div class="booking-card-footer-right">
-                  <div class="read-message-container">
-                  <% if booking.response_message_read == false %>
-                    <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
-                  <% end %>
-                    <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
-                  </div>
-                  <div class="mark-item-container">
-                  <%= link_to "Item received", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green btn-sm', method: :patch} %>
-                  </div>
-                </div>
-                <div class="booking-card-image-container">
-                  <% unless booking.item.user.photo_fake == nil %>
-                    <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
-                  <% else %>
-                    <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
-                  <% end %>
-                    <!-- item photo -->
-                  <% unless booking.item.photo_fake == nil %>
-                    <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
-                  <% else %>
-                    <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
-                  <% end %>
-                </div>
-                <div class="booking-card-footer">
-                  <div class="card-rating-box">
-                    <h6><i class="fas fa-star"></i><%= ((booking.item.rating + booking.item.user.rating)/2).round(1) %></h6>
-                  </div>
-                  <div class="card-credits-box">
-                    <h6><%= booking.item.credits %></h6>
-                  </div>
+      <div id="borrowing-booking-cards">
+        <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
+        <% if booking.response_message_read == false %>
+          <div class="green-bar"></div>
+        <% end %>
+          <%= link_to item_path(booking.item) do %>
+            <div class="booking-card-grid">
+              <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
+              <div class="booking-card-footer-right">
+                <div class="mark-item-container">
+                  <%= link_to "Item returned", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green btn-sm', method: :patch} %>
                 </div>
               </div>
-            <% end %>
-          <% end %>
-        </div>
+              <%= render 'components/booking_cards/booking-card-image-container', booking: booking %>
+              <%= render 'components/booking_cards/booking-card-footer', booking: booking %>
+            </div>
+          <!-- MODAL -->
+          <%= render 'components/leave-review-modal', booking: booking %>
+        <% end %>
+        <% end %>
+      </div>
 
 <!-- BORROWED -->
         <div id="borrowed-booking-cards">
           <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
             <%= link_to item_path(booking.item) do %>
-            <% if booking.response_message_read == false %>
-              <div class="green-bar"></div>
-            <% end %>
-            <div class="booking-card-grid">
-              <div class="booking-card-request-info-section">
-                <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
-                <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
-              </div>
-              <div class="booking-card-request-message-section">
-                <div class="request-message inline">
-                  <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
-                  <p><%= booking.request_message %></p>
+              <div class="booking-card-grid">
+                <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
+                <div class="booking-card-footer-right">
+                  <div class="mark-item-container">
+                  <!-- MODAL BUTTON -->
+                  <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#lr_modal_#{booking.id}" %>">
+                    Leave a review
+                  </button>
+                  <!-- / MODAL BUTTON -->
+                  </div>
                 </div>
-                <div class="request-message inline">
-                  <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
-                  <p><%= booking.response_message %></p>
-                </div>
+                <%= render 'components/booking_cards/booking-card-image-container', booking: booking %>
+                <%= render 'components/booking_cards/booking-card-footer', booking: booking %>
               </div>
-              <div class="booking-card-footer-right">
-                <div class="read-message-container">
-                <% if booking.response_message_read == false %>
-                  <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
-                <% end %>
-                  <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
-                </div>
-              </div>
-              <div class="booking-card-image-container">
-                <% unless booking.item.user.photo_fake == nil %>
-                  <div class="card-avatar avatar-image position-absolute z-index-ten" style="background-image: url(<%= booking.item.user.photo_fake %>)"></div>
-                <% else %>
-                  <div class="card-avatar position-absolute z-index-ten" style="background-image: url(<%= cl_image_path booking.item.user.photo %>)"></div>
-                <% end %>
-                  <!-- item photo -->
-                <% unless booking.item.photo_fake == nil %>
-                  <div class="booking-card-image" style="background-image: url(<%= booking.item.photo_fake %>)"></div>
-                <% else %>
-                  <div class="booking-card-image" style="background-image: url(<%= cl_image_path booking.item.photo %>)"></div>
-                <% end %>
-              </div>
-              <div class="booking-card-footer">
-                <div class="card-rating-box">
-                  <h6><i class="fas fa-star"></i><%= ((booking.item.rating + booking.item.user.rating)/2).round(1) %></h6>
-                </div>
-                <div class="card-credits-box">
-                  <h6><%= booking.item.credits %></h6>
-                </div>
-              </div>
-            </div>
+            <!-- MODAL -->
+            <%= render 'components/leave-review-modal', booking: booking %>
           <% end %>
           <% end %>
         </div>
@@ -229,4 +90,3 @@
       </div>
     </div>
   </div>
-</div>
