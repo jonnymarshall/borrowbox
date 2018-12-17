@@ -31,10 +31,10 @@
           <div class="rating-block">
             <div>
               <p><strong>
-                <% if @combined_rating.nil? %>
+                <% if @item.combined_rating.nil? %>
                 N/A
                 <% else %>
-                <%= @combined_rating.round(1) %>
+                <%= @item.combined_rating %>
                 <% end %>
               </strong></p>
             </div>
