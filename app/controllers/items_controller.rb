@@ -11,18 +11,14 @@ class ItemsController < ApplicationController
                    min_rating: params[:min_rating],
                    name: "%#{params[:name]}%")
       end
-    @items = @items.near(params[:address]) if params[:address].present?
-
-    # Mapbox logic
-    @items = @items.where.not(latitude: nil, longitude: nil)
-
-    @markers = @items.map do |item|
-      {
-        lng: item.longitude,
-        lat: item.latitude,
-        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
-      }
+    if params[:max_distance].present?
+      @items = @items.near(params[:coordinates], params[:max_distance])
+    elsif params[:address].present?
+      @items = @items.near(params[:address])
     end
+    # Mapbox
+    @items = @items.where.not(latitude: nil, longitude: nil)
+    markers(@items)
   end
 
   def show
@@ -30,18 +26,8 @@ class ItemsController < ApplicationController
     @booking = Booking.new
     ratings_array = [@item.user.rating, @item.rating]
     @combined_rating = calculate_average(ratings_array)
-
-    items = [@item]
-    # Mapbox logic
-    # @item = @item.where.not(latitude: nil, longitude: nil)
-
-    @markers = items.map do |item|
-      {
-        lng: item.longitude,
-        lat: item.latitude,
-        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
-      }
-    end
+    # Mapbox
+    markers([@item])
   end
 
   private
@@ -79,5 +65,15 @@ class ItemsController < ApplicationController
     query << ':min_rating <= rating' if params[:min_rating].present?
     query << 'name ILIKE :name' if params[:name].present?
     query.join(' AND ')
+  end
+
+  def markers(items)
+    @markers = items.map do |item|
+      {
+        lng: item.longitude,
+        lat: item.latitude,
+        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
+      }
+    end
   end
 end
