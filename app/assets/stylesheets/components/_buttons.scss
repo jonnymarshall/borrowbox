@@ -72,3 +72,13 @@
 .btn-back {
   margin-top: 10px;
 }
+
+.btn-search {
+  background-color: $green;
+  color: white;
+}
+
+.btn-search:hover {
+  color: white;
+  opacity: 0.8;
+}
