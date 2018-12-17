@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     end
     # Mapbox
     @items = @items.where.not(latitude: nil, longitude: nil)
-    markers(@items)
+    @markers = markers(@items)
   end
 
   def show
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     ratings_array = [@item.user.rating, @item.rating]
     @combined_rating = calculate_average(ratings_array)
     # Mapbox
-    markers([@item])
+    @markers = markers([@item])
   end
 
   private
@@ -68,11 +68,11 @@ class ItemsController < ApplicationController
   end
 
   def markers(items)
-    @markers = items.map do |item|
+    items.map do |item|
       {
         lng: item.longitude,
         lat: item.latitude,
-        infoWindow: { content: render_to_string(partial: "/items/map_window", locals: { item: item }) }
+        infoWindow: { content: render_to_string(partial: "/shared/map_window", locals: { item: item }) }
       }
     end
   end
