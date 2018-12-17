@@ -13,16 +13,18 @@ class Item < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def combined_rating
-    ratings_array = [user.rating, rating]
-    calculate_average(ratings_array).round(1)
+    comb_rating.nil? ? "n/a" : comb_rating.round(1)
   end
 
-  def display_rating
-    rating.nil? ? "n/a" : rating.round(1)
-  end
-
-  def display_rating_bar
+  def item_rating_bar
     rating.nil? ? 0 : rating.round(1)
+
+  def item_rating
+    reviews.average(:item_rating).nil? ? 'n/a' : reviews.average(:item_rating).round(1)
+  end
+
+  def user_rating
+    user.reviews.average(:lender_rating).nil? ? 'n/a' : user.reviews.average(:lender_rating).round(1)
   end
 
   private
