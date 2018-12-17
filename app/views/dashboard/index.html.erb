@@ -9,6 +9,8 @@
 <!-- Modal -->
 
 
+
+
 <!-- REQUESTED -->
 
         <div id="requested-booking-cards">
@@ -39,10 +41,14 @@
                     <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
                   <% end %>
                     <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
+
+
+                    <!-- MODAL -->
+
                   </div>
                   <div class="mark-item-container">
                   <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="<%="#modal_#{booking.id}" %>">
                     Leave a review
                   </button>
                   </div>
@@ -67,10 +73,10 @@
                   <div class="card-credits-box">
                     <h6><%= booking.item.credits %></h6>
                   </div>
-                </div>
+                </div>?
               </div>
-
-              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <!-- MODAL -->
+              <div class="modal fade" id="<%="modal_#{booking.id}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -102,6 +108,9 @@
             <% end %>
           <% end %>
         </div>
+
+
+
 
 <!-- BORROWING -->
         <div id="borrowing-booking-cards">
