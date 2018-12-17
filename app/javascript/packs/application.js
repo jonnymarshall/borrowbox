@@ -1,4 +1,4 @@
-console.log('hello from application.js')
+// console.log('hello from application.js')
 import "bootstrap";
 
 import { initTabs } from "../components/tabs";
