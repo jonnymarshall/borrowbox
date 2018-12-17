@@ -17,3 +17,7 @@ const mapTest = document.getElementById('map');
 if (mapTest) {
   mapToggle();
 }
+
+// import { responseMessageNotification } from'../components/response-message-notification';
+
+// responseMessageNotification();
