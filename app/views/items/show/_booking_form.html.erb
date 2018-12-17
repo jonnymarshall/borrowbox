@@ -1,0 +1,18 @@
+<div class="row">
+  <%= simple_form_for [@item, @booking] do |f| %>
+  <div class="col-xs-6">
+    <%= f.input :start_date, label: 'From:' %>
+  </div>
+  <div class="col-xs-6">
+    <%= f.input :end_date, label: 'To:' %>
+  </div>
+  <div class="col-xs-12">
+    <%= f.input :request_message, label: 'Message to lender:', input_html: {:rows => 3} %>
+  </div>
+  <div class="col-xs-12">
+    <%= f.submit "Borrow item", class: "btn btn-booking btn-green btn-type-2" %>
+  </div>
+  <% end %>
+<% sleep(1) %>
+</div>
+
