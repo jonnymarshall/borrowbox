@@ -1,7 +1,11 @@
+<% if user_signed_in? %>
+  <%= render 'shared/navbar' %>
+<% else %>
+  <%= render 'shared/homepage_navbar' %>
+<% end %>
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 50%), url('https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80');">
   <div class="banner-content">
     <h1>Borrowbox</h1>
-    <%# raise %>
     <p>Stop buying. Start borrowing.</p>
     <div class="searchbar">
       <%= form_tag items_path, method: :get , class: 'form-horizontal col-sm-10' do  %>
@@ -19,35 +23,4 @@
   </div>
 </div>
 
-<!-- <div class="about">
-  <div class="container">
-    <div class="row">
-      <div>
-      <h2 style="width: 100%;"> A credit based system cultivating a fair and balanced community, enabling people to lend and borrow lesser-used items.</h2>
-      </div>
-    </div>
-     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="home-text-card">
-          <h3 class="home-text-card-title"><b> Minimalistic </br> & </br>Economical </b></h3>
-         <i class="fas fa-hand-holding-usd"></i>
-          <p>Sharing leads to less consumerism helping the environment as you stop spending money on rarely used stored items.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="home-text-card">
-          <h3 class="home-text-card-title"><b> Community Oriented </br> & Convenient </b></h3>
-          <i class="fas fa-users"></i>
-          <p>Shops all closed? That's ok, borrow it! On your way meet your neighbours through lending and borrowing!</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="home-text-card">
-          <h3 class="home-text-card-title"><b> Safe </br>&</br> Trusting</b></h3>
-          <i class="fas fa-lock"></i>
-          <p>Ratings and reviews builds trust and keeps a well organised, balanced community.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
+<%= render '/pages/about' %>

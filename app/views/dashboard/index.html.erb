@@ -3,71 +3,8 @@
 <div class="wrapper">
   <div class="container">
     <div class="dashboard-index-grid">
-      <div class="user-area">
-        <div class="user-image-container">
-          <!-- <div class="dashboard-user-image"></div> -->
-          <img src="https://images.unsplash.com/photo-1476493279419-b785d41e38d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2500&q=80" class="dashboard-user-image">
-        </div>
-        <div class="user-info inline">
-          <div class="dashboard-user-first-name">
-            <h4><%= current_user.first_name %></h4>
-          </div>
-          <div class="dashboard-user-rating">
-            <div class="dashboard-rating-block-container inline">
-              <% if current_user.rating %>
-              <div class="dashboard-rating-block"><strong><%= current_user.rating.round(1) %></strong></div>
-              <% else %>
-              <div class="dashboard-rating-block"><strong>n/a</strong></div>
-              <% end %>
-            </div>
-            <% if current_user.rating %>
-            <p>Your rating</p>
-            <% else %>
-            <p>No reviews yet!</p>
-            <% end %>
-          </div>
-        </div>
-        <div class="user-credits">
-          <!-- <p><p class="credits-icon">b&nbsp;</p> -->
-          <h3><strong><%= current_user.credits %></strong></h3>
-          <p>Credits</p>
-        </div>
-        <div class="user-stats inline">
-          <div class="user-items-lent">
-            <strong><%= current_user.bookings.count %></strong>
-            <p>Items lent</p>
-          </div>
-          <div class="user-items-borrowed">
-            <strong><%= current_user.bookings.count %></strong>
-            <p>Items borrowed</p>
-          </div>
-        </div>
-        <div class="buy-more-credits inline">
-          <button type="button" class="btn btn-credits btn-green btn-sm">Buy More Credits</button>
-        </div>
-      </div>
-
-<!-- TABS -->
-
-      <div class="list-area" id="dashboard-tabs">
-        <div class="tabs">
-          <a class="tab active" id="requested" href="#">
-            <h3>350</h3>
-            <p>Requested</p>
-          </a>
-          <a class="tab" id="borrowing" href="#">
-            <h3>456</h3>
-            <p>Borrowing</p>
-          </a>
-          <a class="tab" id="borrowed" href="#">
-            <h3>189</h3>
-            <p>Borrowed</p>
-          </a>
-          <a class="tab" id="my-items" href="#">
-            <h3>13</h3>
-            <p>My Items</p>
-          </a>
-        </div>
+      <%= render 'user-area' %>
+      <%= render 'tabs' %>
 
 <!-- REQUESTED -->
 
@@ -86,6 +23,7 @@
                 <div class="request-message inline">
                   <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
                   <p><%= booking.request_message %></p>
+                  <i id="response-message-notification" class="fas fa-comment hidden"></i>
                 </div>
                 <div class="response-message inline">
                   <strong>Lender's Response:&nbsp;&nbsp;&nbsp;</strong>
