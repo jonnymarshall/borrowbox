@@ -1,0 +1,12 @@
+<div class="picture-frame">
+  <% unless @item.photo_fake == nil %>
+    <div class="item-photo" id="item-picture" style="background-image: url('<%= @item.photo_fake %>')"></div>
+  <% else %>
+    <div class="item-photo" id="item-picture" style="background-image: url('<%= cl_image_path @item.photo %>')"></div>
+  <% end %>
+  <% unless @item.user.photo_fake == nil %>
+    <div class="avatar-medium item-owner" style="background-image: url('<%= @item.user.photo_fake %>')"></div>
+  <% else %>
+    <div class="avatar-medium item-owner" style="background-image: url('<%= cl_image_path @item.user.photo %>')"></div>
+  <% end %>
+</div>

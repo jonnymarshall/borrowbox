@@ -9,10 +9,17 @@
   <div class="col-xs-12">
     <%= f.input :request_message, label: 'Message to lender:', input_html: {:rows => 3} %>
   </div>
+
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#mtl_modal_#{@item.id}" %>">
+      Request
+    </button>
+  </div>
+  <%= render 'items/show/message-to-lender' %>
+
   <div class="col-xs-12">
     <%= f.submit "Borrow item", class: "btn btn-booking btn-green btn-type-2" %>
   </div>
   <% end %>
 <% sleep(1) %>
 </div>
-
