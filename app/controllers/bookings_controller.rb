@@ -1,23 +1,10 @@
 class BookingsController < ApplicationController
   def create
     item = Item.find(params[:item_id])
-    credits = item.credits
     booking = Booking.new(booking_new_params)
-    booking.user = current_user
-    booking.item = item
-    booking.response_message = dummy_reponse_message(booking)
-
-    first_day = booking.start_date.to_s(:number).to_i
-    last_day = booking.end_date.to_s(:number).to_i
-    booking_duration = last_day - first_day + 1
-
-    booking.total_credits = credits * booking_duration
+    booking_details(booking, item)
     booking.save
-    booking.user.credits -= booking.total_credits
-    booking.user.save
-
-    booking.item.user.credits += booking.total_credits
-    booking.item.user.save
+    update_user_credits(booking)
     redirect_to dashboard_index_path
   end
 
@@ -34,16 +21,29 @@ class BookingsController < ApplicationController
   end
 
   def booking_new_params
-    params.permit(
+    params.require(:booking).permit(
       :request_message,
       :start_date,
-      :end_date,
-      :item_id,
-      :total_credits
+      :end_date
     )
   end
+
   def dummy_reponse_message(booking)
     "I'd be happy for you to borrow my #{booking.item.name}! See you then :)"
   end
 
+  def booking_details(booking, item)
+    booking_duration = (booking.end_date - booking.start_date).to_i + 1
+    booking.user = current_user
+    booking.item = item
+    booking.total_credits = item.credits * booking_duration
+    booking.response_message = dummy_reponse_message(booking)
+  end
+
+  def update_user_credits(booking)
+    booking.user.credits -= booking.total_credits
+    booking.user.save
+    booking.item.user.credits += booking.total_credits
+    booking.item.user.save
+  end
 end

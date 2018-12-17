@@ -96,7 +96,7 @@ user = User.new(
   first_name: "Borrow",
   last_name: "Box",
   credits: rand(1000..10000),
-  rating: rand(3.0..5.0),
+  # rating: rand(3.0..5.0),
   photo_fake: "http://kitt.lewagon.com/placeholder/users/dfmore"
 )
 user.save!
@@ -117,7 +117,7 @@ non_test_users = []
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     credits: rand(1000..10000),
-    rating: rand(1.0..5.0),
+    # rating: rand(1.0..5.0),
     photo_fake: avatars.sample
   )
   user.save!
@@ -138,7 +138,7 @@ n_items.times do
     description: Faker::GameOfThrones.quote,
     user: User.all.sample,
     # address: addresses.sample,
-    rating: rand(1.0..5.0),
+    # rating: rand(1.0..5.0),
     photo_fake: photos.sample,
     latitude: fake_coordinates[1],
     longitude: fake_coordinates[0]

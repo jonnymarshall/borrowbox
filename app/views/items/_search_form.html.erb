@@ -1,12 +1,11 @@
 <div class="row filter">
-<%= form_tag items_path, method: :get do %>
   <div class="col-xs-12">
     <div class="form-group font-sm show-map-button-container">
       <button id="show-map-button" class="btn btn-gray btn-sm" style="width: 100%">Show map</button>
       <button id="show-list-button" class="btn btn-gray btn-sm" style="width: 100%">Show List</button>
     </div>
   </div>
-
+<%= form_tag items_path, method: :get do %>
   <div class="col-xs-12">
     <div class="form-group font-sm">
       <label for="item">Item</label>
@@ -40,7 +39,7 @@
   <div class="col-xs-12">
     <div class="form-group font-sm">
       <label for="max-distance">Max distance</label>
-      <%= number_field_tag :max_distance, params[:max_distance], class: "form-control", placeholder: "Max Distance" %>
+      <%= number_field_tag :max_distance, params[:max_distance], class: "form-control", placeholder: "Kilometers" %>
     </div>
   </div>
   <div class="col-xs-12">
@@ -49,6 +48,7 @@
       <%= number_field_tag :min_rating, params[:min_rating], class: "form-control", placeholder: "Min Rating" %>
     </div>
   </div>
+  <%= hidden_field_tag :coordinates %>
   <div class="col-xs-12">
     <button type="submit" class="btn btn-filter btn-green btn-sm" style="width: 100%">Filter</button>
   </div>
