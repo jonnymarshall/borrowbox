@@ -6,86 +6,31 @@
       <%= render 'user-area' %>
       <%= render 'tabs' %>
 
-<!-- REQUESTED -->
+
 <i id="response-message-notification" class="fas fa-comment hidden"></i>
+
+<!-- REQUESTED -->
       <div id="requested-booking-cards">
         <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
-        <% if booking.response_message_read == false %>
-          <div class="green-bar"></div>
-        <% end %>
-          <%= link_to item_path(booking.item) do %>
-            <div class="booking-card-grid">
-              <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
-              <div class="booking-card-footer-right">
-                <div class="mark-item-container">
-                <!-- MODAL BUTTON -->
-                  <% if booking.response_message_read == true %>
-                    <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
-                  <% end %>
-                  <!-- MODAL BUTTON -->
-                  <% if booking.response_message_read == false %>
-                    <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#rm_modal_#{booking.id}" %>">
-                      Read message
-                    </button>
-                  <% end %>
-                <!-- / MODAL BUTTON -->
-                </div>
-              </div>
-              <%= render 'components/booking_cards/booking-card-image-container', booking: booking %>
-              <%= render 'components/booking_cards/booking-card-footer', booking: booking %>
-            </div>
-          <!-- MODAL -->
-          <%= render 'components/leave-review-modal', booking: booking %>
-        <% end %>
+          <%= render 'booking', booking: booking, status: :requested %>
         <% end %>
       </div>
 
 <!-- BORROWING -->
       <div id="borrowing-booking-cards">
         <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
-        <% if booking.response_message_read == false %>
-          <div class="green-bar"></div>
-        <% end %>
-          <%= link_to item_path(booking.item) do %>
-            <div class="booking-card-grid">
-              <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
-              <div class="booking-card-footer-right">
-                <div class="mark-item-container">
-                  <%= link_to "Item returned", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green btn-sm', method: :patch} %>
-                </div>
-              </div>
-              <%= render 'components/booking_cards/booking-card-image-container', booking: booking %>
-              <%= render 'components/booking_cards/booking-card-footer', booking: booking %>
-            </div>
-          <!-- MODAL -->
-          <%= render 'components/leave-review-modal', booking: booking %>
-        <% end %>
+          <%= render 'booking', booking: booking, status: :borrowing %>
         <% end %>
       </div>
 
 <!-- BORROWED -->
         <div id="borrowed-booking-cards">
           <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
-            <%= link_to item_path(booking.item) do %>
-              <div class="booking-card-grid">
-                <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
-                <div class="booking-card-footer-right">
-                  <div class="mark-item-container">
-                  <!-- MODAL BUTTON -->
-                  <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#lr_modal_#{booking.id}" %>">
-                    Leave a review
-                  </button>
-                  <!-- / MODAL BUTTON -->
-                  </div>
-                </div>
-                <%= render 'components/booking_cards/booking-card-image-container', booking: booking %>
-                <%= render 'components/booking_cards/booking-card-footer', booking: booking %>
-              </div>
-            <!-- MODAL -->
-            <%= render 'components/leave-review-modal', booking: booking %>
-          <% end %>
+            <%= render 'booking', booking: booking, status: :borrowed %>
           <% end %>
         </div>
+
+<!-- MY ITEMS -->
         <%= render 'my-items' %>
       </div>
     </div>

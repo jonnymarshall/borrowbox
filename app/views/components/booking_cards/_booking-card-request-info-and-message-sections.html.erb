@@ -1,10 +1,14 @@
-<div class="booking-card-request-info-section">
-  <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
-  <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
-</div>
-<div class="booking-card-request-message-section">
-  <div class="request-message inline">
-    <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
-    <p><%= booking.request_message %></p>
+<%= link_to item_path(booking.item) do %>
+  <div class="booking-card-request-info-section">
+    <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
+    <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
   </div>
-</div>
+<% end %>
+<%= link_to item_path(booking.item) do %>
+  <div class="booking-card-request-message-section">
+    <div class="request-message inline">
+      <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
+      <p><%= booking.request_message %></p>
+    </div>
+  </div>
+<% end %>
