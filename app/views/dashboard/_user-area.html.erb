@@ -1,0 +1,43 @@
+<div class="user-area">
+        <div class="user-image-container">
+          <!-- <div class="dashboard-user-image"></div> -->
+          <img src="https://images.unsplash.com/photo-1476493279419-b785d41e38d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2500&q=80" class="dashboard-user-image">
+        </div>
+        <div class="user-info inline">
+          <div class="dashboard-user-first-name">
+            <h4><%= current_user.first_name %></h4>
+          </div>
+          <div class="dashboard-user-rating">
+            <div class="dashboard-rating-block-container inline">
+              <% if current_user.rating %>
+              <div class="dashboard-rating-block"><strong><%= current_user.rating.round(1) %></strong></div>
+              <% else %>
+              <div class="dashboard-rating-block"><strong>n/a</strong></div>
+              <% end %>
+            </div>
+            <% if current_user.rating %>
+            <p>Your rating</p>
+            <% else %>
+            <p>No reviews yet!</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="user-credits">
+          <!-- <p><p class="credits-icon">b&nbsp;</p> -->
+          <h3><strong><%= current_user.credits %></strong></h3>
+          <p>Credits</p>
+        </div>
+        <div class="user-stats inline">
+          <div class="user-items-lent">
+            <strong><%= current_user.bookings.count %></strong>
+            <p>Items lent</p>
+          </div>
+          <div class="user-items-borrowed">
+            <strong><%= current_user.bookings.count %></strong>
+            <p>Items borrowed</p>
+          </div>
+        </div>
+        <div class="buy-more-credits inline">
+          <button type="button" class="btn btn-credits btn-green btn-sm">Buy More Credits</button>
+        </div>
+      </div>
