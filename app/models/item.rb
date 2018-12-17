@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def combined_rating
-    ratings_array = [self.user.rating, self.rating]
+    ratings_array = [user.rating, rating]
     calculate_average(ratings_array).round(1)
   end
 
@@ -30,11 +30,11 @@ class Item < ApplicationRecord
   end
 
   def both_ratings_nil?
-    self.user.rating.nil? && self.rating.nil?
+    user.rating.nil? && rating.nil?
   end
 
   def any_rating_nil?
-    self.user.rating.nil? || self.rating.nil?
+    user.rating.nil? || rating.nil?
   end
 
   def average(ratings_array)
