@@ -17,7 +17,8 @@ class Item < ApplicationRecord
   end
 
   def item_rating_bar
-    rating.nil? ? 0 : rating.round(1)
+    reviews.average(:item_rating).nil? ? 0 : reviews.average(:item_rating).round(1)
+  end
 
   def item_rating
     reviews.average(:item_rating).nil? ? 'n/a' : reviews.average(:item_rating).round(1)

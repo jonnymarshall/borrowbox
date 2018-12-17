@@ -14,4 +14,8 @@ class User < ApplicationRecord
   validates :credits, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  def average_rating
+    reviews.average(:lender_rating).nil? ? 'n/a' : reviews.average(:lender_rating).round(1)
+  end
 end
