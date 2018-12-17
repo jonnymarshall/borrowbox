@@ -6,6 +6,11 @@
       <%= render 'user-area' %>
       <%= render 'tabs' %>
 
+<!-- Modal -->
+
+
+
+
 <!-- REQUESTED -->
 
         <div id="requested-booking-cards">
@@ -36,9 +41,15 @@
                     <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
                   <% end %>
                     <!-- <button type="button" class="btn btn-primary">Message Read</button> -->
+
+                    <!-- MODAL BUTTON -->
+
                   </div>
                   <div class="mark-item-container">
                   <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="<%="#modal_#{booking.id}" %>">
+                    Leave a review
+                  </button>
                   </div>
                 </div>
                 <div class="booking-card-image-container">
@@ -61,11 +72,44 @@
                   <div class="card-credits-box">
                     <h6><%= booking.item.credits %></h6>
                   </div>
+                </div>?
+              </div>
+              <!-- MODAL -->
+              <div class="modal fade" id="<%="modal_#{booking.id}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Leave a review for <%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= booking.item.name %>
+                      <%= form_for [booking, @review] do |f| %>
+                        <%= f.label :content %>:
+                        <%= f.text_area :content %><br />
+                        <%= f.label :item_rating %>:
+                        <%= f.number_field :item_rating %><br />
+                        <%= f.label :lender_rating %>:
+                        <%= f.number_field :lender_rating %><br />
+                        <%= f.submit %>
+                      <% end %>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save review</button>
+                    </div>
+                  </div>
                 </div>
               </div>
+
             <% end %>
           <% end %>
         </div>
+
+
+
 
 <!-- BORROWING -->
         <div id="borrowing-booking-cards">
@@ -182,50 +226,8 @@
           <% end %>
         </div>
 
-<!-- MY ITEMS -->
-        <div id="my-items-cards">
-          <div class="cards-area">
+        <%= render 'my-items' %>
 
-            <div class="item-card-grid">
-                  <div class="new-item-block">
-                  <i class="fas fa-plus-circle add-item-lrg"></i>
-                  <h6>Add an item</h6>
-                </div>
-              </div>
-
-          <% current_user.items.order(created_at: :desc).each do |item| %>
-            <%= link_to item_path(item) do %>
-            <div class="item-card-grid">
-                <div class="item-card-image-container">
-                  <!-- item photo -->
-                  <% unless item.photo_fake == nil %>
-                  <div class="item-card-image" style="background-image: url(<%= item.photo_fake %>)
-                  "></div>
-                  <% else %>
-                  <div class="item-card-image" style="background-image: url(<%= cl_image_path item.photo %>)
-                  "></div>
-                  <% end %>
-                </div>
-                <div class="item-card-name">
-                  <h5><%= item.name %></h5>
-                </div>
-                <div class="item-card-description">
-                  <p><%= item.description %></p>
-                </div>
-                <div class="item-card-footer">
-                  <div class="card-rating-box">
-                    <h6><i class="fas fa-star align-middle"></i> <%= item.rating.round(1) %></h6>
-                  </div>
-                  <div class="card-credits-box">
-                    <h6><i class="fab fa-cuttlefish"></i> <%= item.credits %></h6>
-                  </div>
-                </div>
-                <% link_to item_path(item) %>
-              </div>
-          <% end %>
-          <% end %>
-        </div>
-        </div>
       </div>
     </div>
   </div>

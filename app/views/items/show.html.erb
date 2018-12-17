@@ -76,9 +76,8 @@
         </div>
       </div>
 
-      <!-- reviews -->
       <div class="item-reviews">
-        <% @item.reviews.each do |review| %>
+        <% @item.reviews.order(created_at: :desc).each do |review| %>
         <div class="review">
           <div class="inline space-between">
             <div class="inline">
@@ -124,4 +123,4 @@
   </div>
 </div>
 
-  <%= javascript_pack_tag "map" %>
+<%= javascript_pack_tag "map" %>
