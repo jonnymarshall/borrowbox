@@ -9,7 +9,13 @@
     </div>
     <div class="dashboard-user-rating">
       <div class="dashboard-rating-block-container inline">
-        <div class="dashboard-rating-block"><strong><%= current_user.average_rating %></strong></div>
+        <div class="dashboard-rating-block">
+          <% if current_user.average_rating.nil? %>
+            <strong>n/a</strong>
+          <% else %>
+            <strong><%= current_user.average_rating.round(1) %></strong>
+          <% end %>
+        </div>
       </div>
       <% if current_user.average_rating != "n/a" %>
       <p>Your rating</p>
