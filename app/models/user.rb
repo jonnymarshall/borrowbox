@@ -16,6 +16,10 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def average_rating
-    reviews.average(:lender_rating).nil? ? 'n/a' : reviews.average(:lender_rating).round(1)
+    User.find_by_sql("SELECT AVG(reviews.lender_rating) FROM reviews "\
+      "JOIN items ON items.user_id = #{id} "\
+      "JOIN bookings ON bookings.item_id = items.id "\
+      "WHERE reviews.booking_id = bookings.id"
+    )[0].avg.round(1)
   end
 end
