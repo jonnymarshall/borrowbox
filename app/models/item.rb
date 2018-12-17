@@ -18,7 +18,7 @@ class Item < ApplicationRecord
   end
 
   def display_rating
-    rating.round(1).nil? ? "N/A" : rating.round(1)
+    rating.nil? ? "N/A" : rating.round(1)
   end
 
   private
