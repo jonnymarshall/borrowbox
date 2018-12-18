@@ -333,7 +333,6 @@ items_attributes = [
     credits: 135,
     photo_fake: "https://unsplash.com/photos/5dehYy5BkRw"
   },
-
 ]
 
 Item.create!(items_attributes)
