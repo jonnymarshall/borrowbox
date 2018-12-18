@@ -25,7 +25,13 @@
   </div>
   <div class="user-credits">
     <!-- <p><p class="credits-icon">b&nbsp;</p> -->
-    <h3><strong><i class="fab fa-cuttlefish"></i> <%= number_with_delimiter(current_user.credits, :delimiter => ',') %></strong></h3>
+      <div id=credits-b>
+          <h4>b</h4>
+          <br>
+      </div>
+      <h3><strong>
+        <%=number_with_delimiter(current_user.credits, :delimiter => ',') %>
+      </strong></h3>
     <!-- <p>Credits</p> -->
   </div>
   <div class="user-stats inline">
