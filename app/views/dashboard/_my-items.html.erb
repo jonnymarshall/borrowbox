@@ -30,7 +30,11 @@
                 </div>
                 <div class="item-card-footer">
                   <div class="card-rating-box">
-                    <h6><i class="fas fa-star align-middle"></i> <%= item.combined_rating %></h6>
+                    <% if item.comb_rating.nil? %>
+                      <h6>n/a</h6>
+                    <% else %>
+                      <h6><i class="fas fa-star align-middle"></i> <%= item.comb_rating.round(1) %></h6>
+                    <% end %>
                   </div>
                   <div class="card-credits-box">
                     <h6><i class="fab fa-cuttlefish"></i> <%= item.credits %></h6>

@@ -31,7 +31,11 @@
           <div class="rating-block">
             <div>
               <p><strong>
-                <%= @item.combined_rating %>
+                <% if @item.comb_rating.nil? %>
+                  n/a
+                <% else %>
+                  <%= @item.comb_rating.round(1) %>
+                <% end %>
               </strong></p>
             </div>
           </div>
@@ -45,7 +49,11 @@
         <div class="inline space-between user-rating">
           <div><p><%= @item.name %>'s Rating</p></div>
           <div><p>
-            <%= @item.item_rating %>
+            <% if @item.item_rating.nil? %>
+              n/a
+            <% else %>
+              <%= @item.item_rating.round(1) %>
+            <% end %>
           </p></div>
         </div>
         <div class="progress">
@@ -55,7 +63,10 @@
         <div class="inline space-between user-rating">
           <div><p><%= @item.user.first_name %>'s Rating</p></div>
           <div><p>
-            <%= @item.user_rating %>
+            <% if @item.user_rating.nil? %>
+              n/a
+            <% end %>
+              <%= @item.user_rating.round(1) %>
           </p></div>
         </div>
         <div class="progress">
