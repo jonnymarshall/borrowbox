@@ -6,9 +6,6 @@
       <%= render 'user-area' %>
       <%= render 'tabs' %>
 
-
-<i id="response-message-notification" class="fas fa-comment hidden"></i>
-
 <!-- REQUESTED -->
       <div id="requested-booking-cards">
         <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
