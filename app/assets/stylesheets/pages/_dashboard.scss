@@ -46,6 +46,7 @@
 .user-credits {
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
+  display: flex;
   // background-color: orange;
   h3 {
     color: #008e82;
@@ -54,6 +55,12 @@
   p {
     margin: 3px 0px 0px 0px;
     font-size: 14px;
+  }
+  h4 {
+    color: #008e82;
+    margin: 0px 10px 0px 0px;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
   }
 }
 

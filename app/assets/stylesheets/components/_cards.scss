@@ -85,14 +85,17 @@
 .card-rating-box {
   position: relative;
   height: 30px;
-  width: 60px;
+  width: 75px;
   border: 1px solid #E2E2E2;
   border-radius: 8px;
   margin-right: 10px;
+  .fas.fa-star {
+    margin: 0px 3px 0px 0px;
+  }
   h6 {
     position: absolute;
-    top: 15%;
-    left: 20%;
+    top: 20%;
+    left: 12%;
     margin: 0;
   }
 }
@@ -100,14 +103,23 @@
 .card-credits-box {
   position: relative;
   height: 30px;
-  width: 80px;
+  width: 75px;
   border: 1px solid #E2E2E2;
   border-radius: 8px;
   text-align: center;
   h6 {
     position: absolute;
     top: 20%;
-    left: 20%;
+    left: 35%;
     margin: 0;
+  }
+  h4 {
+    position: absolute;
+    color: #008e82;
+    margin: 0px 10px 0px 0px;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    top: 0%;
+    left: 15%;
   }
 }
