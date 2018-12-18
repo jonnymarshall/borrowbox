@@ -8,7 +8,7 @@
     <h1>Borrowbox</h1>
     <p>Stop buying. Start borrowing.</p>
     <div class="searchbar">
-      <%= form_tag items_path, method: :get , class: 'form-horizontal col-sm-10' do  %>
+      <%= form_tag items_path, method: :get , class: 'form-horizontal col-sm-10', style: "padding-right :0;align :middle" do  %>
         <% if request.location.city.nil? %>
           <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "What do you want to borrow?" %>
         <% else %>
@@ -16,11 +16,13 @@
           <%= hidden_field_tag :address, request.location.city %>
         <% end %>
       <% end %>
-      <%= link_to items_path, class: "btn btn-primary", style: "background-color :#3D9082" do %>
+      <%= link_to items_path, class: "btn btn-primary", style: "background-color :#3D9082;border-color :#3D9082" do %>
         <i class="fas fa-search"></i>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= render '/pages/about' %>
+<%= render "about" %>
+<%= render "credits" %>
+
