@@ -12,21 +12,21 @@
 <!-- REQUESTED -->
       <div id="requested-booking-cards">
         <% current_user.bookings.where(status: :requested).order(created_at: :desc).each do |booking| %>
-          <%= render 'booking', booking: booking, status: :requested %>
+          <%= render 'booking', booking: booking %>
         <% end %>
       </div>
 
 <!-- BORROWING -->
       <div id="borrowing-booking-cards">
         <% current_user.bookings.where(status: :borrowing).order(created_at: :desc).each do |booking| %>
-          <%= render 'booking', booking: booking, status: :borrowing %>
+          <%= render 'booking', booking: booking %>
         <% end %>
       </div>
 
 <!-- BORROWED -->
         <div id="borrowed-booking-cards">
           <% current_user.bookings.where(status: :borrowed).order(created_at: :desc).each do |booking| %>
-            <%= render 'booking', booking: booking, status: :borrowed %>
+            <%= render 'booking', booking: booking %>
           <% end %>
         </div>
 

@@ -2,15 +2,35 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Leave a review for <%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h5>
+        <div class="col-md-12">
+          <h5 class="modal-title" id="exampleModalLongTitle">Leave a review for <%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h5>
+        </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <%= render 'components/new-review', booking: booking %>
-      <div class="modal-footer">
+      <div class="modal-body">
+        <%= form_for [booking, @review] do |f| %>
+          <div class="form-group">
+            <div class="form-group col-md-12">
+              <%= f.text_area :content, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6" style="margin-top:15px;">
+              <%= f.label :item_rating %>:
+              <%= f.number_field :item_rating, class: 'form-control' %><br />
+            </div>
+            <div class="form-group col-md-6" style="margin-top:15px;">
+              <%= f.label :lender_rating %>:
+              <%= f.number_field :lender_rating, class: 'form-control' %><br />
+            </div>
+          </div>
+      <div class="modal-footer" style="border-top:none;">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save review</button>
+        <%= f.submit "Submit review", class: "btn-green btn-sm" %>
+        <% end %>
+      </div>
       </div>
     </div>
   </div>
