@@ -1,0 +1,86 @@
+.hp-about {
+  margin: auto;
+  height: 550px;
+  width: 1000px;
+}
+
+.hpa-container {
+  max-width: 1000px;
+}
+
+.hpa-row {
+  margin-left: 0px;
+  margin-right:0px;
+}
+
+.hp-about h2 {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  width: 50px;
+  text-align: center;
+  width: 1200px;
+  font-size: 30px;
+}
+
+.hpa-text-card i {
+  height: 120px;
+}
+
+
+.hpa-text-card-title {
+  height: 100px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.hpa-line {
+  height: 1px;
+  width: 1000px;
+  margin: auto;
+  border-radius: 1px;
+  margin-bottom: 30px;
+  background-color: #D3D3D3;
+}
+
+.hpa-icons-grid {
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: auto;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hpa-icons {
+  display: block;
+  margin: auto;
+}
+
+
+/*ICONS*/
+
+.fas.fa-hand-holding-usd {
+  color: $green;
+  font-size: 70px;
+  margin-left: 115px;
+}
+
+.fas.fa-users {
+  color: $green;
+  font-size: 70px;
+  margin-left: 115px;
+}
+
+.fas.fa-lock {
+  color: $green;
+  font-size: 70px;
+  margin-left: 125px;
+}
+
+.hpa-icons {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
