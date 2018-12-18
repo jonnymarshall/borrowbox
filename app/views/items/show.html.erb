@@ -65,8 +65,9 @@
           <div><p>
             <% if @item.user_rating.nil? %>
               n/a
-            <% end %>
+            <% else %>
               <%= @item.user_rating.round(1) %>
+            <% end %>
           </p></div>
         </div>
         <div class="progress">
