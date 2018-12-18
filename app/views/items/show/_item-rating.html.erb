@@ -1,0 +1,52 @@
+<div class="item-rating">
+  <div class="inline">
+    <div class="rating-block">
+      <div>
+        <p><strong>
+          <% if @item.comb_rating.nil? %>
+            n/a
+          <% else %>
+            <%= @item.comb_rating.round(1) %>
+          <% end %>
+        </strong></p>
+      </div>
+    </div>
+    <div>
+      <h4 class="kill-margin-top kill-margin-bottom"><%= @item.user.first_name %></h4>
+      <p class="kill-margin-top kill-margin-bottom" id=reviews-number>
+        <%= "#{@item.reviews.count} Total Reviews"%>
+      </p>
+    </div>
+  </div>
+  <div class="inline space-between user-rating">
+   <div>
+    <p><%= @item.name %>'s Rating</p>
+  </div>
+   <div>
+    <p><% if @item.item_rating.nil? %>
+       n/a
+      <% else %>
+       <%= @item.item_rating.round(1) %>
+     <% end %>
+   </p>
+  </div>
+ </div>
+  <div class="progress">
+   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.item_rating_bar * 20 %>%;">
+   </div>
+ </div>
+ <div class="inline space-between user-rating">
+   <div><p><%= @item.user.first_name %>'s Rating</p></div>
+   <div><p>
+     <% if @item.user.average_rating.nil? %>
+       n/a
+     <% else %>
+       <%= @item.user.average_rating.round(1) %>
+     <% end %>
+   </p></div>
+ </div>
+ <div class="progress">
+   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.user.average_rating * 20 %>%;">
+   </div>
+ </div>
+</div>

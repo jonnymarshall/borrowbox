@@ -1,0 +1,29 @@
+<div class="review">
+  <div class="inline space-between">
+    <div class="inline">
+      <% unless review.booking.user.photo_fake == nil %>
+      <div class="avatar-small" style="background-image: url(<%= review.booking.user.photo_fake %>)"></div>
+      <% else %>
+      <div class="avatar-small" style="background-image: url(<%= cl_image_path review.booking.user.photo %>)"></div>
+      <% end %>
+      <div class="reviewer">
+        <div>
+          <p><strong>
+            <%= review.booking.user.first_name %>
+            <%= review.booking.user.last_name %>
+          </strong></p>
+        </div>
+        <div><p><%= review.created_at.strftime("%b %d, %Y") %></p></div>
+      </div>
+    </div>
+    <div class="stars">
+      <% review.item_rating.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.item_rating).times do %>
+      <i class="far fa-star"></i>
+      <% end %>
+    </div>
+  </div>
+  <p><%= review.content %></p>
+</div>

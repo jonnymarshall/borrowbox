@@ -8,9 +8,8 @@
       <div class="booking-card-footer-right">
         <div class="mark-item-container">
         <!-- BUTTONS -->
-
-        <% case status %>
-        <% when :requested %>
+        <% case booking.status %>
+        <% when "requested" %>
           <% if booking.response_message_read %>
             <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
           <% else %>
@@ -18,11 +17,11 @@
               Read message
             </button>
           <% end %>
-        <% when :borrowing %>
+        <% when "borrowing" %>
           <div class="mark-item-container">
             <%= link_to "Item returned", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green btn-sm', method: :patch} %>
           </div>
-        <% when :borrowed %>
+        <% when "borrowed" %>
           <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#lr_modal_#{booking.id}" %>">
             Leave a review
           </button>
