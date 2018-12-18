@@ -216,7 +216,6 @@ items_attributes = [
     description: "1.3AH Cordless. Request if you are already used to speed drills.",
     user: User.all.sample,
     credits: 20,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1541474424879-14480b8e249d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -225,7 +224,6 @@ items_attributes = [
     description: "Cordless 18V, lovely drill, I have been using this mainly for wood",
     user: User.all.sample,
     credits: 80,
-    comb_rating: rand(3..5),
     photo_fake:"https://images.unsplash.com/photo-1540104539488-92a51bbc0410?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -234,7 +232,6 @@ items_attributes = [
     description: "brrr brrr brrr",
     user: User.all.sample,
     credits: 25,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -243,7 +240,6 @@ items_attributes = [
     description: "Best fitting for projects with light metal as it comes with special tools for that.",
     user: User.all.sample,
     credits: 90,
-    comb_rating: rand(3..5),
     photo_fake:"https://images.unsplash.com/photo-1518709414768-a88981a4515d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -252,7 +248,6 @@ items_attributes = [
     description: "No pets allowed",
     user: User.all.sample,
     credits: 210,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1531984557360-89184e00f590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -262,7 +257,6 @@ items_attributes = [
     description: "Easy to put up, party approved! Fits chairs for 20 people easily",
     user: User.all.sample,
     credits: 500,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -271,7 +265,6 @@ items_attributes = [
     description: "For a very exclusive party",
     user: User.all.sample,
     credits: 400,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1479244209311-71e35c910f59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -280,7 +273,6 @@ items_attributes = [
     description: "Colourful and nice, perfect for childrens birthday parties!",
     user: User.all.sample,
     credits: 500,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1496080174650-637e3f22fa03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -290,7 +282,6 @@ items_attributes = [
     description: "16oz smells nice",
     user: User.all.sample,
     credits: 50,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1526714719019-b3032b5b5aac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -299,7 +290,6 @@ items_attributes = [
     description: "53oz handle with care",
     user: User.all.sample,
     credits: 20,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.unsplash.com/photo-1542583633-aa0b0e378e2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -311,7 +301,6 @@ items_attributes = [
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 135,
-    comb_rating: rand(3..5),
     photo_fake: "https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   },
 
@@ -322,7 +311,6 @@ items_attributes = [
     description: "Large suitcase, fits 30kg",
     user: User.all.sample,
     credits: 135,
-    comb_rating: rand(3..5),
     photo_fake: "https://unsplash.com/photos/5dehYy5BkRw"
   },
 
@@ -333,7 +321,6 @@ items_attributes = [
     description: "Very good and sustainable lawn mower.",
     user: User.all.sample,
     credits: 135,
-    comb_rating: rand(3..5),
     photo_fake: "https://unsplash.com/photos/5dehYy5BkRw"
   },
 
@@ -344,7 +331,6 @@ items_attributes = [
     description: "Very loud and powerful boxes, can easily be paired with other DJ equipment.",
     user: User.all.sample,
     credits: 135,
-    comb_rating: rand(3..5),
     photo_fake: "https://unsplash.com/photos/5dehYy5BkRw"
   },
 
@@ -368,15 +354,22 @@ puts "Created latitude and longitude for items..."
 puts "Creating bookings..."
 n_bookings = users_attributes.count * 4
 
+m_request = ["I wanna borrow this"]
+m_response = ["You can borrow this"]
+
 n_bookings.times do |booking|
+  count = 0
   booking = Booking.new(
-    start_date: 20181201,
-    end_date: 20181202,
+    start_date: 20181201 + count,
+    end_date: 20181202 + count,
     user: User.all.sample,
     item: Item.all.sample,
-    status: rand(0..2)
+    status: rand(0..2),
+    request_message: m_request.sample,
+    response_message: m_response.sample
   )
   booking.save!
+  count += 1
 end
 puts "Created #{Booking.count} bookings..."
 
