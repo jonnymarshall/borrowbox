@@ -21,6 +21,7 @@ gem 'geocoder'
 # *** additional gems ***
 # jonny
 gem 'faker'
+gem 'flatpickr'
 
 # dan
 

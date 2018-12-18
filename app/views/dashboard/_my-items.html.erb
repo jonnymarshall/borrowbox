@@ -78,13 +78,12 @@
           <%= f.input :address %>
           <%= f.input :credits %>
           <%= f.input :photo %>
-          <%= f.submit "add item", class: "btn btn-green" %>
-          <% end %>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-green">Add item</button> -->
+        <%= f.submit "add item", class: "btn btn-green" %>
+          <% end %>
       </div>
     </div>
   </div>
