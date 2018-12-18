@@ -14,7 +14,7 @@
   background: linear-gradient(#FFFFFF, #F7F7F7);
   border: 1px solid #E2E2E2;
   border-radius: 10px;
-  margin-bottom: 12px;
+  margin: 0px 2.5px 12px 2.5px;
   &:hover {
     background: linear-gradient(#F7F7F7, #F1F1F1);
   }
@@ -25,8 +25,6 @@
   grid-row: 1 / span 1;
   border-radius: 10px 10px 0px 0px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
 
