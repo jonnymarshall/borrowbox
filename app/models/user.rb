@@ -14,4 +14,13 @@ class User < ApplicationRecord
   validates :credits, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  def average_rating
+    sql_query = "SELECT AVG(reviews.lender_rating) FROM reviews "\
+      "JOIN items ON items.user_id = #{id} "\
+      "JOIN bookings ON bookings.item_id = items.id "\
+      "WHERE reviews.booking_id = bookings.id"
+
+    User.find_by_sql(sql_query)[0].avg
+  end
 end

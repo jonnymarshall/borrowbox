@@ -3,11 +3,18 @@ class Review < ApplicationRecord
 
   validates :content, presence: true
 
+  # after_create :calculate_combined_rating
+
   def average_review
     calculate_average(item_rating, lender_rating)
   end
 
   private
+
+  # def calculate_combined_rating
+  #   item.update(combined_rating: )
+
+  # end
 
   def calculate_average(item_rating, lender_rating)
     ratings_array = [item_rating, lender_rating]

@@ -1,0 +1,17 @@
+<div class="modal fade" id="<%="rm_modal_#{booking.id}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%="#modal_#{booking.id}" %>"><%= "#{booking.item.user.first_name} responded to your request" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <p><%= booking.response_message %></p>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
+      </div>
+    </div>
+  </div>
+</div>

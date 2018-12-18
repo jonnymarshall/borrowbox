@@ -1,0 +1,12 @@
+<div class="modal-body">
+  <%= booking.item.name %>
+  <%= form_for [booking, @review] do |f| %>
+    <%= f.label :content %>:
+    <%= f.text_area :content %><br />
+    <%= f.label :item_rating %>:
+    <%= f.number_field :item_rating %><br />
+    <%= f.label :lender_rating %>:
+    <%= f.number_field :lender_rating %><br />
+    <%= f.submit %>
+  <% end %>
+</div>
