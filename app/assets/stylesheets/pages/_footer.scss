@@ -1,0 +1,115 @@
+.hp-footer {
+  background-color: $light-gray;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  width: 2000px;
+  padding: 0px 200px;
+  margin-top: 40px;
+}
+
+.hpf-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hpf-links {
+  padding: 50px;
+}
+
+.hpf-links h3 {
+  color: #454545;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+.hpf-links ul {
+  list-style-type: none;
+  padding: 6px 0;
+}
+
+.hpf-links ul li {
+  padding: 3px 0;
+}
+
+.hpf-aboutlink {
+  margin-top: 25px;
+  padding: 50px;
+}
+
+.hpf-aboutlink h3 {
+  color: #454545;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+.hpf-aboutlink ul {
+  list-style-type: none;
+  padding: 6px 0;
+}
+
+.hpf-aboutlink ul li{
+  padding: 3px 0;
+}
+
+.hpf-social-links {
+  display: flex;
+  align-items: center;
+  margin: 0 0px 40px 70px;
+  color: $green;
+}
+
+.fa-github:before {
+  content: "\f09b";
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa-instagram:before {
+  content: "\f16d";
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa-facebook:before {
+  content: "\f09a";
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa-twitter:before {
+  content: "\f099";
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.fa-linkedin:before {
+  content: "\f08c";
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.col-hpf {
+  height: 50px;
+  background-color: $light-gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-hpf .hpf-item {
+  color: #454545;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-right: -150px;
+  width: 30%;
+}
