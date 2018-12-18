@@ -1,19 +1,20 @@
 <div class="list-area" id="dashboard-tabs">
         <div class="tabs">
           <a class="tab active" id="requested" href="#">
-            <h3>350</h3>
+            <h3><%= current_user.bookings.where(status: :requested).count %>
+            </h3>
             <p>Requested</p>
           </a>
           <a class="tab" id="borrowing" href="#">
-            <h3>456</h3>
+            <h3><%= current_user.bookings.where(status: :borrowing).count %></h3>
             <p>Borrowing</p>
           </a>
           <a class="tab" id="borrowed" href="#">
-            <h3>189</h3>
+            <h3><%= current_user.bookings.where(status: :borrowed).count %></h3>
             <p>Borrowed</p>
           </a>
           <a class="tab" id="my-items" href="#">
-            <h3>13</h3>
+            <h3><%= current_user.items.count %></h3>
             <p>My Items</p>
           </a>
         </div>
