@@ -15,7 +15,14 @@
       <!-- calendar -->
       <div class="item-calendar">
         <div class="booking-form booking-form-borrowbox">
-          <%= render '/items/show/booking_form' %>
+          <% if @item.user != current_user %>
+            <%= render '/items/show/booking_form' %>
+          <% else %>
+            <div class="delete-item">
+              <%= link_to "Delete this item", item_path(@item), class: "btn btn-lightgray btn-delete", method: :delete %>
+            </div>
+            <!-- <button class="btn btn-green btn-delete">Delete item</button> -->
+          <% end %>
         </div>
       </div>
     </div>
