@@ -16,6 +16,6 @@ if (mapTest) {
   mapToggle();
 }
 
-// import { responseMessageNotification } from'../components/response-message-notification';
+import { responseMessageNotification } from'../components/response-message-notification';
 
-// responseMessageNotification();
+responseMessageNotification();
