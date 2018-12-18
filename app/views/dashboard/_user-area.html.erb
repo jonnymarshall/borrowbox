@@ -17,10 +17,10 @@
           <% end %>
         </div>
       </div>
-      <% if current_user.average_rating != "n/a" %>
-      <p>Your rating</p>
+      <% if current_user.average_rating.nil? %>
+        <p>No reviews yet!</p>
       <% else %>
-      <p>No reviews yet!</p>
+        <p>Your rating</p>
       <% end %>
     </div>
   </div>
