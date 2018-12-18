@@ -1,7 +1,7 @@
 <div class="booking-card-footer">
   <div class="card-rating-box">
     <% if booking.item.comb_rating.nil? %>
-      <h6>n/a</h6>
+      <h6><i class="fas fa-star"></i>n/a</h6>
     <% else %>
       <h6><i class="fas fa-star"></i><%= booking.item.comb_rating.round(1) %></h6>
     <% end %>
