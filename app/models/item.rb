@@ -20,10 +20,6 @@ class Item < ApplicationRecord
     reviews.average(:item_rating)
   end
 
-  # def user_rating
-  #   reviews.average(:lender_rating)
-  # end
-
   private
 
   def calculate_average(ratings_array)
