@@ -8,6 +8,7 @@
   display: flex;
   // align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .banner h1 {
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
@@ -23,7 +24,7 @@
 }
 
 .banner-content {
-  margin: 170px;
+  margin: 110px 170px 170px 170px;
 }
 
 .banner-content h1 {
