@@ -1,12 +1,13 @@
         <div id="my-items-cards">
           <div class="cards-area">
 
-            <div class="item-card-grid">
+            <div class="item-card-grid add-item-pointer" type="button" data-target="#exampleModalCenter" data-toggle="modal">
                   <div class="new-item-block">
                   <i class="fas fa-plus-circle add-item-lrg"></i>
                   <h6>Add an item</h6>
                 </div>
-                <a href="#bottom">go to bottom</a>
+                <!-- Button trigger modal -->
+
               </div>
 
           <% current_user.items.order(created_at: :desc).each do |item| %>
@@ -43,28 +44,44 @@
         </div>
         </div>
 
-        <div id="bottom">
-          <h2>Add an item</h2>
-          <%= simple_form_for [@item] do |f| %>
-            <% if @item.errors.any? %>
-              <div class="errors-container">
-                <ul>
-                  <% @item.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">Add an item</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-            <% end %>
+              <div class="modal-body">
+                <div>
+                  <%= simple_form_for [@item] do |f| %>
+                    <% if @item.errors.any? %>
+                      <div class="errors-container">
+                        <ul>
+                          <% @item.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    <% end %>
 
-            <%= f.input :name %>
-            <%= f.input :description %>
-            <%= f.input :address %>
-            <%= f.input :credits %>
-            <%= f.input :photo %>
-            <%= f.submit "add item", class: "btn btn-green" %>
-          <% end %>
-
-
-
-
+                    <%= f.input :name %>
+                    <%= f.input :description %>
+                    <%= f.input :address %>
+                    <%= f.input :credits %>
+                    <%= f.input :photo %>
+                    <%= f.submit "add item", class: "btn btn-green" %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-green">Add item</button> -->
+              </div>
+            </div>
+          </div>
         </div>
