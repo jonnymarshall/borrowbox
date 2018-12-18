@@ -63,14 +63,15 @@
         <div class="inline space-between user-rating">
           <div><p><%= @item.user.first_name %>'s Rating</p></div>
           <div><p>
-            <% if @item.user_rating.nil? %>
+            <% if @item.user.average_rating.nil? %>
               n/a
+            <% else %>
+              <%= @item.user.average_rating.round(1) %>
             <% end %>
-              <%= @item.user_rating.round(1) %>
           </p></div>
         </div>
         <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.user_rating * 20 %>%;">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: <%= @item.user.average_rating * 20 %>%;">
           </div>
         </div>
       </div>

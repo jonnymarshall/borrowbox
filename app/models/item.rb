@@ -20,9 +20,9 @@ class Item < ApplicationRecord
     reviews.average(:item_rating)
   end
 
-  def user_rating
-    user.reviews.average(:lender_rating)
-  end
+  # def user_rating
+  #   reviews.average(:lender_rating)
+  # end
 
   private
 
