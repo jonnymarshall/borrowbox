@@ -1,9 +1,8 @@
-<%# if booking.response_message_read == false %>
-  <!-- <div class="green-bar"></div>  -->
-<%# end %>
-    <div class="booking-card-grid">
+<div class="booking-card-grid">
+  <%= link_to item_path(booking.item), class: 'booking-card-grid-link' do %>
+  <% end %>
 
-        <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
+  <%= render 'components/booking_cards/booking-card-request-info-and-message-sections', booking: booking %>
 
       <div class="booking-card-footer-right">
         <div class="mark-item-container">
@@ -12,10 +11,6 @@
         <% when "requested" %>
           <% if booking.response_message_read %>
             <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
-          <% else %>
-            <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#rm_modal_#{booking.id}" %>">
-              Read message
-            </button>
           <% end %>
         <% when "borrowing" %>
           <div class="mark-item-container">
