@@ -10,28 +10,28 @@
       <div class="dashboard-rating-block-container inline">
         <div class="dashboard-rating-block">
           <% if current_user.average_rating.nil? %>
-            <strong>n/a</strong>
+          <strong>n/a</strong>
           <% else %>
-            <strong><%= current_user.average_rating.round(1) %></strong>
+          <strong><%= current_user.average_rating.round(1) %></strong>
           <% end %>
         </div>
       </div>
       <% if current_user.average_rating.nil? %>
-        <p>No reviews yet!</p>
+      <p>No reviews yet!</p>
       <% else %>
-        <p>Your rating</p>
+      <p>Your rating</p>
       <% end %>
     </div>
   </div>
   <div class="user-credits">
     <!-- <p><p class="credits-icon">b&nbsp;</p> -->
-      <div id=credits-b>
-          <h4>b</h4>
-          <br>
-      </div>
-      <h3><strong>
-        <%=number_with_delimiter(current_user.credits, :delimiter => ',') %>
-      </strong></h3>
+    <div id=credits-b>
+      <h4>b</h4>
+      <br>
+    </div>
+    <h3><strong>
+      <%=number_with_delimiter(current_user.credits, :delimiter => ',') %>
+    </strong></h3>
     <!-- <p>Credits</p> -->
   </div>
   <div class="user-stats inline">

@@ -1,6 +1,5 @@
 <div id="my-items-cards">
   <div class="cards-area">
-
     <!-- Modal trigger -->
     <div class="item-card-grid add-item-pointer" type="button" data-target="#exampleModalCenter" data-toggle="modal">
       <div class="new-item-block">
@@ -73,11 +72,11 @@
           </div>
           <% end %>
 
-          <%= f.input :name %>
-          <%= f.input :description %>
-          <%= f.input :address %>
-          <%= f.input :credits %>
-          <%= f.input :photo %>
+          <%= f.input :name, required: true %>
+          <%= f.input :description, required: true %>
+          <%= f.input :address, required: true %>
+          <%= f.input :credits, required: true, input_html: { min: '5'} %>
+          <%= f.input :photo, required: true %>
         </div>
       </div>
       <div class="modal-footer">

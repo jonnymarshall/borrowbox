@@ -53,8 +53,14 @@
   border: 1px solid #E2E2E2;
   border-radius: 10px;
   margin-bottom: 0px;
+  h6 {
+    margin-top: 2.5px;
+  }
   &:hover {
     background: linear-gradient(#F7F7F7, #F1F1F1);
+  }
+  h6 {
+    margin-top: 2px;
   }
 }
 

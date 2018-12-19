@@ -11,7 +11,7 @@
   grid-template-columns: 100%;
   grid-template-rows: 50% 11fr 8fr 8fr 4fr;
   position: sticky;
-  top: 70px;
+  top: 60px;
   left: 0;
   // padding: 10px;
   // background-color: yellow;
@@ -52,6 +52,7 @@
   h3 {
     color: #008e82;
     margin: 0px;
+    margin-top: 3px;
   }
   p {
     margin: 3px 0px 0px 0px;
