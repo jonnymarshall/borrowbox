@@ -88,4 +88,60 @@
     content: "Uncomplicated and advantageous!",
     item_rating: rand(3..5)
   },
+
+  {
+    title: "Happy!",
+    content: "The item worked as expected, I'm really happy with how convenient and easy it all was",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "Overall great!",
+    content: "The lender was very responsive, it was easy to plan the meeting and the item was exactly what I needed, thanks!",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "Really good!",
+    content: "I've got to give a special thanks to the lender for making my life so easy",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "Will come back!",
+    content: "This will definitly become a habit of mine, borrowing is just better than buying and storing, the lender was super nice",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "Thank you!!",
+    content: "I will be sure to come back and borrow some more (:",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "Delighted",
+    content: "Thank you so much for the great service and attention",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "This was great",
+    content: "The lender was very nice and the item worked properly",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "(:",
+    content: "Will make sure to tell everyone about the service, thanks",
+    item_rating: rand(3..5)
+  },
+
+  {
+    title: "Chuffed",
+    content: "The lender was very honest and transparent, easy to communicate with and overall a very nice person, the item worked as expected, the whole experience was very pleasant and convenient so thank you",
+    item_rating: rand(3..5)
+  },
+
+
 ]
