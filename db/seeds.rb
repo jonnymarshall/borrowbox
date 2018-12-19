@@ -26,7 +26,7 @@ users_attributes = [
     last_name: "Moreira",
     email: "dmborrow@box.com",
     password: "dborrowbox",
-    credits: 1000,
+    credits: 10000,
     photo_fake: "http://kitt.lewagon.com/placeholder/users/dfmore"
   },
 
@@ -35,7 +35,7 @@ users_attributes = [
     last_name: "Salgueiro",
     email: "isborrow@box.com",
     password: "iborrowbox",
-    credits: 1200,
+    credits: 10000,
     photo_fake: "http://kitt.lewagon.com/placeholder/users/ineslgrc"
   },
 
@@ -44,7 +44,7 @@ users_attributes = [
     last_name: "Schaffner",
     email: "csborrow@box.com",
     password: "cborrowbox",
-    credits: 3000,
+    credits: 10000,
     photo_fake: "http://kitt.lewagon.com/placeholder/users/carlottaschaffner"
   },
 
@@ -215,7 +215,7 @@ items_attributes = [
     name: "Guild Drill Driver ",
     description: "1.3AH Cordless. Request if you are already used to speed drills.",
     user: User.all.sample,
-    credits: 20,
+    credits: 250,
     photo_fake: "https://images.unsplash.com/photo-1541474424879-14480b8e249d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -223,7 +223,7 @@ items_attributes = [
     name: "Makita G-Series Drill",
     description: "Cordless 18V, lovely drill, I have been using this mainly for wood",
     user: User.all.sample,
-    credits: 80,
+    credits: 230,
     photo_fake:"https://images.unsplash.com/photo-1540104539488-92a51bbc0410?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -231,7 +231,7 @@ items_attributes = [
     name: "Bosch PBH 2100 RE",
     description: "brrr brrr brrr",
     user: User.all.sample,
-    credits: 25,
+    credits: 200,
     photo_fake: "https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -239,7 +239,7 @@ items_attributes = [
     name: "WORX Hammer Drill",
     description: "Best fitting for projects with light metal as it comes with special tools for that.",
     user: User.all.sample,
-    credits: 90,
+    credits: 260,
     photo_fake:"https://images.unsplash.com/photo-1518709414768-a88981a4515d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -264,7 +264,7 @@ items_attributes = [
     name: "Small Party Tent",
     description: "For a very exclusive party",
     user: User.all.sample,
-    credits: 400,
+    credits: 490,
     photo_fake: "https://images.unsplash.com/photo-1479244209311-71e35c910f59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
 
@@ -286,52 +286,399 @@ items_attributes = [
   },
 
   {
-    name: "Magnusson Single Piece",
+    name: "Single Piece Hammer",
     description: "53oz handle with care",
     user: User.all.sample,
-    credits: 20,
+    credits: 50,
     photo_fake: "https://images.unsplash.com/photo-1542583633-aa0b0e378e2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
 
 #VACUUM CLEANERS
   {
-    name: "Vac 3000",
-    description: "Powerful cleaner, comes with empty vacuum bags and different vacuum tools.",
+    name: "Vacuum 3000 Wireless",
+    description: "Powerful cleaner, comes with empty bags and different tools.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
-    credits: 135,
+    credits: 500,
     photo_fake: "https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+
+  {
+    name: "Electric Vacuum",
+    description: "Quiet and pet friendly, comes with empty vacuum bags and different vacuum tools.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 450,
+    photo_fake: "https://images.unsplash.com/photo-1527515673510-8aa78ce21f9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Vacuum",
+    description: "Includes the original accessories.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 480,
+    photo_fake: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
+  },
+
+  {
+    name: "Vacuum Cleaner",
+    description: "Comes with accessories.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 500,
+    photo_fake: "https://images.pexels.com/photos/844874/pexels-photo-844874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+
+{
+    name: "Electric Vacuum",
+    description: "Quiet vacuum, comes with it's accessories.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 460,
+    photo_fake: "https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+
+{
+    name: "Vacuum Breeze",
+    description: "Bagless Cylinder Vacuum Cleaner, [BR71BR01].",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 450,
+    photo_fake: "https://cdn.pixabay.com/photo/2014/02/17/14/28/vacuum-cleaner-268179__340.jpg"
+  },
+
+{
+    name: "Vacuum Freedom",
+    description: "2in1 Pets Cordless Stick Vacuum Cleaner, Powerful, Titanium.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 560,
+    photo_fake: "https://cdn.pixabay.com/photo/2014/02/17/14/03/vacuum-cleaner-268161__340.jpg"
+  },
+
+  {
+    name: "Motorised Vacuum",
+    description: "Comes with brush head, powerful.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 520,
+    photo_fake: "https://cdn.pixabay.com/photo/2018/10/31/16/30/robot-vacuum-cleaner-3786243__340.jpg"
+  },
+
+{
+    name: "Vaporised Vacuum",
+    description: "Gets rid of stains, deep cleaner.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 460,
+    photo_fake: "https://cdn.pixabay.com/photo/2014/07/01/10/48/cleaning-381089__340.jpg"
+  },
+
+  {
+    name: "Upright NEW Vaccuum",
+    description: "BH51120PTV Vacuum Cleaner 20V Air Cordless Lift.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 400,
+    photo_fake: "https://cdn.pixabay.com/photo/2014/07/01/10/48/cleaning-381090__340.jpg"
+  },
+
+  {
+    name: "Modern Vacuum Cleaner",
+    description: "Cordless and Quiet.",
+    user: User.all.sample,
+    # address: "Rua da Moeda 1, Lisbon",
+    credits: 410,
+    photo_fake: "https://image.shutterstock.com/image-photo/closeup-vacuum-cleaner-over-grey-260nw-1068478943.jpg"
   },
 
 
 #SUITCASES
   {
-    name: "Suitcase",
+    name: "Spacey Suitcase",
     description: "Large suitcase, fits 30kg",
     user: User.all.sample,
-    credits: 135,
-    photo_fake: "https://unsplash.com/photos/5dehYy5BkRw"
+    credits: 250,
+    photo_fake: "https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
 
+  {
+    name: "Suitcase",
+    description: "Standard suitcase, usually allowed in the cabin",
+    user: User.all.sample,
+    credits: 220,
+    photo_fake: "https://images.unsplash.com/photo-1502301197179-65228ab57f78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "New Suitcase",
+    description: "Perfect condtions, roomy",
+    user: User.all.sample,
+    credits: 240,
+    photo_fake: "https://images.unsplash.com/photo-1525103504173-8dc1582c7430?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Standard Suitcase",
+    description: "This suitcase has served me for years! Quite good",
+    user: User.all.sample,
+    credits: 230,
+    photo_fake: "https://images.unsplash.com/photo-1534534573898-db5148bc8b0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Small Suitcase",
+    description: "A small suitcase for a shor trip",
+    user: User.all.sample,
+    credits: 250,
+    photo_fake: "https://images.unsplash.com/photo-1536238349444-c05ffb6837e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Organised Suitcase",
+    description: "This suitcase has got lots of compartments to fit in the most you can",
+    user: User.all.sample,
+    credits: 260,
+    photo_fake: "https://images.unsplash.com/photo-1542323073-dc63913f3262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Big Suitcase",
+    description: "This suitcase is perfect for a big trip",
+    user: User.all.sample,
+    credits: 220,
+    photo_fake: "https://images.unsplash.com/photo-1515935480894-3bab89cf8e89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Business Suitcase",
+    description: "Specialized pockets for pens, notebooks and a laptop",
+    user: User.all.sample,
+    credits: 200,
+    photo_fake: "https://images.unsplash.com/photo-1499985217418-1f2c55099b4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Nomad Suitcase",
+    description: "Suitable for the ones that are always on the move",
+    user: User.all.sample,
+    credits: 230,
+    photo_fake: "https://images.unsplash.com/photo-1499985217418-1f2c55099b4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
 
 #LAWN MOWERS
   {
     name: "Lawn Mower 2000",
     description: "Very good and sustainable lawn mower.",
     user: User.all.sample,
-    credits: 135,
-    photo_fake: "https://unsplash.com/photos/5dehYy5BkRw"
+    credits: 800,
+    photo_fake: "https://images.unsplash.com/photo-1458245201577-fc8a130b8829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Lawn Mower V10",
+    description: "Modern and long lasting.",
+    user: User.all.sample,
+    credits: 850,
+    photo_fake: "https://cdn.pixabay.com/photo/2015/09/13/18/43/lawn-mower-938555__340.jpg"
+  },
+
+  {
+    name: "Brand New Lawn Mower",
+    description: "In perfect conditions, includes accessories.",
+    user: User.all.sample,
+    credits: 820,
+    photo_fake: "https://images.pexels.com/photos/589/garden-grass-meadow-green.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  },
+
+  {
+    name: "Wireless Lawn Mower",
+    description: "Easier to maneuver.",
+    user: User.all.sample,
+    credits: 750,
+    photo_fake: "https://as2.ftcdn.net/jpg/00/66/54/33/500_F_66543364_kdFacbCAyAX1KkbXvcIpWhFmjbUaUqB4.jpg"
+  },
+
+  {
+    name: "BOSCH Lawn Mower",
+    description: "Includes original tools and accessories.",
+    user: User.all.sample,
+    credits: 790,
+    photo_fake: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS19t8biYQg9mUredClUI_YLdibB-9p6VArUgs8HCJtxm6aNY_neQ"
   },
 
 
 #STEREO BOXES
   {
     name: "Panasonic Stereo Boxes",
-    description: "Very loud and powerful boxes, can easily be paired with other DJ equipment.",
+    description: "Very loud owerful boxes, can be paired with other DJ equipment.",
     user: User.all.sample,
-    credits: 135,
-    photo_fake: "https://unsplash.com/photos/5dehYy5BkRw"
+    credits: 455,
+    photo_fake: "https://images.pexels.com/photos/159613/ghettoblaster-radio-recorder-boombox-old-school-159613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+
+  {
+    name: "Vintage Stereo Boxes",
+    description: "For the ones who love the characteristic sound.",
+    user: User.all.sample,
+    credits: 500,
+    photo_fake: "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Stereo Box Amplifier",
+    description: "Bluetooth & Built-in Microphone.",
+    user: User.all.sample,
+    credits: 450,
+    photo_fake: "https://image.shutterstock.com/image-photo/stereo-system-260nw-416299081.jpg"
+  },
+
+  {
+    name: "Pro-Ject Stereo Box 20",
+    description: "Portable Stereo Boombox with Programmable CD Player and FM.",
+    user: User.all.sample,
+    credits: 480,
+    photo_fake: "https://images.pexels.com/photos/9295/vintage-music-business-shop.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  },
+
+  {
+    name: "Sony Stereo",
+    description: "High Power One Box Music System with Lighting Effects.",
+    user: User.all.sample,
+    credits: 470,
+    photo_fake: "https://images.pexels.com/photos/157557/pexels-photo-157557.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  },
+
+#TOOLS 41
+  {
+    name: "Tool Set",
+    description: "Tool Kit Set for DIY and Repair with Combination Pliers in Plastic Toolbox.",
+    user: User.all.sample,
+    credits: 500,
+    photo_fake: "https://images.unsplash.com/photo-1534190239940-9ba8944ea261?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "WORKPRO Tool Set",
+    description: "Drive Socket Set, Quick Release Ratchet Wrench",
+    user: User.all.sample,
+    credits: 500,
+    photo_fake: "https://images.unsplash.com/photo-1534190239940-9ba8944ea261?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "38 Piece Tool Kit",
+    description: "Magnetic Precision Ratcheting Screwdriver & Phillips, Slotted, Torx",
+    user: User.all.sample,
+    credits: 550,
+    photo_fake: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "399 PCS TOOL KIT",
+    description: "SOCKET SET / SCREW DRIVERS + MUCH MORE",
+    user: User.all.sample,
+    credits: 490,
+    photo_fake: "https://images.unsplash.com/photo-1507126694149-a8685f99aa4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Haus256pc Hand Tool",
+    description: "Combo Tool Kit with Satin-finished Tools & Heavy Duty Storage Case",
+    user: User.all.sample,
+    credits: 450,
+    photo_fake: "https://images.unsplash.com/photo-1540207605711-f0b85c37c8ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+#CAMERAS
+{
+    name: "PANASONIC Camera",
+    description: "DC-G9LEB-K 12-60 mm Leica DG Lens Mirrorless Compact System Camera",
+    user: User.all.sample,
+    credits: 630,
+    photo_fake: "https://images.unsplash.com/photo-1495512046360-dad6e8b83667?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Canon EOS Camera",
+    description: "DSLR Camera and EF-S 18-55 mm f/3.5-5.6 III Lens",
+    user: User.all.sample,
+    credits: 650,
+    photo_fake: "https://images.unsplash.com/photo-1503847003563-6819dd01382b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Nikon B500 Camera",
+    description: "Coolpix Digital Compact Camera - Black",
+    user: User.all.sample,
+    credits: 600,
+    photo_fake: "https://images.unsplash.com/photo-1495844138710-938feaeeadcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Sony Camera",
+    description: "Digital Compact Camera with Wi-Fi and NFC (18.2 MP, 20x Optical Zoom)",
+    user: User.all.sample,
+    credits: 610,
+    photo_fake: "https://images.unsplash.com/photo-1494251268800-9ca078482168?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Sony Camera CEH",
+    description: "Digital Compact Camera (20.1 MP, 5x Zoom, 2.7 LCD, 720p HD, 23 mm)",
+    user: User.all.sample,
+    credits: 700,
+    photo_fake: "https://images.unsplash.com/photo-1479909031872-133432b2d7c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Crosstour Action Camera",
+    description: "Wifi Full HD 1080P Waterproof Cam 2” LCD Screen 98ft Underwater 170° Wide-angle",
+    user: User.all.sample,
+    credits: 750,
+    photo_fake: "https://images.unsplash.com/photo-1495707902641-75cac588d2e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+
+ {
+    name: "Digital Camera",
+    description: "Youmeet Digital Cameras - 2.7 inch 18 MP for Holiday Family, Friends, Kids",
+    user: User.all.sample,
+    credits: 645,
+    photo_fake: "https://images.unsplash.com/photo-1486574655068-162e94137442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Vlogging Camera",
+    description: "24MP Ultra HD WiFi Digital Camera 3.0 Inch 180 Degree Rotation Flip Screen",
+    user: User.all.sample,
+    credits: 70,
+    photo_fake: "https://images.unsplash.com/photo-1493805503700-3219b693ffcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Sony DSC-RX10 Camera",
+    description: "Black 20.2 MP 8.3 x Zoom 3.0 LCD FHD 24 mm Wide Lens Wi-Fi",
+    user: User.all.sample,
+    credits: 750,
+    photo_fake: "https://images.unsplash.com/photo-1529734781665-be642ec8fc8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Camera FUJIFILM",
+    description: "with XF18-55mm lens",
+    user: User.all.sample,
+    credits: 690,
+    photo_fake: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  },
+
+  {
+    name: "Nikon B500 Camera",
+    description: "Coolpix Digital Compact Camera",
+    user: User.all.sample,
+    credits: 620,
+    photo_fake: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 ]
 
@@ -353,8 +700,8 @@ puts "Created latitude and longitude for items..."
 puts "Creating bookings..."
 n_bookings = users_attributes.count * 4
 
-m_request = ["I wanna borrow this"]
-m_response = ["You can borrow this"]
+m_request = ["Hey I'd really like to borrow this item. Would tomorrow be okay?", "Hi there! Would it be ok if I borrow this tomorrow am?", "Hi there. Just checking this item is definitely available? If so could I grab it at 9?" "Hi there. Would love to borrow this item just for a day please! Would 7 be ok?"]
+m_response = ["Of course you can borrow it, see you then!", "Sure you can. I'll be there to hand it over :)", "Of course no problem at all. Look forward to meeting you.", "Hi there. It is available and yes you can borrow it. See you soon!", "Absolutely, no problem. See you then :)!"]
 
 n_bookings.times do |booking|
   count = 0

@@ -2,8 +2,8 @@ import flatpickr from 'flatpickr';
 
 const dateSelector = function() {
   console.log("hello from dateselector");
-  const startDateinput = document.getElementById('booking_start_date');
-  const endDateinput = document.getElementById('booking_end_date');
+  var startDateinput = document.getElementById('booking_start_date');
+  var endDateinput = document.getElementById('booking_end_date');
 
   if (startDateinput && endDateinput) {
     flatpickr(startDateinput, {

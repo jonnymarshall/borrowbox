@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <title>Borrowbox</title>
+
+    <% if yield(:title).empty? %>
+      <title>Borrowbox</title>
+    <% else %>
+      <title><%= yield(:title)%></title>
+    <% end %>
+
+
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= favicon_link_tag asset_path('favicon.png') %>
