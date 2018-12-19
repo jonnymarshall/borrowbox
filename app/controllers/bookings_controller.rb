@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @review = Review.new
     @booking = Booking.find(params[:id])
     @booking.update(booking_status_params)
     @message_was_read = booking_status_params[:response_message_read].present? && booking_status_params[:response_message_read]
