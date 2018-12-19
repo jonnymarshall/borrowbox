@@ -695,11 +695,11 @@ n_bookings = users_attributes.count * 4
 m_request = ["Hey I'd really like to borrow this item. Would tomorrow be okay?", "Hi there! Would it be ok if I borrow this tomorrow am?", "Hi there. Just checking this item is definitely available? If so could I grab it at 9?" "Hi there. Would love to borrow this item just for a day please! Would 7 be ok?"]
 m_response = ["Of course you can borrow it, see you then!", "Sure you can. I'll be there to hand it over :)", "Of course no problem at all. Look forward to meeting you.", "Hi there. It is available and yes you can borrow it. See you soon!", "Absolutely, no problem. See you then :)!"]
 
-n_bookings.times do |booking|
-  count = 0
+n_bookings.times do
+  random_integer = rand(5..40)
   booking = Booking.new(
-    start_date: 20181201 + count,
-    end_date: 20181202 + count,
+    start_date: Date.today + random_integer,
+    end_date: Date.today + random_integer + rand(1..3),
     user: User.all.sample,
     item: Item.all.sample,
     status: rand(0..2),
@@ -708,137 +708,117 @@ n_bookings.times do |booking|
     response_message_read: true
   )
   booking.save!
-  count += 1
 end
 puts "Created #{Booking.count} bookings..."
 
 #----------REVIEWS SEEDS----------
 puts 'Creating reviews...'
 
- reviews_attributes = [
+reviews = [
   {
     title: "Good as new",
     content: "The item was impeccable, exactly what I needed in perfect conditions. The lender was very nice and helping!",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Very happy",
     content: "It was my first time using the service and I'm very happy with how easy and casual the whole thing was, the lender was very nice and helpfull, definitly recommend it to everyone.",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Not satisfied",
     content: "The item didn't correspond my expectations, the lender wasn't honest about it's conditions, I will look for another lender next time.",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Helpfull!",
     content: "The lender was flexible around my difficult schedule, very quick with the messages and the item was exactly what I needed.",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "So friendly",
     content: "It's nice how easy it is to get what you need, just like asking for a friend! Both the lender and the item were great!",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Good",
     content: "Standard, easy to communicate and arrange the pick up, item worked fine and the lender was a good person",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Overall a good experience",
     content: "The lender was quick at responding to the messages and the item worked fine",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "100% Recommend",
     content: "Happy I didn't have to spend much money at the shop for a one time thing, it was easy to arrange and very convenient",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Great!",
     content: "Will be telling friends and family about the experience, the lender and the item were great",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Very good",
     content: "The item performed as expected, the lender was very easy and helpful",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Awesome",
     content: "So easy to get everything done and definitly way cheaper",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Easy and Familiar",
     content: "The whole process was really easy and familiar, just like asking a mate",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Convenience at it's peak",
     content: "Will definitly start browsing here for most things, the item was in perfect condition and the lender was awesome too",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Okay",
     content: "It was hard to arrange the meeting and work around the lender's schedule but the item was good",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 
   {
     title: "Easy",
     content: "Uncomplicated and advantageous!",
-    item_rating: rand(3..5),
-    lender_rating: rand(3..5),
-    booking: Booking.all.sample
+    item_rating: rand(3..5)
   },
 ]
+    # byebug
 
-Review.create!(reviews_attributes)
+n_reviews = n_bookings * 3
+
+n_reviews.times do
+  attribute = reviews.sample
+  review = Review.new(
+    title: attribute[:title],
+    content: attribute[:content],
+    item_rating: attribute[:item_rating],
+    booking: Booking.all.sample,
+    lender_rating: rand(3..5)
+  )
+  review.save
+end
+
 puts "Created #{Review.count} reviews..."
-
-
-
