@@ -5,7 +5,6 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :credits, presence: true
-  validates :photo, presence: true
   # validates :address, presence: true
 
   geocoded_by :address
