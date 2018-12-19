@@ -4,7 +4,6 @@ class Item < ApplicationRecord
   has_many :reviews, through: :bookings
 
   validates :name, presence: true
-  validates :credits, presence: true
   # validates :address, presence: true
 
   geocoded_by :address
