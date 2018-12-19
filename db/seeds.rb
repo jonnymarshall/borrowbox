@@ -8,7 +8,7 @@ User.destroy_all
 
 #----------USER SEEDS----------
 puts 'Creating users...'
-require_relative "auxilliary/users"
+require_relative "auxilliary/user_seeds"
 
 User.create!(@users)
 puts "Created #{User.count} users..."
@@ -24,7 +24,7 @@ end
 
 #----------ITEM SEEDS----------
 puts 'Creating items...'
-require_relative "auxilliary/items"
+require_relative "auxilliary/item_seeds"
 
 Item.create!(@items)
 puts "Created #{Item.count} items..."
@@ -42,7 +42,7 @@ puts "Created latitude and longitude for items..."
 
 #----------BOOKING SEEDS----------
 puts "Creating bookings..."
-n_bookings = @users.count * 4
+n_bookings = @users.count * 5
 
 m_request = ["Hey I'd really like to borrow this item. Would tomorrow be okay?",
   "Hi there! Would it be ok if I borrow this tomorrow am?",
@@ -75,9 +75,9 @@ puts "Created #{Booking.count} bookings..."
 
 #----------REVIEWS SEEDS----------
 puts 'Creating reviews...'
-require_relative "auxilliary/reviews"
+require_relative "auxilliary/review_seeds"
 
-n_reviews = n_bookings * 3
+n_reviews = n_bookings * 5
 
 n_reviews.times do
   attribute = @reviews.sample
