@@ -213,7 +213,7 @@ items_attributes = [
 #DRILLS
   {
     name: "Guild Drill Driver ",
-    description: "1.3AH Cordless. Request if you are already used to speed drills.",
+    description: "1.3AH Cordless. Please only request if you are already used to speed drills.",
     user: User.all.sample,
     credits: 250,
     photo_fake: "https://images.unsplash.com/photo-1541474424879-14480b8e249d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
@@ -229,7 +229,7 @@ items_attributes = [
 
   {
     name: "Bosch PBH 2100 RE",
-    description: "brrr brrr brrr",
+    description: "I have been using this mainly for wood and lighter materials.",
     user: User.all.sample,
     credits: 200,
     photo_fake: "https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -245,7 +245,7 @@ items_attributes = [
 
   {
     name: "Einhell 1010W Drill",
-    description: "No pets allowed",
+    description: "Comes with extra equipment for heavy material use.",
     user: User.all.sample,
     credits: 210,
     photo_fake: "https://images.unsplash.com/photo-1531984557360-89184e00f590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
@@ -254,7 +254,7 @@ items_attributes = [
 #PARTY TENTS
    {
     name: "White Party Tent",
-    description: "Easy to put up, party approved! Fits chairs for 20 people easily",
+    description: "Fits chairs for 20 people easily. Easy to put up, party approved! ",
     user: User.all.sample,
     credits: 500,
     photo_fake: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
@@ -262,7 +262,7 @@ items_attributes = [
 
   {
     name: "Small Party Tent",
-    description: "For a very exclusive party",
+    description: "Outdoor Tent with weatherproof cover.",
     user: User.all.sample,
     credits: 490,
     photo_fake: "https://images.unsplash.com/photo-1479244209311-71e35c910f59?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
@@ -270,7 +270,7 @@ items_attributes = [
 
   {
     name: "Kids Party Tent",
-    description: "Colourful and nice, perfect for childrens birthday parties!",
+    description: "Colourful and nice, perfect for birthday parties for the little ones!",
     user: User.all.sample,
     credits: 500,
     photo_fake: "https://images.unsplash.com/photo-1496080174650-637e3f22fa03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
@@ -279,7 +279,7 @@ items_attributes = [
 #HAMMERS
   {
     name: "Carbon Claw Hammer",
-    description: "16oz smells nice",
+    description: "Heavily used but still in excellent condition.",
     user: User.all.sample,
     credits: 50,
     photo_fake: "https://images.unsplash.com/photo-1526714719019-b3032b5b5aac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
@@ -287,7 +287,7 @@ items_attributes = [
 
   {
     name: "Single Piece Hammer",
-    description: "53oz handle with care",
+    description: "Various use tool, return in good condition please!",
     user: User.all.sample,
     credits: 50,
     photo_fake: "https://images.unsplash.com/photo-1542583633-aa0b0e378e2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
@@ -296,7 +296,7 @@ items_attributes = [
 
 #VACUUM CLEANERS
   {
-    name: "Vacuum 3000 Wireless",
+    name: "Vacuum 3000 FluidX",
     description: "Powerful cleaner, comes with empty bags and different tools.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
@@ -304,18 +304,18 @@ items_attributes = [
     photo_fake: "https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   },
 
-  {
-    name: "Electric Vacuum",
-    description: "Quiet and pet friendly, comes with empty vacuum bags and different vacuum tools.",
-    user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
-    credits: 450,
-    photo_fake: "https://images.unsplash.com/photo-1527515673510-8aa78ce21f9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-  },
+  # {
+  #   name: "Electric Vacuum",
+  #   description: "Quiet and pet friendly, comes with empty vacuum bags and different vacuum tools.",
+  #   user: User.all.sample,
+  #   # address: "Rua da Moeda 1, Lisbon",
+  #   credits: 450,
+  #   photo_fake: "https://images.unsplash.com/photo-1527515673510-8aa78ce21f9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+  # },
 
   {
     name: "Vacuum",
-    description: "Includes the original accessories.",
+    description: "Quiet and pet friendly, comes with empty vacuum bags and different vacuum tools.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 480,
@@ -323,8 +323,8 @@ items_attributes = [
   },
 
   {
-    name: "Vacuum Cleaner",
-    description: "Comes with accessories.",
+    name: "Vacuum Cleaner Wireless",
+    description: "Wireless cleaner, overnight selfcharging, capacity of 2l.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 500,
@@ -333,16 +333,16 @@ items_attributes = [
 
 {
     name: "Electric Vacuum",
-    description: "Quiet vacuum, comes with it's accessories.",
+    description: "Quiet vacuum, high in capacity, comes with extra brushes.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 460,
-    photo_fake: "https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    photo_fake: "https://images.unsplash.com/photo-1527515673510-8aa78ce21f9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 
 {
     name: "Vacuum Breeze",
-    description: "Bagless Cylinder Vacuum Cleaner, [BR71BR01].",
+    description: "Cylinder vacuum cleaner, model [BR71BR01] of the 2015 series.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 450,
@@ -351,7 +351,7 @@ items_attributes = [
 
 {
     name: "Vacuum Freedom",
-    description: "2in1 Pets Cordless Stick Vacuum Cleaner, Powerful, Titanium.",
+    description: "2in1 multi-use stick vacuum cleaner, Powerful, Titanium.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 560,
@@ -360,7 +360,7 @@ items_attributes = [
 
   {
     name: "Motorised Vacuum",
-    description: "Comes with brush head, powerful.",
+    description: "Bagless, comes with brush head, powerful.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 520,
@@ -378,7 +378,7 @@ items_attributes = [
 
   {
     name: "Upright NEW Vaccuum",
-    description: "BH51120PTV Vacuum Cleaner 20V Air Cordless Lift.",
+    description: "BH51120PTV Vacuum Cleaner 20V Air Lift.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 400,
@@ -387,17 +387,17 @@ items_attributes = [
 
   {
     name: "Modern Vacuum Cleaner",
-    description: "Cordless and Quiet.",
+    description: "Comes with smooth rotation brush and extra tools for carpet usage.",
     user: User.all.sample,
     # address: "Rua da Moeda 1, Lisbon",
     credits: 410,
-    photo_fake: "https://image.shutterstock.com/image-photo/closeup-vacuum-cleaner-over-grey-260nw-1068478943.jpg"
+    photo_fake: "https://www.miele.de/media/domestic_de/media/assets_442_x/CompleteC2Jubilee_442x216_20000140898.opi.jpg"
   },
 
 
 #SUITCASES
   {
-    name: "Spacey Suitcase",
+    name: "Vintage Suitcase",
     description: "Large suitcase, fits 30kg",
     user: User.all.sample,
     credits: 250,
@@ -413,51 +413,51 @@ items_attributes = [
   },
 
   {
-    name: "New Suitcase",
-    description: "Perfect condtions, roomy",
+    name: "Leather Travelbag",
+    description: "Perfect condtions, soft brown leather, please do not use for heavy items.",
     user: User.all.sample,
     credits: 240,
     photo_fake: "https://images.unsplash.com/photo-1525103504173-8dc1582c7430?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 
   {
-    name: "Standard Suitcase",
-    description: "This suitcase has served me for years! Quite good",
+    name: "Standard Travelbag",
+    description: "This travelbag has served me for years! Quite good",
     user: User.all.sample,
     credits: 230,
-    photo_fake: "https://images.unsplash.com/photo-1534534573898-db5148bc8b0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+    photo_fake: "https://cache.willhaben.at/mmo/6/280/528/616_562749801.jpg"
   },
 
   {
-    name: "Small Suitcase",
-    description: "A small suitcase for a shor trip",
+    name: "Cabin sized Suitcase",
+    description: "Small softshell suitcase for a short trip, fits usual cabin size.",
     user: User.all.sample,
     credits: 250,
-    photo_fake: "https://images.unsplash.com/photo-1536238349444-c05ffb6837e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+    photo_fake: "https://www.testsguide.de/wp-content/uploads/Handgepaeck-Koffer-300x225.jpg"
   },
 
   {
     name: "Organised Suitcase",
-    description: "This suitcase has got lots of compartments to fit in the most you can",
+    description: "This suitcase has got lots of compartments to organize your belongings.",
     user: User.all.sample,
     credits: 260,
-    photo_fake: "https://images.unsplash.com/photo-1542323073-dc63913f3262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+    photo_fake: "https://can01.anibis.ch/Reisekoffer-Hartschalenkoffer-Samsonite/?1024x768/3/60/anibis/869/566/026/fFpmNyjr0ESmEmcZVL3OKQ_1.jpg"
   },
 
   {
-    name: "Big Suitcase",
-    description: "This suitcase is perfect for a big trip",
+    name: "Travelbag 30l",
+    description: "Travelbag with one big and a couple of smaller compartments, supported bottom and 4 rolls.",
     user: User.all.sample,
     credits: 220,
     photo_fake: "https://images.unsplash.com/photo-1515935480894-3bab89cf8e89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 
   {
-    name: "Business Suitcase",
-    description: "Specialized pockets for pens, notebooks and a laptop",
+    name: "Spacious Backpack",
+    description: "Waterproof and watereppeling material, 30l capacity, adjustable straps.",
     user: User.all.sample,
     credits: 200,
-    photo_fake: "https://images.unsplash.com/photo-1499985217418-1f2c55099b4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+    photo_fake: "https://cache.willhaben.at/mmo/6/277/766/166_1146020227.jpg"
   },
 
   {
@@ -494,7 +494,7 @@ items_attributes = [
   },
 
   {
-    name: "Wireless Lawn Mower",
+    name: "Sit-on Lawn Mower",
     description: "Easier to maneuver.",
     user: User.all.sample,
     credits: 750,
@@ -513,7 +513,7 @@ items_attributes = [
 #STEREO BOXES
   {
     name: "Panasonic Stereo Boxes",
-    description: "Very loud owerful boxes, can be paired with other DJ equipment.",
+    description: "Very loud powerful boxes, can be paired with other DJ equipment.",
     user: User.all.sample,
     credits: 455,
     photo_fake: "https://images.pexels.com/photos/159613/ghettoblaster-radio-recorder-boombox-old-school-159613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -528,11 +528,11 @@ items_attributes = [
   },
 
   {
-    name: "Stereo Box Amplifier",
-    description: "Bluetooth & Built-in Microphone.",
+    name: "Beton Look Stereo Box",
+    description: "AUX-input & built-in sound stabilisation system.",
     user: User.all.sample,
     credits: 450,
-    photo_fake: "https://image.shutterstock.com/image-photo/stereo-system-260nw-416299081.jpg"
+    photo_fake: "https://selekkt.com/media/catalog/product/cache/1/image/680x/17f82f742ffe127f42dca9de82fb58b1/0/0/001_5__2.jpg"
   },
 
   {
@@ -594,7 +594,7 @@ items_attributes = [
 
 #CAMERAS
 {
-    name: "PANASONIC Camera",
+    name: "Nikon Vintage Camera",
     description: "DC-G9LEB-K 12-60 mm Leica DG Lens Mirrorless Compact System Camera",
     user: User.all.sample,
     credits: 630,
@@ -602,31 +602,31 @@ items_attributes = [
   },
 
   {
-    name: "Canon EOS Camera",
-    description: "DSLR Camera and EF-S 18-55 mm f/3.5-5.6 III Lens",
+    name: "Analog Camera - 35mm",
+    description: "Working analog camera with supported EF-S 18-55 mm f/3.5-5.6 III lens",
     user: User.all.sample,
     credits: 650,
     photo_fake: "https://images.unsplash.com/photo-1503847003563-6819dd01382b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 
   {
-    name: "Nikon B500 Camera",
-    description: "Coolpix Digital Compact Camera - Black",
+    name: "Canon EOS 7D Camera",
+    description: "Single-lens reflex Camera - black",
     user: User.all.sample,
     credits: 600,
     photo_fake: "https://images.unsplash.com/photo-1495844138710-938feaeeadcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 
   {
-    name: "Sony Camera",
-    description: "Digital Compact Camera with Wi-Fi and NFC (18.2 MP, 20x Optical Zoom)",
+    name: "SLR Camera 2015",
+    description: "SLR Camera with Wi-Fi and NFC (18.2 MP, 20x Optical Zoom), extra equipment optional",
     user: User.all.sample,
     credits: 610,
     photo_fake: "https://images.unsplash.com/photo-1494251268800-9ca078482168?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 
   {
-    name: "Sony Camera CEH",
+    name: "SLR Camera CEH",
     description: "Digital Compact Camera (20.1 MP, 5x Zoom, 2.7 LCD, 720p HD, 23 mm)",
     user: User.all.sample,
     credits: 700,
@@ -634,7 +634,7 @@ items_attributes = [
   },
 
   {
-    name: "Crosstour Action Camera",
+    name: "Canon EOS 80D Camera",
     description: "Wifi Full HD 1080P Waterproof Cam 2” LCD Screen 98ft Underwater 170° Wide-angle",
     user: User.all.sample,
     credits: 750,
@@ -642,15 +642,15 @@ items_attributes = [
   },
 
  {
-    name: "Digital Camera",
-    description: "Youmeet Digital Cameras - 2.7 inch 18 MP for Holiday Family, Friends, Kids",
+    name: "Canon 35mm Camera",
+    description: "Analog Camera from Canon - 2.7 inch 18 MP for Holiday Family, Friends, Kids",
     user: User.all.sample,
     credits: 645,
     photo_fake: "https://images.unsplash.com/photo-1486574655068-162e94137442?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 
   {
-    name: "Vlogging Camera",
+    name: "NIKON Vlog Camera",
     description: "24MP Ultra HD WiFi Digital Camera 3.0 Inch 180 Degree Rotation Flip Screen",
     user: User.all.sample,
     credits: 70,
@@ -658,7 +658,7 @@ items_attributes = [
   },
 
   {
-    name: "Sony DSC-RX10 Camera",
+    name: "Minolta RX10 Camera",
     description: "Black 20.2 MP 8.3 x Zoom 3.0 LCD FHD 24 mm Wide Lens Wi-Fi",
     user: User.all.sample,
     credits: 750,
@@ -666,18 +666,10 @@ items_attributes = [
   },
 
   {
-    name: "Camera FUJIFILM",
-    description: "with XF18-55mm lens",
+    name: "CANON 5D Camera",
+    description: "with XF18-55mm lens and adjustable strap",
     user: User.all.sample,
     credits: 690,
-    photo_fake: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-  },
-
-  {
-    name: "Nikon B500 Camera",
-    description: "Coolpix Digital Compact Camera",
-    user: User.all.sample,
-    credits: 620,
     photo_fake: "https://images.unsplash.com/photo-1519638831568-d9897f54ed69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
 ]
