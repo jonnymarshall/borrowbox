@@ -1,5 +1,6 @@
 // console.log('hello from application.js')
 import "bootstrap";
+import './application.css';
 
 import { initTabs } from "../components/tabs";
 
@@ -11,11 +12,17 @@ if (dashboardTabsTest) {
   initTabs();
 }
 
-const mapTest = document.getElementById('map');
-if (mapTest) {
-  mapToggle();
+// const mapTest = document.getElementById('map');
+// if (mapTest) {
+//   mapToggle();
+// }
+
+import { responseMessageNotification } from'../components/response-message-notification';
+
+if (document.getElementById('response-message-notification')) {
+  responseMessageNotification();
 }
 
-// import { responseMessageNotification } from'../components/response-message-notification';
+import { dateSelector } from '../components/dateselector';
 
-// responseMessageNotification();
+dateSelector();

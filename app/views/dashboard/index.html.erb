@@ -4,10 +4,8 @@
   <div class="container">
     <div class="dashboard-index-grid">
       <%= render 'user-area' %>
+      <div class="list-area" id="dashboard-tabs">
       <%= render 'tabs' %>
-
-
-<i id="response-message-notification" class="fas fa-comment hidden"></i>
 
 <!-- REQUESTED -->
       <div id="requested-booking-cards">
@@ -36,3 +34,6 @@
       </div>
     </div>
   </div>
+</div>
+
+<% content_for :title, "Borrowbox - My Dashboard" %>
