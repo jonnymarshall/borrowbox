@@ -1,13 +1,12 @@
 <div id="my-items-cards">
   <div class="cards-area">
 
+    <!-- Modal trigger -->
     <div class="item-card-grid add-item-pointer" type="button" data-target="#exampleModalCenter" data-toggle="modal">
       <div class="new-item-block">
         <i class="fas fa-plus-circle add-item-lrg"></i>
         <h6>Add an item</h6>
       </div>
-      <!-- Button trigger modal -->
-
     </div>
 
     <% current_user.items.order(created_at: :desc).each do |item| %>
