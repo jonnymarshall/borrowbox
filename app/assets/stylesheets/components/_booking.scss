@@ -147,7 +147,7 @@ a:hover {
   position: absolute;
   right: 0px;
   top: 0px;
-  font-size: 35px;
+  font-size: 25px;
   z-index: 2;
   color: $yellow;
   -webkit-animation: animation 1000ms linear both;
@@ -158,8 +158,8 @@ a:hover {
 .black-text {
   color: black;
   top: 5px;
-  right: 13px;
-  font-size: 15px;
+  right: 11px;
+  font-size: 8px;
   -webkit-animation: animation 1000ms linear both;
   animation: animation 4000ms linear both;
 }

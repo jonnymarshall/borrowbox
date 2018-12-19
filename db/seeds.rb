@@ -1,9 +1,9 @@
 puts 'Cleaning database...'
 
-User.destroy_all
-Item.destroy_all
 Review.destroy_all
 Booking.destroy_all
+Item.destroy_all
+User.destroy_all
 
 # Examples:
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
@@ -365,7 +365,8 @@ n_bookings.times do |booking|
     item: Item.all.sample,
     status: rand(0..2),
     request_message: m_request.sample,
-    response_message: m_response.sample
+    response_message: m_response.sample,
+    response_message_read: true
   )
   booking.save!
   count += 1
