@@ -700,8 +700,8 @@ puts "Created latitude and longitude for items..."
 puts "Creating bookings..."
 n_bookings = users_attributes.count * 4
 
-m_request = ["I wanna borrow this", "Can I borrow this?", "Is this item available?" "Could I borrow this item please?"]
-m_response = ["You can borrow this", "Sure!", "Of course!", "It is available", "Yeah!", "Definitly!"]
+m_request = ["Hey I'd really like to borrow this item. Would tomorrow be okay?", "Hi there! Would it be ok if I borrow this tomorrow am?", "Hi there. Just checking this item is definitely available? If so could I grab it at 9?" "Hi there. Would love to borrow this item just for a day please! Would 7 be ok?"]
+m_response = ["Of course you can borrow it, see you then!", "Sure you can. I'll be there to hand it over :)", "Of course no problem at all. Look forward to meeting you.", "Hi there. It is available and yes you can borrow it. See you soon!", "Absolutely, no problem. See you then :)!"]
 
 n_bookings.times do |booking|
   count = 0
