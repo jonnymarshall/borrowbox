@@ -15,24 +15,17 @@
   font-family: 'Lobster', cursive;
   font-size: 140px;
   color: $light-gray;
+  margin-bottom: 0px;
 }
 .banner p {
   font-size: 25px;
   color: $light-gray;
-  margin-bottom: 30px;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .banner-content {
   margin: 110px 170px 170px 170px;
-}
-
-.banner-content h1 {
-  margin: -20px;
-}
-
-.banner-content p {
-  margin-bottom: 10px;
 }
 
 .searchbar {
