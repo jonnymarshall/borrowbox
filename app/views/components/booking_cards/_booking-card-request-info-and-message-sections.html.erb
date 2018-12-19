@@ -6,21 +6,27 @@
     <% end %>
 
     <h4><%= "#{booking.item.user.first_name}'s #{booking.item.name}" %></h4>
-    <h6><strong><%= "#{booking.start_date} - #{booking.end_date}" %></strong></h6>
+    <h6><strong><%= "#{booking.start_date.strftime("%a, %d.%m.%Y") } - #{booking.end_date.strftime("%a, %d.%m.%Y") }" %></strong></h6>
   </div>
 <%# end %>
 
 <%#= link_to item_path(booking.item) do %>
   <div class="booking-card-request-message-section">
-    <div class="request-message inline">
-      <strong>Your message:&nbsp;&nbsp;&nbsp;</strong>
-      <p><%= booking.request_message %></p>
-    </div>
-    <div class="request-message inline">
+    <div class="request-message">
+      <div class="message-left">
+        <strong>Your message</strong>
+        <div class="message-box-left">
+          <p><%= booking.request_message %></p>
+        </div>
+      </div>
       <% if booking.response_message_read %>
         <!-- <div class="green-bar"></div>  -->
-          <strong><%= booking.item.user.first_name %>'s response:&nbsp;&nbsp;&nbsp;</strong>
-        <p><%= booking.response_message %></p>
+        <div class="message-right">
+          <strong><%= booking.item.user.first_name %>'s response</strong>
+          <div class="message-box-right">
+            <p><%= booking.response_message %></p>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

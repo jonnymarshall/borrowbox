@@ -4,23 +4,27 @@
     <label for="item">Item</label>
     <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "What are you looking for?" %>
   </div>
-  <div class="col-xs-12 form-group font-sm">
+  <div class="col-xs-12 form-group font-sm margin-boost">
     <label for="location">Location</label>
     <%= text_field_tag :address, params[:address], class: "form-control", placeholder: "Where are you searching?" %>
   </div>
-  <div class="col-xs-12 form-group font-sm">
-    <label for="start-date">Start date</label>
-    <%= date_field_tag :start_date, params[:start_date], class: "form-control", id: 'booking_start_date' %>
+  <div class="col-xs-5 form-group font-sm margin-boost">
+    <label for="start-date">Between</label>
+    <%= date_field_tag :start_date, params[:start_date], class: "form-control bg-white", id: 'booking_start_date', :placeholder => 'Earliest' %>
+    </div>
+    <div class="col-xs-2 form-group font-sm" style="margin-top: 13px;">
+    <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="margin-top: 14px"><path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fill-rule="evenodd"></path></svg>
+    </div>
+
+  <div class="col-xs-5 form-group font-sm margin-boost">
+    <label for="end-date"> </label>
+    <%= date_field_tag :end_date, params[:end_date], class: "form-control bg-white", id: 'booking_end_date', :placeholder => 'Latest' %>
   </div>
-  <div class="col-xs-12 form-group font-sm">
-    <label for="end-date">End date</label>
-    <%= date_field_tag :end_date, params[:end_date], class: "form-control", id: 'booking_end_date' %>
-  </div>
-  <div class="col-xs-12 form-group font-sm">
+  <div class="col-xs-12 form-group font-sm margin-boost">
     <label for="max-credits">Max credits</label>
     <%= number_field_tag :max_credits, params[:max_credits], class: "form-control", placeholder: "Max Credits", autofocus: true %>
   </div>
-  <div class="col-xs-12 form-group font-sm">
+  <div class="col-xs-12 form-group font-sm margin-boost">
     <label for="max-distance">Max distance</label>
     <%= number_field_tag :max_distance, params[:max_distance], class: "form-control", placeholder: "Kilometers" %>
   </div>
@@ -40,7 +44,7 @@
   </div>
   <%= hidden_field_tag :coordinates %>
   <div class="col-xs-12">
-    <button type="submit" class="btn btn-filter btn-green btn-sm" style="width: 100%">Filter</button>
+    <button type="submit" class="btn btn-filter btn-green btn-sm" style="width: 100%; margin: 0px;">Filter</button>
   </div>
   <% end %>
 </div>

@@ -9,9 +9,14 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @review = Review.new
     @booking = Booking.find(params[:id])
     @booking.update(booking_status_params)
-    redirect_to dashboard_index_path
+    @message_was_read = booking_status_params[:response_message_read].present? && booking_status_params[:response_message_read]
+    respond_to do |format|
+      format.js
+    end
+    # redirect_to dashboard_index_path
   end
 
   private

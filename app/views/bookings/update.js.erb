@@ -1,0 +1,24 @@
+if (document.getElementById('modal-dismiss-button')) {
+  document.getElementById('modal-dismiss-button').click();
+  var responseMessageNotifications = document.querySelectorAll('[data-target~="<%="#rm_modal_#{@booking.id}" %>"]');
+  responseMessageNotifications.forEach(function(notification) {
+    notification.classList.add("hidden");
+  })
+}
+
+var bookingCard = document.getElementById("<%= "booking-card_#{@booking.id}" %>");
+if (<%= !@message_was_read %>) {
+  let requestedCards = document.getElementById("requested-booking-cards");
+  let borrowingCards = document.getElementById("borrowing-booking-cards");
+  let borrowedCards = document.getElementById("borrowed-booking-cards");
+  if (<%= @booking.status == "borrowing" %>) {
+    console.log("<%= j render "dashboard/booking", booking: @booking %>");
+    bookingCard.remove();
+    borrowingCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
+  }
+  else if (<%= @booking.status == "borrowed" %>) {
+    console.log("<%= j render "dashboard/booking", booking: @booking %>");
+    bookingCard.remove();
+    borrowedCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
+  }
+}

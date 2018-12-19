@@ -1,4 +1,4 @@
-<div class="booking-card-grid">
+<div class="booking-card-grid" id="booking-card_<%= booking.id %>">
   <%= link_to item_path(booking.item), class: 'booking-card-grid-link' do %>
   <% end %>
 
@@ -9,12 +9,10 @@
     <!-- BUTTONS -->
     <% case booking.status %>
     <% when "requested" %>
-      <% if booking.response_message_read %>
-        <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', method: :patch} %>
-      <% end %>
+        <%= link_to "Item received", booking_path(booking, status: 'borrowing'), {class: 'btn btn-green btn-sm', id: "item-received_#{booking.id}", method: :patch, remote: true} %>
     <% when "borrowing" %>
       <div class="mark-item-container">
-        <%= link_to "Item returned", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green btn-sm', method: :patch} %>
+        <%= link_to "Item returned", booking_path(booking, status: 'borrowed'), {class: 'btn btn-green btn-sm', id: "item-returned_#{booking.id}", method: :patch, remote: true} %>
       </div>
     <% when "borrowed" %>
       <button type="button" class="btn btn-green btn-sm" data-toggle="modal" data-target="<%="#lr_modal_#{booking.id}" %>">
@@ -26,7 +24,7 @@
   </div>
   <%= render 'components/booking_cards/booking-card-image-container', booking: booking %>
   <%= render 'components/booking_cards/booking-card-footer', booking: booking %>
-</div>
   <!-- MODAL -->
   <%= render 'components/leave-review-modal', booking: booking %>
   <%= render 'components/read-message-modal', booking: booking %>
+</div>
