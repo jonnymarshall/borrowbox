@@ -8,7 +8,7 @@ User.destroy_all
 
 #----------USER SEEDS----------
 puts 'Creating users...'
-require_relative "auxilliary/users"
+require_relative "auxilliary/user_seeds"
 
 User.create!(@users)
 puts "Created #{User.count} users..."
@@ -24,7 +24,7 @@ end
 
 #----------ITEM SEEDS----------
 puts 'Creating items...'
-require_relative "auxilliary/items"
+require_relative "auxilliary/item_seeds"
 
 Item.create!(@items)
 puts "Created #{Item.count} items..."
@@ -75,7 +75,7 @@ puts "Created #{Booking.count} bookings..."
 
 #----------REVIEWS SEEDS----------
 puts 'Creating reviews...'
-require_relative "auxilliary/reviews"
+require_relative "auxilliary/review_seeds"
 
 n_reviews = n_bookings * 5
 
