@@ -12,8 +12,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-beige btn-sm" data-dismiss="modal">Close</button>
-        <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch} %>
+        <button type="button" class="btn-beige btn-sm" data-dismiss="modal" id="modal-dismiss-button">Close</button>
+        <%= link_to "Message Read", booking_path(booking, response_message_read: true), {class: 'btn btn-green btn-sm', method: :patch, remote: true} %>
       </div>
     </div>
   </div>
