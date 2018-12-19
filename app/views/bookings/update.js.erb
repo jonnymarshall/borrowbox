@@ -11,14 +11,23 @@ if (<%= !@message_was_read %>) {
   let requestedCards = document.getElementById("requested-booking-cards");
   let borrowingCards = document.getElementById("borrowing-booking-cards");
   let borrowedCards = document.getElementById("borrowed-booking-cards");
+  let requestedTab = document.getElementById("requested");
+  let borrowingTab = document.getElementById("borrowing");
+  let borrowedTab = document.getElementById("borrowed");
   if (<%= @booking.status == "borrowing" %>) {
-    console.log("<%= j render "dashboard/booking", booking: @booking %>");
     bookingCard.remove();
     borrowingCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
+    let requestedTabCount = parseInt(requestedTab.firstElementChild.innerText, 10);
+    let borrowingTabCount = parseInt(borrowingTab.firstElementChild.innerText, 10);
+    requestedTab.firstElementChild.innerText = requestedTabCount - 1;
+    borrowingTab.firstElementChild.innerText = borrowingTabCount + 1;
   }
   else if (<%= @booking.status == "borrowed" %>) {
-    console.log("<%= j render "dashboard/booking", booking: @booking %>");
     bookingCard.remove();
     borrowedCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
+    let borrowingTabCount = parseInt(borrowingTab.firstElementChild.innerText, 10);
+    let borrowedTabCount = parseInt(borrowedTab.firstElementChild.innerText, 10);
+    borrowingTab.firstElementChild.innerText = borrowingTabCount - 1;
+    borrowedTab.firstElementChild.innerText = borrowedTabCount + 1;
   }
 }

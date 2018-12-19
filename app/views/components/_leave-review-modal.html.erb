@@ -28,7 +28,7 @@
           </div>
       <div class="modal-footer" style="border-top:none;">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Submit review", class: "btn-green btn-sm" %>
+        <%= f.submit "Submit review", { class: "btn-green btn-sm", remote: true } %>
         <% end %>
       </div>
       </div>
