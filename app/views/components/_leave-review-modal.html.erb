@@ -21,6 +21,10 @@
               <%= f.label :item_rating %>:
               <%= f.number_field :item_rating, class: 'form-control' %><br />
             </div>
+              <fieldset class="rating">
+                <%= f.radio_button :item_rating, '' %>
+                <%= label :item_rating, 'min_rating_5', class: "full" %>
+              </fieldset>
             <div class="form-group col-md-6" style="margin-top:15px;">
               <%= f.label :lender_rating %>:
               <%= f.number_field :lender_rating, class: 'form-control' %><br />
@@ -36,9 +40,13 @@
   </div>
 </div>
 
+
+
+
+
 <!--
       <fieldset class="rating">
-        <%= radio_button_tag :min_rating, "5", params[:min_rating] == "5" %>
+        <%= radio_button_tag :item_rating, "5", params[:min_rating] == "5" %>
         <%= label_tag 'min_rating_5', '', class: "full" %>
         <%= radio_button_tag :min_rating, "4", params[:min_rating] == "4" %>
         <%= label_tag 'min_rating_4', '', class: "full" %>
