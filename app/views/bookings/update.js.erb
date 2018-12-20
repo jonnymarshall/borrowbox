@@ -2,15 +2,17 @@ if (document.getElementById("<%="modal_dismiss_button_mr_#{@booking.id}"%>")) {
   document.getElementById("<%="modal_dismiss_button_mr_#{@booking.id}"%>").click();
   let bookingCard = document.getElementById("<%= "booking-card_#{@booking.id}" %>");
   let bookingCardRerender = "<%= j render "dashboard/booking", booking: @booking %>"
-  bookingCard.outerHTML = bookingCardRerender;
-  // var responseMessageNotifications = document.querySelectorAll('[data-target~="<%="#rm_modal_#{@booking.id}" %>"]');
-  // responseMessageNotifications.forEach(function(notification) {
-  //   notification.classList.add("hidden");
-  // })
+  bookingCard = bookingCardRerender;
+  var responseMessageNotifications = document.querySelectorAll('[data-target~="<%="#rm_modal_#{@booking.id}" %>"]');
+  responseMessageNotifications.forEach(function(notification) {
+    notification.classList.add("hidden");
+  })
 }
 
 var bookingCard = document.getElementById("<%= "booking-card_#{@booking.id}" %>");
 if (<%= !@message_was_read %>) {
+  // booking status was changed
+  console.log("booking status was changed.. fading out and removing")
   let requestedCards = document.getElementById("requested-booking-cards");
   let borrowingCards = document.getElementById("borrowing-booking-cards");
   let borrowedCards = document.getElementById("borrowed-booking-cards");
@@ -18,19 +20,26 @@ if (<%= !@message_was_read %>) {
   let borrowingTab = document.getElementById("borrowing");
   let borrowedTab = document.getElementById("borrowed");
   if (<%= @booking.status == "borrowing" %>) {
-    console.log("im gonna turn opacity to 0");
-    console.log("opacity is ${bookingCard.style.opacity}");
-    bookingCard.style.opacity = "0";
-    // bookingCard.remove();
-    borrowingCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
+    console.log("borrowing card detected.. removing old card from requested");
+    bookingCard.classList.add("fade-out");
+    window.setTimeout(() => {
+      bookingCard.remove();
+    }, 1000);
+    console.log("inserting new card into borrowing");
+    let newCard = borrowingCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
     let requestedTabCount = parseInt(requestedTab.firstElementChild.innerText, 10);
     let borrowingTabCount = parseInt(borrowingTab.firstElementChild.innerText, 10);
     requestedTab.firstElementChild.innerText = requestedTabCount - 1;
     borrowingTab.firstElementChild.innerText = borrowingTabCount + 1;
   }
   else if (<%= @booking.status == "borrowed" %>) {
-    bookingCard.style.opacity = "0";
-    // bookingCard.remove();
+    console.log("borrowed card detected.. removing old card from borrowing");
+    console.log(`bookingCard id is ${bookingCard.id}`);
+    bookingCard.classList.add("fade-out");
+    window.setTimeout(() => {
+      bookingCard.remove();
+    }, 1000);
+    console.log("inserting new card into borrowed");
     borrowedCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
     let borrowingTabCount = parseInt(borrowingTab.firstElementChild.innerText, 10);
     let borrowedTabCount = parseInt(borrowedTab.firstElementChild.innerText, 10);
