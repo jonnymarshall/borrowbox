@@ -28,19 +28,22 @@
     <label for="max-distance">Max distance</label>
     <%= number_field_tag :max_distance, params[:max_distance], class: "form-control", placeholder: "Kilometers" %>
   </div>
-  <div class="col-xs-12">
-    <fieldset class="rating">
-      <%= radio_button_tag :min_rating, "5", params[:min_rating] == "5" %>
-      <%= label_tag 'min_rating_5', '', class: "full" %>
-      <%= radio_button_tag :min_rating, "4", params[:min_rating] == "4" %>
-      <%= label_tag 'min_rating_4', '', class: "full" %>
-      <%= radio_button_tag :min_rating, "3", params[:min_rating] == "3" %>
-      <%= label_tag 'min_rating_3', '', class: "full" %>
-      <%= radio_button_tag :min_rating, "2", params[:min_rating] == "2" %>
-      <%= label_tag 'min_rating_2', '', class: "full" %>
-      <%= radio_button_tag :min_rating, "1", params[:min_rating] == "1" %>
-      <%= label_tag 'min_rating_1', '', class: "full" %>
-    </fieldset>
+  <div class="col-xs-12 rating-box">
+    <!-- <div class="rating-box"> -->
+      <fieldset class="rating">
+        <%= radio_button_tag :min_rating, "5", params[:min_rating] == "5" %>
+        <%= label_tag 'min_rating_5', '', class: "full" %>
+        <%= radio_button_tag :min_rating, "4", params[:min_rating] == "4" %>
+        <%= label_tag 'min_rating_4', '', class: "full" %>
+        <%= radio_button_tag :min_rating, "3", params[:min_rating] == "3" %>
+        <%= label_tag 'min_rating_3', '', class: "full" %>
+        <%= radio_button_tag :min_rating, "2", params[:min_rating] == "2" %>
+        <%= label_tag 'min_rating_2', '', class: "full" %>
+        <%= radio_button_tag :min_rating, "1", params[:min_rating] == "1" %>
+        <%= label_tag 'min_rating_1', '', class: "full" %>
+      </fieldset>
+      <a href="#" id="clear-button">Clear</a>
+    <!-- </div> -->
   </div>
   <%= hidden_field_tag :coordinates %>
   <div class="col-xs-12">
@@ -48,3 +51,12 @@
   </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  document.getElementById('clear-button').addEventListener('click', function () {
+    ["min_rating_5", "min_rating_4", "min_rating_3", "min_rating_2", "min_rating_1"].forEach(function(id) {
+      document.getElementById(id).checked = false;
+    });
+    return false;
+  })
+</script>
