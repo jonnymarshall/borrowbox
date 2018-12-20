@@ -70,7 +70,7 @@ Item.all.each do |item|
       status: rand(0..2),
       request_message: m_request.sample,
       response_message: m_response.sample,
-      response_message_read: [true, false].sample
+      response_message_read: true
     )
   end
 end
