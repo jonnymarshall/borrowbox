@@ -1,5 +1,5 @@
-if (document.getElementById('modal-dismiss-button')) {
-  document.getElementById('modal-dismiss-button').click();
+if (document.getElementById("<%="modal_dismiss_button_mr_#{@booking.id}"%>")) {
+  document.getElementById("<%="modal_dismiss_button_mr_#{@booking.id}"%>").click();
   var responseMessageNotifications = document.querySelectorAll('[data-target~="<%="#rm_modal_#{@booking.id}" %>"]');
   responseMessageNotifications.forEach(function(notification) {
     notification.classList.add("hidden");

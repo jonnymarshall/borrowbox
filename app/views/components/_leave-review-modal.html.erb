@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= form_for [booking, @review] do |f| %>
+        <%= form_for [booking, @review], remote: true do |f| %>
           <div class="form-group">
             <div class="form-group col-md-12">
               <%= f.text_area :content, class: 'form-control' %>
@@ -27,8 +27,8 @@
             </div>
           </div>
       <div class="modal-footer" style="border-top:none;">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= f.submit "Submit review", { class: "btn-green btn-sm", remote: true } %>
+        <button type="button" class="btn-beige btn-sm" data-dismiss="modal" id="<%="modal_dismiss_button_lr_#{booking.id}" %>">Close</button>
+        <%= f.submit "Submit review", { class: "btn-green btn-sm" } %>
         <% end %>
       </div>
       </div>

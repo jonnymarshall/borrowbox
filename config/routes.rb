@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :bookings, only: [:update] do
-    resources :reviews, only: [:index, :create]
+    resources :reviews, only: [:index, :create, :update]
   end
   get "/", to: "front_end_development#homepage-search"
 

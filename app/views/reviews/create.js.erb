@@ -1,1 +1,19 @@
-console.log("did it eeach heer?");
+console.log("<%="modal_dismiss_button_lr_#{@booking.id}"%>");
+if (document.getElementById("<%="modal_dismiss_button_lr_#{@booking.id}"%>")) {
+  document.getElementById("<%="modal_dismiss_button_lr_#{@booking.id}"%>").click();
+  console.log("clicked da button")
+  let bookingCard = document.getElementById("<%= "booking-card_#{@booking.id}" %>");
+  console.log("bookingCard");
+  let borrowedTab = document.getElementById("borrowed");
+  console.log("borrowedTab");
+  let borrowedCards = document.getElementById("borrowed-booking-cards");
+  console.log("borrowedCards");
+  let bookingCardRerender = "<%= j render "dashboard/booking", booking: @booking %>"
+  console.log(bookingCardRerender);
+  if (<%= @booking.status == "borrowed" %>) {
+    // bookingCard.remove();
+    // bookingCard.replaceWith("<%= j render "dashboard/booking", booking: @booking %>");
+    bookingCard.outerHTML = bookingCardRerender;
+    // borrowedCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
+  }
+}
