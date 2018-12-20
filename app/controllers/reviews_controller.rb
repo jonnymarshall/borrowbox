@@ -2,17 +2,20 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.booking_id = booking_params[:booking_id].to_i
+
+    @booking = Booking.find(booking_params[:booking_id])
+    render :new if @booking.user != current_user
     if @review.save
-      redirect_to dashboard_index_path
+      respond_to do |format|
+        format.js
+      end
     else
+
       render :new
     end
-    # if @review.save
 
-    #   respond_to do |format|
-    #     # byebug
-    #     format.js
-    #   end
+    # if @review.save
+    #   redirect_to dashboard_index_path
     # else
     #   render :new
     # end
