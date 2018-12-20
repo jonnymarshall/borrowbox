@@ -21,3 +21,5 @@ if (document.getElementById('response-message-notification')) {
 import { dateSelector } from '../components/dateselector';
 
 dateSelector();
+
+import '../components/star-rating';
