@@ -11,52 +11,27 @@
       </div>
       <div class="modal-body">
         <%= form_for [booking, @review], remote: true do |f| %>
-        <div class="form-group">
-          <div class="form-group col-md-12">
-            <%= f.text_area :content, class: 'form-control', required: true %>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6" style="margin-top:15px;">
-            <div class="rating-box">
-              <fieldset class="ratingz">
-                <%= f.radio_button :item_rating, '5' %>
-                <%= label :item_rating, '5', class: "full" %>
-                <%= f.radio_button :item_rating, '4' %>
-                <%= label :item_rating, '4', class: "full" %>
-                <%= f.radio_button :item_rating, '3' %>
-                <%= label :item_rating, '3', class: "full" %>
-                <%= f.radio_button :item_rating, '2' %>
-                <%= label :item_rating, '2', class: "full" %>
-                <%= f.radio_button :item_rating, '1' %>
-                <%= label :item_rating, '1', class: "full" %>
-              </fieldset>
+          <div class="form-group">
+            <div class="form-group col-md-12">
+              <%= f.text_area :content, required:true, class: 'form-control' %>
             </div>
           </div>
-          <div class="form-group col-md-6" style="margin-top:15px;">
-            <div class="rating-box">
-              <fieldset class="ratingz">
-                <%= f.radio_button :lender_rating, '5' %>
-                <%= label :lender_rating, '5', class: "full" %>
-                <%= f.radio_button :lender_rating, '4' %>
-                <%= label :lender_rating, '4', class: "full" %>
-                <%= f.radio_button :lender_rating, '3' %>
-                <%= label :lender_rating, '3', class: "full" %>
-                <%= f.radio_button :lender_rating, '2' %>
-                <%= label :lender_rating, '2', class: "full" %>
-                <%= f.radio_button :lender_rating, '1' %>
-                <%= label :lender_rating, '1', class: "full" %>
-              </fieldset>
+          <div class="form-row">
+            <div class="form-group col-md-6" style="margin-top:15px;">
+              <%= f.label :item_rating %>:
+              <%= f.number_field :item_rating, required:true, class: 'form-control' %><br />
+            </div>
+            <div class="form-group col-md-6" style="margin-top:15px;">
+              <%= f.label :lender_rating %>:
+              <%= f.number_field :lender_rating, required:true, class: 'form-control' %><br />
             </div>
           </div>
-        </div>
-        <div class="modal-footer" style="border-top:none;">
-          <button type="button" class="btn-beige btn-sm" data-dismiss="modal" id="<%="modal_dismiss_button_lr_#{booking.id}" %>">Close</button>
-          <%= f.submit "Submit review", { class: "btn-green btn-sm" } %>
-          <% end %>
-        </div>
+      <div class="modal-footer" style="border-top:none;">
+        <button type="button" class="btn-beige btn-sm" data-dismiss="modal" id="<%="modal_dismiss_button_lr_#{booking.id}" %>">Close</button>
+        <%= f.submit "Submit review", { class: "btn-green btn-sm" } %>
+        <% end %>
+      </div>
       </div>
     </div>
   </div>
 </div>
-
