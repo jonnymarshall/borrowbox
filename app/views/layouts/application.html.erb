@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Be part of a peer-to-peer community, rent and lend lesser used items in your neighbourhood and share your experiences on a trustbased platform. Stop buying. Start borrowing.">
+
+
+    <meta property="og:title" content="Borrowbox">
+    <meta property="og:site_name" content="Borrowbox | Stop Buying. Start Borrowing.">
+    <meta property="og:description" content="Be part of a peer-to-peer community, rent and lend lesser used items in your neighbourhood and share your experiences on a trustbased platform. Stop buying. Start borrowing.">
+    <meta property="og:image" content="https://res.cloudinary.com/drbug2j3g/image/upload/v1545305878/og_image_borrowbox.jpg">
+
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
     <% if yield(:title).empty? %>
@@ -10,6 +18,8 @@
     <% else %>
       <title><%= yield(:title)%></title>
     <% end %>
+
+
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -26,6 +36,5 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag "user-location" %>
   </body>
 </html>
