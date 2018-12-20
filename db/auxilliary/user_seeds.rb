@@ -36,6 +36,178 @@
   },
 
   {
+    first_name: "Finn",
+    last_name: "Harries",
+    email: "17borrow@box.com",
+    password: "borrowbox17",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/guillaumeschwaederle"
+  },
+
+  {
+    first_name: "Caspar",
+    last_name: "Lee",
+    email: "18borrow@box.com",
+    password: "borrowbox18",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/Kve91"
+  },
+
+  {
+    first_name: "Joe",
+    last_name: "Sugg",
+    email: "19borrow@box.com",
+    password: "borrowbox19",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/bertrandbussac"
+  },
+
+  {
+    first_name: "Shane",
+    last_name: "Dawson",
+    email: "20borrow@box.com",
+    password: "borrowbox20",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/leduc81"
+  },
+
+  {
+    first_name: "Zoe",
+    last_name: "Thatcher",
+    email: "21borrow@box.com",
+    password: "borrowbox21",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/eloiselag"
+  },
+
+  {
+    first_name: "Joey",
+    last_name: "Graceffa",
+    email: "22borrow@box.com",
+    password: "borrowbox22",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/adrienfabiano"
+  },
+
+  {
+    first_name: "John",
+    last_name: "Kuckian",
+    email: "23borrow@box.com",
+    password: "borrowbox23",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/adri0713"
+  },
+
+  {
+    first_name: "Tania",
+    last_name: "Burr",
+    email: "24borrow@box.com",
+    password: "borrowbox24",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/Nadrioc"
+  },
+
+  {
+    first_name: "Bethany",
+    last_name: "Mota",
+    email: "25borrow@box.com",
+    password: "borrowbox25",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/valerieschraauwers"
+  },
+
+  {
+    first_name: "Ryland",
+    last_name: "Adams",
+    email: "26borrow@box.com",
+    password: "borrowbox26",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/juliends"
+  },
+
+  {
+    first_name: "Lisa",
+    last_name: "Shwartz",
+    email: "27borrow@box.com",
+    password: "borrowbox27",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/gabibranco"
+  },
+
+  {
+    first_name: "Jackie",
+    last_name: "Aina",
+    email: "28borrow@box.com",
+    password: "borrowbox28",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/tttiff"
+  },
+
+  {
+    first_name: "James",
+    last_name: "Charles",
+    email: "29borrow@box.com",
+    password: "borrowbox29",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/OllieSenduk"
+  },
+
+  {
+    first_name: "Antonio",
+    last_name: "Garza",
+    email: "30borrow@box.com",
+    password: "borrowbox30",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/charleshenriponiard"
+  },
+
+  {
+    first_name: "Conan",
+    last_name: "Gray",
+    email: "31borrow@box.com",
+    password: "borrowbox31",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/daniel-huertas"
+  },
+
+  {
+    first_name: "Connor",
+    last_name: "Todd",
+    email: "32borrow@box.com",
+    password: "borrowbox32",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/TFoujols"
+  },
+
+  {
+    first_name: "Rachel",
+    last_name: "Aust",
+    email: "33borrow@box.com",
+    password: "borrowbox33",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/stephaniemai"
+  },
+
+  {
+    first_name: "Niomi",
+    last_name: "Smart",
+    email: "34borrow@box.com",
+    password: "borrowbox34",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/KheiraBenmed"
+  },
+
+  {
+    first_name: "Bertie",
+    last_name: "Gilbert",
+    email: "35borrow@box.com",
+    password: "borrowbox35",
+    credits: 10000,
+    photo_fake: "https://kitt.lewagon.com/placeholder/users/joaocvalerio"
+  },
+
+
+  {
     first_name: "Sheldon",
     last_name: "Gatwick",
     email: "16borrow@box.com",
