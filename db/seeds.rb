@@ -42,7 +42,7 @@ puts "Created latitude and longitude for items..."
 
 #----------BOOKING SEEDS----------
 puts "Creating bookings..."
-n_bookings = @users.count * 5
+
 
 m_request = ["Hey I'd really like to borrow this item. Would tomorrow be okay?",
   "Hi there! Would it be ok if I borrow this tomorrow am?",
@@ -57,27 +57,30 @@ m_response = ["Of course you can borrow it, see you then!",
   "Absolutely, no problem. See you then :)!"
 ]
 
-n_bookings.times do
-  random_integer = rand(5..40)
-  booking = Booking.new(
-    start_date: Date.today + random_integer,
-    end_date: Date.today + random_integer + rand(1..3),
-    user: User.all.sample,
-    item: Item.all.sample,
-    status: rand(0..2),
-    request_message: m_request.sample,
-    response_message: m_response.sample,
-    response_message_read: true
-  )
-  booking.save!
+Item.all.each do |item|
+  rand(1..4).times do
+    random_integer = rand(5..40)
+    booking = Booking.new(
+      start_date: Date.today + random_integer,
+      end_date: Date.today + random_integer + rand(1..3),
+      user: User.all.sample,
+      item: item,
+      status: rand(0..2),
+      request_message: m_request.sample,
+      response_message: m_response.sample,
+      response_message_read: true
+    )
+    booking.save!
+  end
 end
+
 puts "Created #{Booking.count} bookings..."
 
 #----------REVIEWS SEEDS----------
 puts 'Creating reviews...'
 require_relative "auxilliary/review_seeds"
 
-n_reviews = n_bookings * 3
+n_reviews = Booking.all.length * 3
 
 n_reviews.times do
   attribute = @reviews.sample
@@ -86,7 +89,7 @@ n_reviews.times do
     content: attribute[:content],
     item_rating: attribute[:item_rating],
     booking: Booking.all.sample,
-    lender_rating: rand(3..5)
+    lender_rating: rand(2..5)
   )
   review.save
 end
