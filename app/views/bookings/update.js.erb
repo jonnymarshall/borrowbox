@@ -18,7 +18,10 @@ if (<%= !@message_was_read %>) {
   let borrowingTab = document.getElementById("borrowing");
   let borrowedTab = document.getElementById("borrowed");
   if (<%= @booking.status == "borrowing" %>) {
-    bookingCard.remove();
+    console.log("im gonna turn opacity to 0");
+    console.log("opacity is ${bookingCard.style.opacity}");
+    bookingCard.style.opacity = "0";
+    // bookingCard.remove();
     borrowingCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
     let requestedTabCount = parseInt(requestedTab.firstElementChild.innerText, 10);
     let borrowingTabCount = parseInt(borrowingTab.firstElementChild.innerText, 10);
@@ -26,7 +29,8 @@ if (<%= !@message_was_read %>) {
     borrowingTab.firstElementChild.innerText = borrowingTabCount + 1;
   }
   else if (<%= @booking.status == "borrowed" %>) {
-    bookingCard.remove();
+    bookingCard.style.opacity = "0";
+    // bookingCard.remove();
     borrowedCards.insertAdjacentHTML('afterbegin', "<%= j render "dashboard/booking", booking: @booking %>");
     let borrowingTabCount = parseInt(borrowingTab.firstElementChild.innerText, 10);
     let borrowedTabCount = parseInt(borrowedTab.firstElementChild.innerText, 10);
