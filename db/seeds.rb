@@ -61,7 +61,7 @@ Item.all.each do |item|
   n_bookings = rand(2..8)
   booking_users = User.all.sample(n_bookings)
   n_bookings.times do
-    random_integer = rand(1..99) - 100
+    random_integer = rand(1..99) - 130
     booking = Booking.create!(
       start_date: Date.today + random_integer,
       end_date: Date.today + random_integer + rand(0..3),
