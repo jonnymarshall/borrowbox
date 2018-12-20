@@ -13,7 +13,7 @@
           <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "What do you want to borrow?" %>
         <% else %>
           <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "What do you want to borrow in #{request.location.city}?" %>
-          <%= hidden_field_tag :address, request.location.city %>
+          <%#= hidden_field_tag :address, request.location.city %>
         <% end %>
       <%= hidden_field_tag :coordinates %>
       <% end %>
@@ -27,4 +27,3 @@
 <%= render "about" %>
 <%= render "credits" %>
 <%= render "footer" %>
-<%= javascript_pack_tag "user-location" %>

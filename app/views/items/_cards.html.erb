@@ -25,7 +25,9 @@
       <h5><%= item.name %></h5>
     </div>
     <div class="item-card-distance">
-      <p><%= item.distance_from(params[:coordinates]).round(1) %>km away</p>
+      <% unless item.distance_from(params[:coordinates]).nan? %>
+        <p><%= item.distance_from(params[:coordinates]).round(1) %>km away</p>
+      <% end %>
     </div>
     <div class="item-card-description">
       <p><%= item.description %></p>
