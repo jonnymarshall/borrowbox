@@ -6,9 +6,10 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
   .rails-default-error-page {
     background-color: #3D9082;
-    color: white;
+    color: #F4F4F4;
     text-align: center;
     font-family: "Raleway", "Helvetica", "sans-serif";
     font-size: 20px;
@@ -17,6 +18,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .rails-default-error-page div.dialog {
+    position: relative;
+    top: -20px;
+  }
+
+  .rails-default-error-page div.dialog h2 {
+    margin: 10px;
+  }
+
+  .rails-default-error-page div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    font-size: 16px;
   }
 
   .h1-error-top {
@@ -24,49 +41,44 @@
   }
 
   .rails-default-error-page h1 {
-    font-size: 40px;
-    color: white;
-    line-height: 1.5em;
-    font-family: "Raleway", "Helvetica", "sans-serif";
+    font-family: 'Lobster';
+    font-size: 70px;
+    color: #F4F4F4;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    line-height: 1.1em;
+    margin: 10px;
   }
 
   .error-circle {
-  height: 150px;
-  width: 150px;
-  background-color: white;
-  border-radius: 50%;
-  display: block;
-  margin: auto;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    margin: 30px auto;
+  }
 
-}
+  .error-b {
+    font-family: 'Lobster', cursive;
+    font-size: 150px;
+    line-height: 140px;
+    text-align: center;
+    color: #3D9082;
+    border-style: none;
+    margin: auto;
+  }
 
-.error-b {
-  font-family: 'Lobster', cursive;
-  font-size: 150px;
-  line-height: 140px;
-  text-align: center;
-  color: #3D9082;
-  border-style: none;
-  margin: auto;
-}
-
-
-  </style>
+</style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <div>
-      <h1 class="h1-error-top"> Oops! 404 </h1>
-
-        <div class="error-circle">
-          <h3 class="error-b"> b </h3>
-        </div>
-
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You're probably quite upset, you may have mistyped the address or the page may have moved.</p>
+    <h2> Oops! Error 404 </h2>
+    <h1>The page you were looking for<br>doesn't exist</h1>
+    <div class="error-circle">
+      <h3 class="error-b"> b </h3>
     </div>
+    <p>You're probably quite upset, you may have mistyped the address or the page may have moved.</p>
   </div>
 </body>
 </html>
