@@ -15,6 +15,7 @@
           <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "What do you want to borrow in #{request.location.city}?" %>
           <%= hidden_field_tag :address, request.location.city %>
         <% end %>
+      <%= hidden_field_tag :coordinates %>
       <% end %>
       <%= link_to items_path, class: "btn btn-primary", style: "background-color :#3D9082;border-color :#3D9082" do %>
         <i class="fas fa-search"></i>
@@ -26,4 +27,4 @@
 <%= render "about" %>
 <%= render "credits" %>
 <%= render "footer" %>
-
+<%= javascript_pack_tag "user-location" %>
