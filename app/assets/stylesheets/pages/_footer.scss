@@ -2,9 +2,9 @@
   background-color: $light-gray;
   display: flex;
   align-items: center;
-  height: 200px;
-  width: 2000px;
-  padding: 0px 200px;
+  height: 100%;
+  width: 100%;
+  padding: 0px 120px;
   margin-top: 20px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .hpf-links {
-  padding: 50px;
+  padding: 10px 50px;
 }
 
 .hpf-links h3 {
@@ -40,7 +40,7 @@
 
 .hpf-aboutlink {
   margin-top: 25px;
-  padding: 50px;
+  padding: 10px 50px;
 }
 
 .hpf-aboutlink a {
@@ -117,7 +117,5 @@
   color: #454545;
   font-size: 16px;
   font-weight: bold;
-  margin-left: 50px;
-  margin-right: -150px;
-  width: 30%;
+  padding: 0 80px;
 }
