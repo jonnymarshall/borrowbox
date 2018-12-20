@@ -1,9 +1,12 @@
 if (document.getElementById("<%="modal_dismiss_button_mr_#{@booking.id}"%>")) {
   document.getElementById("<%="modal_dismiss_button_mr_#{@booking.id}"%>").click();
-  var responseMessageNotifications = document.querySelectorAll('[data-target~="<%="#rm_modal_#{@booking.id}" %>"]');
-  responseMessageNotifications.forEach(function(notification) {
-    notification.classList.add("hidden");
-  })
+  let bookingCard = document.getElementById("<%= "booking-card_#{@booking.id}" %>");
+  let bookingCardRerender = "<%= j render "dashboard/booking", booking: @booking %>"
+  bookingCard.outerHTML = bookingCardRerender;
+  // var responseMessageNotifications = document.querySelectorAll('[data-target~="<%="#rm_modal_#{@booking.id}" %>"]');
+  // responseMessageNotifications.forEach(function(notification) {
+  //   notification.classList.add("hidden");
+  // })
 }
 
 var bookingCard = document.getElementById("<%= "booking-card_#{@booking.id}" %>");
