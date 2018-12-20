@@ -5,7 +5,7 @@
         <h5 class="modal-title">Leave a message for <%= "#{@item.user.first_name}" %></h5>
       </div>
       <div class="col-xs-12" style="margin-top:25px;">
-        <%= f.input :request_message, input_html: {:rows => 3}, label: false %>
+        <%= f.input :request_message, input_html: {:rows => 3}, label: false, required: true %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn-beige btn-sm" data-dismiss="modal">Close</button>
