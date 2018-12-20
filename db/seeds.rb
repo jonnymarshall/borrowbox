@@ -59,7 +59,8 @@ m_response = ["Of course you can borrow it, see you then!",
 
 Item.all.each do |item|
   rand(1..4).times do
-    random_integer = rand(5..40)
+    random_integer = rand(5..40) - 100
+    # byebug
     booking = Booking.new(
       start_date: Date.today + random_integer,
       end_date: Date.today + random_integer + rand(1..3),

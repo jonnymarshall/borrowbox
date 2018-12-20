@@ -7,7 +7,7 @@
       <%= render 'items/show/item-info-and-description.html' %>
       <%= render 'items/show/item-rating' %>
       <div class="item-reviews">
-        <% @item.reviews.order(created_at: :desc).each do |review| %>
+        <% @item.reviews.joins(:booking).order('bookings.end_date DESC').each do |review| %>
           <%= render 'items/show/review', review: review %>
         <% end %>
       </div>
