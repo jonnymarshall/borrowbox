@@ -1,12 +1,21 @@
 class ReviewsController < ApplicationController
   def create
-    review = Review.new(review_params)
-    review.booking_id = booking_params[:booking_id].to_i
-    if review.save
+    @review = Review.new(review_params)
+    @review.booking_id = booking_params[:booking_id].to_i
+    if @review.save
       redirect_to dashboard_index_path
     else
       render :new
     end
+    # if @review.save
+
+    #   respond_to do |format|
+    #     # byebug
+    #     format.js
+    #   end
+    # else
+    #   render :new
+    # end
   end
 
   private
