@@ -77,7 +77,7 @@ puts "Created #{Booking.count} bookings..."
 puts 'Creating reviews...'
 require_relative "auxilliary/review_seeds"
 
-n_reviews = n_bookings * 5
+n_reviews = n_bookings * 3
 
 n_reviews.times do
   attribute = @reviews.sample
