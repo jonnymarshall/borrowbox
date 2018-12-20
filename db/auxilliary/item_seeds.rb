@@ -149,7 +149,7 @@
   },
 
   {
-    name: "Upright NEW Vaccuum",
+    name: "Upright NEW Vacuum",
     description: "BH51120PTV Vacuum Cleaner 20V Air Lift.",
     user: User.all.sample,
     credits: 400,
