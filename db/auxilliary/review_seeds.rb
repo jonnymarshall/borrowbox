@@ -14,7 +14,7 @@
   {
     title: "Not satisfied",
     content: "The item didn't correspond my expectations, the lender wasn't honest about it's conditions, I will look for another lender next time.",
-    item_rating: rand(1..3)
+    item_rating: rand(1..2)
   },
 
   {
