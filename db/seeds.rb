@@ -58,19 +58,20 @@ m_response = ["Of course you can borrow it, see you then!",
 ]
 
 Item.all.each do |item|
-  rand(1..4).times do
-    random_integer = rand(5..40)
-    booking = Booking.new(
+  n_bookings = rand(1..5)
+  booking_users = User.all.sample(n_bookings)
+  n_bookings.times do
+    random_integer = rand(1..99) - 100
+    booking = Booking.create!(
       start_date: Date.today + random_integer,
-      end_date: Date.today + random_integer + rand(1..3),
-      user: User.all.sample,
+      end_date: Date.today + random_integer + rand(0..3),
+      user: booking_users.shift,
       item: item,
       status: rand(0..2),
       request_message: m_request.sample,
       response_message: m_response.sample,
       response_message_read: true
     )
-    booking.save!
   end
 end
 
@@ -80,18 +81,15 @@ puts "Created #{Booking.count} bookings..."
 puts 'Creating reviews...'
 require_relative "auxilliary/review_seeds"
 
-n_reviews = Booking.all.length * 3
-
-n_reviews.times do
+Booking.all.each do |booking|
   attribute = @reviews.sample
-  review = Review.new(
+  review = Review.create!(
     title: attribute[:title],
     content: attribute[:content],
     item_rating: attribute[:item_rating],
-    booking: Booking.all.sample,
+    booking: booking,
     lender_rating: rand(2..5)
   )
-  review.save
 end
 
 puts "Created #{Review.count} reviews..."

@@ -10,15 +10,8 @@ class ReviewsController < ApplicationController
         format.js
       end
     else
-
       render :new
     end
-
-    # if @review.save
-    #   redirect_to dashboard_index_path
-    # else
-    #   render :new
-    # end
   end
 
   private
