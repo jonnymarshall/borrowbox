@@ -88,25 +88,14 @@
     name: "Vacuum 3000 FluidX",
     description: "Powerful cleaner, comes with empty bags and different tools.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 500,
     photo_fake: "https://images.pexels.com/photos/38325/vacuum-cleaner-carpet-cleaner-housework-housekeeping-38325.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   },
-
-  # {
-  #   name: "Electric Vacuum",
-  #   description: "Quiet and pet friendly, comes with empty vacuum bags and different vacuum tools.",
-  #   user: User.all.sample,
-  #   # address: "Rua da Moeda 1, Lisbon",
-  #   credits: 450,
-  #   photo_fake: "https://images.unsplash.com/photo-1527515673510-8aa78ce21f9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-  # },
 
   {
     name: "Vacuum",
     description: "Quiet and pet friendly, comes with empty vacuum bags and different vacuum tools.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 480,
     photo_fake: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
   },
@@ -115,7 +104,6 @@
     name: "Vacuum Cleaner Wireless",
     description: "Wireless cleaner, overnight selfcharging, capacity of 2l.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 500,
     photo_fake: "https://images.pexels.com/photos/844874/pexels-photo-844874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   },
@@ -124,7 +112,6 @@
     name: "Electric Vacuum",
     description: "Quiet vacuum, high in capacity, comes with extra brushes.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 460,
     photo_fake: "https://images.unsplash.com/photo-1527515673510-8aa78ce21f9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
@@ -133,7 +120,6 @@
     name: "Vacuum Breeze",
     description: "Cylinder vacuum cleaner, model [BR71BR01] of the 2015 series.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 450,
     photo_fake: "https://cdn.pixabay.com/photo/2014/02/17/14/28/vacuum-cleaner-268179__340.jpg"
   },
@@ -142,7 +128,6 @@
     name: "Vacuum Freedom",
     description: "2in1 multi-use stick vacuum cleaner, Powerful, Titanium.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 560,
     photo_fake: "https://cdn.pixabay.com/photo/2014/02/17/14/03/vacuum-cleaner-268161__340.jpg"
   },
@@ -151,7 +136,6 @@
     name: "Motorised Vacuum",
     description: "Bagless, comes with brush head, powerful.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 520,
     photo_fake: "https://cdn.pixabay.com/photo/2018/10/31/16/30/robot-vacuum-cleaner-3786243__340.jpg"
   },
@@ -160,7 +144,6 @@
     name: "Vaporised Vacuum",
     description: "Gets rid of stains, deep cleaner.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 460,
     photo_fake: "https://cdn.pixabay.com/photo/2014/07/01/10/48/cleaning-381089__340.jpg"
   },
@@ -169,7 +152,6 @@
     name: "Upright NEW Vaccuum",
     description: "BH51120PTV Vacuum Cleaner 20V Air Lift.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 400,
     photo_fake: "https://cdn.pixabay.com/photo/2014/07/01/10/48/cleaning-381090__340.jpg"
   },
@@ -178,7 +160,6 @@
     name: "Modern Vacuum Cleaner",
     description: "Comes with smooth rotation brush and extra tools for carpet usage.",
     user: User.all.sample,
-    # address: "Rua da Moeda 1, Lisbon",
     credits: 410,
     photo_fake: "https://www.miele.de/media/domestic_de/media/assets_442_x/CompleteC2Jubilee_442x216_20000140898.opi.jpg"
   },

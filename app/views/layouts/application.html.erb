@@ -11,8 +11,6 @@
       <title><%= yield(:title)%></title>
     <% end %>
 
-
-
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= favicon_link_tag asset_path('favicon.png') %>
@@ -28,5 +26,6 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag "user-location" %>
   </body>
 </html>

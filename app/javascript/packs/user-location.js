@@ -1,4 +1,5 @@
 window.onload = getLocation();
+console.log("hello from the user-location");
 var x = document.getElementById("coordinates");
 function getLocation() {
   if (navigator.geolocation) {
