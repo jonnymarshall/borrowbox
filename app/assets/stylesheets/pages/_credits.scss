@@ -1,11 +1,6 @@
 .hp-credits {
-  height: 370px;
   background-color: $green;
-}
-
-.hpc-container {
-  width: 700px;
-  margin: auto;
+  width: 100%;
 }
 
 // .hpc-row {
@@ -27,23 +22,25 @@
 .hpc-b {
   font-family: 'Lobster', cursive;
   font-size: 64px;
-  line-height: 66PX;
   text-align: center;
   color: $green;
   border-style: none;
 }
 
 .hpc-text-card-title {
-  height: 100px;
   font-size: 40px;
   color: white;
   padding-top: 50px ;
+  padding-bottom: 20px;
   text-align: center;
 }
 
 .hpc-text-card  {
   color: white;
-  padding-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 50px;
   text-align: center;
+  margin-left: 140px;
+  margin-right: 140px;
 }
 
