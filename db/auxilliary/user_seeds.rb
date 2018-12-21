@@ -1,14 +1,5 @@
 @users = [
   {
-    first_name: "Jonny",
-    last_name: "Marshall",
-    email: "jmborrow@box.com",
-    password: "jborrowbox",
-    credits: 10000,
-    photo_fake: "http://kitt.lewagon.com/placeholder/users/jonnymarshall"
-  },
-
-  {
     first_name: "Daniel",
     last_name: "Moreira",
     email: "dmborrow@box.com",
@@ -351,3 +342,16 @@
     photo_fake: "http://kitt.lewagon.com/placeholder/users/robstaa"
   },
  ]
+
+@user_jonny = [
+  {
+    first_name: "Jonny",
+    last_name: "Marshall",
+    email: "jmborrow@box.com",
+    password: "jborrowbox",
+    credits: 10000,
+    photo_fake: "http://kitt.lewagon.com/placeholder/users/jonnymarshall"
+  }
+]
+
+

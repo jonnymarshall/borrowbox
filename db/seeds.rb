@@ -82,7 +82,7 @@ puts 'Creating reviews...'
 require_relative "auxilliary/review_seeds"
 
 Booking.all.each do |booking|
-  if booking.status == "borrowing"
+  if booking.status == "borrowed"
     review_randomiser = rand(0..5)
     if review_randomiser >= 2
       attribute = @reviews.sample
@@ -98,3 +98,7 @@ Booking.all.each do |booking|
 end
 
 puts "Created #{Review.count} reviews..."
+
+User.create!(@user_jonny)
+
+puts "Created a Jonny!"
