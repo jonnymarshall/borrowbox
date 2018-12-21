@@ -3,7 +3,7 @@
   {
     name: "Guild Drill Driver ",
     description: "1.3AH Cordless. Please only request if you are already used to speed drills.",
-    user: User.all.sample,
+    user: User.first,
     credits: 250,
     photo_fake: "https://images.unsplash.com/photo-1541474424879-14480b8e249d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
@@ -44,7 +44,7 @@
    {
     name: "White Party Tent",
     description: "Fits chairs for 20 people easily. Easy to put up, party approved! ",
-    user: User.all.sample,
+    user: User.first,
     credits: 500,
     photo_fake: "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
@@ -69,7 +69,7 @@
   {
     name: "Carbon Claw Hammer",
     description: "Heavily used but still in excellent condition.",
-    user: User.all.sample,
+    user: User.first,
     credits: 50,
     photo_fake: "https://images.unsplash.com/photo-1526714719019-b3032b5b5aac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
   },
@@ -177,7 +177,7 @@
   {
     name: "Suitcase",
     description: "Standard suitcase, usually allowed in the cabin",
-    user: User.all.sample,
+    user: User.first,
     credits: 220,
     photo_fake: "https://images.unsplash.com/photo-1502301197179-65228ab57f78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
   },
