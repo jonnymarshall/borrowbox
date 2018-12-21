@@ -61,10 +61,10 @@ Item.all.each do |item|
   n_bookings = rand(2..8)
   booking_users = User.all.sample(n_bookings)
   n_bookings.times do
-    random_integer = rand(1..99) - 130
+    random_days = rand(1..99) - 130
     booking = Booking.create!(
-      start_date: Date.today + random_integer,
-      end_date: Date.today + random_integer + rand(0..3),
+      start_date: Date.today + random_days,
+      end_date: Date.today + random_days + rand(0..3),
       user: booking_users.shift,
       item: item,
       status: rand(0..2),
@@ -100,5 +100,19 @@ end
 puts "Created #{Review.count} reviews..."
 
 User.create!(@user_jonny)
+
+4.times do
+  random_days = rand(1..99) - 130
+  Booking.create!(
+    start_date: Date.today + random_days,
+    end_date: Date.today + random_days + rand(0..3),
+    user: User.all.last,
+    item: Item.all.sample,
+    status: rand(0..2),
+    request_message: m_request.sample,
+    response_message: m_response.sample,
+    response_message_read: true
+  )
+end
 
 puts "Created a Jonny!"
