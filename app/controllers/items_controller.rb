@@ -18,6 +18,9 @@ class ItemsController < ApplicationController
     end
     # Mapbox
     @items = @items.where.not(latitude: nil, longitude: nil)
+
+    @items = @items.paginate(:page => params[:page], :per_page => 9)
+
     @markers = markers(@items)
   end
 

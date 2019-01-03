@@ -24,6 +24,7 @@ gem 'faker'
 gem 'flatpickr'
 
 # dan
+gem 'will_paginate'
 
 # ines
 
