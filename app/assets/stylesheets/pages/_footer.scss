@@ -1,17 +1,17 @@
 .hp-footer {
   background-color: $light-gray;
   display: flex;
-  align-items: center;
-  height: 100%;
   width: 100%;
-  padding: 0px 120px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-top: 20px;
+  justify-content: space-between;
 }
 
-.hpf-container {
+.link-section {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 .hpf-links {
@@ -38,35 +38,10 @@
   padding: 3px 0;
 }
 
-.hpf-aboutlink {
-  margin-top: 25px;
-  padding: 10px 50px;
-}
-
-.hpf-aboutlink a {
- font-size: 15px
-}
-
-.hpf-aboutlink h3 {
-  color: #454545;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0;
-}
-
-.hpf-aboutlink ul {
-  list-style-type: none;
-  padding: 6px 0;
-}
-
-.hpf-aboutlink ul li{
-  padding: 3px 0;
-}
-
 .hpf-social-links {
   display: flex;
   align-items: center;
-  margin: 0 0px 40px 70px;
+  margin: 0px 0px 40px 150px;
   color: $green;
 }
 

@@ -13,17 +13,17 @@
         <%= form_for [booking, @review], remote: true do |f| %>
           <div class="form-group">
             <div class="form-group col-md-12">
-              <%= f.text_area :content, class: 'form-control' %>
+              <%= f.text_area :content, required:true, class: 'form-control' %>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6" style="margin-top:15px;">
               <%= f.label :item_rating %>:
-              <%= f.number_field :item_rating, class: 'form-control' %><br />
+              <%= f.number_field :item_rating, required:true, class: 'form-control' %><br />
             </div>
             <div class="form-group col-md-6" style="margin-top:15px;">
               <%= f.label :lender_rating %>:
-              <%= f.number_field :lender_rating, class: 'form-control' %><br />
+              <%= f.number_field :lender_rating, required:true, class: 'form-control' %><br />
             </div>
           </div>
       <div class="modal-footer" style="border-top:none;">

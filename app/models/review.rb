@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :booking
 
-  validates :content, presence: true
+  validates :content, :item_rating, :lender_rating, presence: true
 
   after_create :update_combined_rating
 

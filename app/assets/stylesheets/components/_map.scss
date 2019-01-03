@@ -44,10 +44,10 @@
 .map-card-grid {
   box-shadow: 0 1px 6px rgba(0,0,0,0.1);
   display: grid;
-  height: 240px;
+  height: 260px;
   width: 180px;
   grid-template-columns: 100%;
-  grid-template-rows: 55% 3fr 3fr 4fr 4fr;
+  grid-template-rows: 55% 3fr 4fr 4fr 4fr;
   padding: 10px;
   background: linear-gradient(#FFFFFF, #F7F7F7);
   border: 1px solid #E2E2E2;
