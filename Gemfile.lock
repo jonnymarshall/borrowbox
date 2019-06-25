@@ -89,7 +89,7 @@ GEM
       tty-tree (~> 0.3.0)
     ffi (1.11.1)
     flatpickr (4.5.7.0)
-    font-awesome-sass (5.0.13)
+    font-awesome-sass (5.5.0.1)
       sassc (>= 1.11)
     geocoder (1.5.1)
     globalid (0.4.2)
@@ -247,14 +247,14 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-  bootstrap-sass (~> 3.3)
+  bootstrap-sass (~> 3.4.0)
   carrierwave (~> 1.2)
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
   faker
   flatpickr
-  font-awesome-sass (~> 5.0.9)
+  font-awesome-sass (~> 5.5.0.1)
   geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
