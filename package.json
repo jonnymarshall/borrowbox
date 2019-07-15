@@ -2,14 +2,24 @@
   "name": "borrowbox",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5",
+    "@rails/webpacker": "^4.0.7",
     "bootstrap": ">=3.4.1",
+    "core-js": "3",
     "flatpickr": "^4.5.2",
     "jquery": "^3.3.1",
     "mapbox-gl": "^0.52.0-beta.2",
-    "sweetalert": "^2.1.2"
+    "popper.js": "^1.15.0",
+    "sweetalert": "^2.1.2",
+    "webpack": "^4.35.3"
   },
   "devDependencies": {
-    "webpack-dev-server": ">=3.1.11"
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "sugarss": "^2.0.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }
